@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { meetings } from "@/data/meetings";
@@ -64,10 +65,8 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
 
         <section className={styles.hero}>
           <div className={`${styles.art} ${styles[meeting.color]}`} aria-hidden="true">
+            <Image className={styles.heroImage} src={meeting.imageUrl} alt="" fill priority sizes="(max-width: 900px) 100vw, 46vw" />
             <span className={styles.artCategory}>{meeting.category}</span>
-            <div className={styles.circle} />
-            <span className={styles.icon}>{meeting.icon}</span>
-            <p>좋아하는 것 <strong>＋ AI</strong></p>
           </div>
 
           <div className={styles.summary}>

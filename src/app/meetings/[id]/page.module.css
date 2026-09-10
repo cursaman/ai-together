@@ -9,6 +9,7 @@
 .breadcrumb strong { color: var(--green); }
 .hero { width: min(1120px, calc(100% - 40px)); margin: auto; display: grid; grid-template-columns: .92fr 1.08fr; overflow: hidden; border: 1px solid var(--line); border-radius: 30px; background: white; box-shadow: var(--shadow); }
 .art { position: relative; min-height: 520px; overflow: hidden; display: grid; place-items: center; }
+.heroImage { object-fit: cover; }
 .green { background: #286b53; } .yellow { background: #e2b94e; } .coral { background: #e7806a; } .blue { background: #547ba5; }
 .circle { position: absolute; width: 340px; height: 340px; border-radius: 50%; background: rgba(255,255,255,.2); box-shadow: 0 0 0 55px rgba(255,255,255,.08); }
 .icon { position: relative; z-index: 1; font-size: 7rem; filter: drop-shadow(0 15px 18px rgba(0,0,0,.15)); }

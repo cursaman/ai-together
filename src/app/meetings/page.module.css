@@ -26,14 +26,12 @@
 .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .cardLink { display: block; height: 100%; }
 .cardArt { position: relative; height: 210px; overflow: hidden; display: grid; place-items: center; }
-.cardArt::before, .cardArt::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.35); }
-.cardArt::before { width: 230px; height: 230px; }
-.cardArt::after { width: 155px; height: 155px; }
+.cardImage { object-fit: cover; transition: transform .35s ease; }
+.card:hover .cardImage { transform: scale(1.035); }
 .green { background: #286b53; }
 .yellow { background: #e2b94e; }
 .coral { background: #e7806a; }
 .blue { background: #547ba5; }
-.icon { position: relative; z-index: 1; font-size: 4.5rem; filter: drop-shadow(0 10px 12px rgba(0,0,0,.1)); }
 .status, .category { position: absolute; z-index: 2; top: 16px; padding: 7px 11px; border-radius: 999px; background: white; font-size: .73rem; font-weight: 800; }
 .status { left: 16px; color: var(--green); }
 .category { right: 16px; background: rgba(255,255,255,.85); color: #495149; }

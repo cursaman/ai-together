@@ -6,6 +6,7 @@ export type Meeting = {
   subtitle: string;
   category: string;
   icon: string;
+  imageUrl: string;
   date: string;
   time: string;
   location: string;

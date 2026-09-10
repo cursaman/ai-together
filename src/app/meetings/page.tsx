@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { meetingCategories } from "@/data/meetings";
 import { getMeetings } from "@/lib/meetings";
@@ -78,9 +79,9 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
                 <article className={styles.card} key={meeting.id}>
                   <Link className={styles.cardLink} href={`/meetings/${meeting.id}`} aria-label={`${meeting.title} 상세보기`}>
                     <div className={`${styles.cardArt} ${styles[meeting.color]}`}>
+                      <Image className={styles.cardImage} src={meeting.imageUrl} alt="" fill sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw" />
                       <span className={styles.status}>{meeting.status}</span>
                       <span className={styles.category}>{meeting.category}</span>
-                      <span className={styles.icon} aria-hidden="true">{meeting.icon}</span>
                     </div>
                     <div className={styles.cardBody}>
                       <div className={styles.badges}><span>{meeting.fee}</span><span>난이도 · {meeting.difficulty}</span></div>

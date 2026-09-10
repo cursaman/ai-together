@@ -11,6 +11,7 @@ type MeetingRow = {
   subtitle: string;
   category: string;
   icon: string;
+  representative_image_url: string | null;
   meeting_date: string;
   meeting_time: string;
   location: string;
@@ -20,6 +21,15 @@ type MeetingRow = {
   fee: number;
   recruitment_status: MeetingStatus;
   color: Meeting["color"];
+};
+
+const categoryImages: Record<string, string> = {
+  사진: "/images/meetings/ai-first-step.webp",
+  여행: "/images/meetings/travel-with-ai.webp",
+  글쓰기: "/images/meetings/write-my-story.webp",
+  홈페이지: "/images/meetings/one-page-site.webp",
+  영상: "/images/meetings/short-video-ideas.webp",
+  자동화: "/images/meetings/easy-automation.webp",
 };
 
 function formatDate(value: string) {
@@ -46,6 +56,7 @@ function toMeeting(row: MeetingRow): Meeting {
     subtitle: row.subtitle,
     category: row.category,
     icon: row.icon,
+    imageUrl: categoryImages[row.category] || row.representative_image_url || "/images/meetings/ai-first-step.webp",
     date: formatDate(row.meeting_date),
     time: formatTime(row.meeting_time),
     location: row.location,
@@ -66,7 +77,7 @@ export async function getMeetings(): Promise<Meeting[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("ait_meetings")
-    .select("id,title,subtitle,category,icon,meeting_date,meeting_time,location,difficulty,capacity,current_applicants,fee,recruitment_status,color")
+    .select("id,title,subtitle,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,capacity,current_applicants,fee,recruitment_status,color")
     .order("meeting_date", { ascending: true });
 
   if (error) {
@@ -85,7 +96,7 @@ export async function getMeetingById(id: string): Promise<Meeting | undefined> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("ait_meetings")
-    .select("id,title,subtitle,category,icon,meeting_date,meeting_time,location,difficulty,capacity,current_applicants,fee,recruitment_status,color")
+    .select("id,title,subtitle,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,capacity,current_applicants,fee,recruitment_status,color")
     .eq("id", id)
     .maybeSingle();
 
