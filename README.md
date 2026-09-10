@@ -18,12 +18,13 @@ AI 경험이 없는 사람도 관심 있는 주제로 직접 결과물을 만들
 ## 현재 진행 상태
 
 **Day 1 - Planning ✅**  
-**Day 2 - Next.js Setup (진행 중)**
+**Day 2 - Next.js Setup (진행 중)**  
+**Day 3 - Main Page ✅**
 
 프로젝트 기획 문서를 기준으로 Next.js, React, TypeScript, App Router 개발환경과 실행 확인용 기본 메인 화면을 구성했습니다. Supabase와 배포 설정은 아직 연결하지 않았습니다.
 
 남은 확인: Git remote 설정 및 첫 커밋, 브라우저 시각 검증  
-다음 작업: **Day 3 - Main Page**
+다음 작업: **Day 4 - Meetings List**
 
 ## 향후 계획
 
