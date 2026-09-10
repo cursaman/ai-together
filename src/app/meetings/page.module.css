@@ -1,0 +1,83 @@
+.header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(32, 37, 31, .08); background: rgba(255, 250, 241, .92); backdrop-filter: blur(14px); }
+.navShell { width: min(1180px, calc(100% - 40px)); min-height: 72px; margin: auto; display: flex; align-items: center; gap: 36px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 800; letter-spacing: -.03em; }
+.brand > span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 13px 13px 13px 4px; background: var(--green); color: white; font-size: .74rem; }
+.navShell nav { margin-left: auto; display: flex; gap: 28px; color: #4f584f; font-size: .94rem; }
+.navShell nav a:hover, .activeNav { color: var(--green); }
+.activeNav { font-weight: 800; }
+.homeLink { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; }
+.intro { padding: 100px 20px 86px; background: #f2ecdd; text-align: center; }
+.kicker { margin: 0 0 18px; color: var(--green); font-size: .76rem; font-weight: 800; letter-spacing: .14em; }
+.intro h1 { margin: 0; font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.08; letter-spacing: -.06em; }
+.intro > p:last-child { max-width: 650px; margin: 24px auto 0; color: var(--muted); line-height: 1.8; }
+.mobileBreak { display: none; }
+.listSection { width: min(1120px, calc(100% - 40px)); margin: auto; padding: 60px 0 110px; }
+.filters { overflow-x: auto; display: flex; gap: 9px; padding-bottom: 8px; scrollbar-width: none; }
+.filters::-webkit-scrollbar { display: none; }
+.filters a { flex: 0 0 auto; padding: 11px 18px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.62); color: var(--muted); font-size: .88rem; font-weight: 700; }
+.filters a:hover { border-color: var(--green); color: var(--green); }
+.filters .selectedFilter { border-color: var(--green); background: var(--green); color: white; }
+.listHeading { margin: 42px 0 24px; display: flex; align-items: end; justify-content: space-between; }
+.listHeading h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -.04em; }
+.listHeading p { margin: 0; color: var(--muted); font-size: .9rem; }
+.listHeading strong { color: var(--green); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: white; transition: transform .2s ease, box-shadow .2s ease; }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.cardLink { display: block; height: 100%; }
+.cardArt { position: relative; height: 210px; overflow: hidden; display: grid; place-items: center; }
+.cardArt::before, .cardArt::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.35); }
+.cardArt::before { width: 230px; height: 230px; }
+.cardArt::after { width: 155px; height: 155px; }
+.green { background: #286b53; }
+.yellow { background: #e2b94e; }
+.coral { background: #e7806a; }
+.blue { background: #547ba5; }
+.icon { position: relative; z-index: 1; font-size: 4.5rem; filter: drop-shadow(0 10px 12px rgba(0,0,0,.1)); }
+.status, .category { position: absolute; z-index: 2; top: 16px; padding: 7px 11px; border-radius: 999px; background: white; font-size: .73rem; font-weight: 800; }
+.status { left: 16px; color: var(--green); }
+.category { right: 16px; background: rgba(255,255,255,.85); color: #495149; }
+.cardBody { padding: 24px; }
+.badges { display: flex; gap: 7px; }
+.badges span { padding: 5px 8px; border-radius: 8px; background: var(--green-pale); color: var(--green); font-size: .69rem; font-weight: 800; }
+.cardBody h3 { margin: 18px 0 8px; font-size: 1.28rem; letter-spacing: -.035em; }
+.subtitle { min-height: 44px; margin: 0; color: var(--muted); font-size: .87rem; line-height: 1.55; }
+.details { margin: 20px 0; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.details div { display: flex; gap: 9px; font-size: .79rem; }
+.details div + div { margin-top: 8px; }
+.details dt, .details dd { margin: 0; }
+.details dd { color: #555e55; }
+.capacity > div:first-child { display: flex; justify-content: space-between; color: var(--muted); font-size: .75rem; }
+.progress { height: 6px; margin-top: 9px; overflow: hidden; border-radius: 999px; background: #edf0eb; }
+.progress span { display: block; height: 100%; border-radius: inherit; background: var(--green); }
+.empty { padding: 70px 20px; border: 1px dashed var(--line); border-radius: 20px; color: var(--muted); text-align: center; }
+.guideBanner { width: min(1120px, calc(100% - 40px)); margin: 0 auto 100px; padding: 34px 40px; border-radius: 24px; background: var(--green-pale); display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.guideBanner > div { display: flex; align-items: center; gap: 18px; }
+.guideBanner > div > span { font-size: 2.4rem; }
+.guideBanner strong { font-size: 1.05rem; }
+.guideBanner p { margin: 7px 0 0; color: var(--muted); font-size: .85rem; }
+.guideBanner > a { flex: 0 0 auto; color: var(--green); font-weight: 800; }
+.footer { width: min(1120px, calc(100% - 40px)); margin: auto; padding: 45px 0; border-top: 1px solid var(--line); display: flex; align-items: end; justify-content: space-between; color: var(--muted); }
+.footer p { margin: 9px 0 0; font-size: .83rem; }
+.footer .brand { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .navShell nav { display: none; }
+  .homeLink { margin-left: auto; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .navShell { width: calc(100% - 30px); min-height: 64px; }
+  .brand > span { width: 34px; height: 34px; }
+  .homeLink { padding: 8px 12px; font-size: .78rem; }
+  .intro { padding: 72px 22px 68px; }
+  .mobileBreak { display: block; }
+  .listSection { width: calc(100% - 30px); padding-top: 36px; }
+  .listHeading { margin-top: 30px; }
+  .grid { grid-template-columns: 1fr; }
+  .cardArt { height: 225px; }
+  .subtitle { min-height: auto; }
+  .guideBanner { width: calc(100% - 30px); padding: 28px; flex-direction: column; align-items: flex-start; }
+  .footer { width: calc(100% - 30px); align-items: flex-start; flex-direction: column; gap: 24px; }
+}
