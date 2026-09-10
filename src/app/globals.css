@@ -1,0 +1,104 @@
+:root {
+  color-scheme: light;
+  --background: #f7f8fc;
+  --foreground: #172033;
+  --accent: #3157d5;
+  --accent-hover: #2545ad;
+  --muted: #697386;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.hero {
+  width: min(100%, 680px);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 8vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.message {
+  margin: 24px 0 32px;
+  font-size: clamp(1.15rem, 4vw, 1.6rem);
+  line-height: 1.65;
+}
+
+.cta {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  padding: 13px 24px;
+  transition: background-color 160ms ease;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: var(--accent-hover);
+}
+
+.cta:focus-visible {
+  outline: 3px solid rgba(49, 87, 213, 0.3);
+  outline-offset: 3px;
+}
+
+.categories {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding-inline: 16px;
+  }
+
+  .cta {
+    width: 100%;
+  }
+}
