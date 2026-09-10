@@ -22,11 +22,27 @@ AI 경험이 없는 사람도 관심 있는 주제로 직접 결과물을 만들
 **Day 3 - Main Page ✅**  
 **Day 4 - Meetings List ✅**  
 **Day 5 - Meeting Detail ✅**
+**Day 6 - Supabase Connection Setup ✅**
 
 프로젝트 기획 문서를 기준으로 Next.js, React, TypeScript, App Router 개발환경과 실행 확인용 기본 메인 화면을 구성했습니다. Supabase와 배포 설정은 아직 연결하지 않았습니다.
 
 남은 확인: Git remote 설정 및 첫 커밋, 브라우저 시각 검증  
-다음 작업: **Day 6 - Supabase Connection**
+다음 작업: **Day 7 - Database Connection**
+
+## Supabase 로컬 설정
+
+Day 6에는 Supabase SSR 클라이언트 구조만 준비했습니다. 기존 `edu-platform` 테이블이나 데이터는 변경하지 않았습니다.
+
+1. `.env.example`을 복사해 `.env.local`을 만듭니다.
+2. 기존 Supabase 프로젝트의 URL과 publishable key를 입력합니다.
+3. `.env.local`은 Git에 포함하지 않습니다.
+
+```text
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+```
+
+실제 데이터 조회와 `ait_` 테이블 연결은 Day 7에 진행합니다.
 
 ## 향후 계획
 
