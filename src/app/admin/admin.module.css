@@ -1,0 +1,56 @@
+.adminShell, .loginShell { min-height: 100vh; background: #f4efe4; }
+.adminHeader { min-height: 70px; padding: 0 max(24px, calc((100% - 1120px) / 2)); border-bottom: 1px solid var(--line); background: white; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.adminBrand { font-size: 1.05rem; font-weight: 900; }
+.adminBrand span { margin-left: 7px; color: var(--green); font-size: .74rem; }
+.adminHeader nav { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: .85rem; font-weight: 700; }
+.adminHeader form { margin: 0; }
+.adminHeader button { border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.adminMain { width: min(1120px, calc(100% - 40px)); margin: auto; padding: 64px 0 100px; }
+.pageHeading { margin-bottom: 32px; display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.pageHeading h1, .formHeading h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 3.5rem); letter-spacing: -.05em; }
+.pageHeading div > p:last-child, .formHeading > p:last-child { margin: 12px 0 0; color: var(--muted); }
+.kicker { margin: 0 0 10px; color: var(--green); font-size: .7rem; font-weight: 900; letter-spacing: .14em; }
+.primaryLink, .primaryButton { border: 0; border-radius: 12px; background: var(--green); color: white; font: inherit; font-weight: 800; cursor: pointer; }
+.primaryLink { padding: 14px 18px; }
+.primaryButton { min-height: 52px; padding: 0 24px; justify-self: start; }
+.primaryButton:disabled { opacity: .65; cursor: wait; }
+.notice { padding: 14px 17px; border-radius: 12px; background: var(--green-pale); color: var(--green); font-weight: 800; }
+.tableWrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: white; }
+.tableWrap table { width: 100%; border-collapse: collapse; }
+.tableWrap th, .tableWrap td { padding: 17px 18px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+.tableWrap th { background: #fbf9f4; color: var(--muted); font-size: .75rem; }
+.tableWrap td { font-size: .86rem; }
+.tableWrap td:first-child { min-width: 280px; white-space: normal; }
+.tableWrap small { display: block; margin-top: 5px; color: var(--muted); }
+.status { padding: 6px 9px; border-radius: 999px; background: var(--green-pale); color: var(--green); font-size: .72rem; font-weight: 800; }
+.editLink { color: var(--green); font-weight: 900; }
+.empty { padding: 50px; color: var(--muted); text-align: center; }
+.backLink { display: inline-block; margin-bottom: 24px; color: var(--green); font-size: .85rem; font-weight: 800; }
+.formHeading { margin-bottom: 32px; }
+.meetingForm { padding: clamp(24px, 5vw, 48px); border: 1px solid var(--line); border-radius: 22px; background: white; display: grid; gap: 24px; }
+.formGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.field { display: grid; gap: 8px; }
+.field label, .loginForm label { font-size: .82rem; font-weight: 800; }
+.field input, .field select, .field textarea, .loginForm input { width: 100%; padding: 13px 14px; border: 1px solid var(--line); border-radius: 11px; background: #fffdf9; color: var(--ink); font: inherit; }
+.field textarea { resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus, .loginForm input:focus { border-color: var(--green); outline: 3px solid rgba(33,99,77,.1); }
+.error, .formMessage { margin: 0; color: #b53d2a; font-size: .76rem; font-weight: 700; }
+.loginShell { padding: 70px 20px; display: grid; place-items: center; }
+.loginCard { width: min(460px, 100%); padding: clamp(30px, 7vw, 50px); border-radius: 24px; background: white; box-shadow: var(--shadow); }
+.loginCard h1 { margin: 0; font-size: 2.25rem; letter-spacing: -.05em; }
+.loginCard > p:not(.kicker) { color: var(--muted); line-height: 1.7; }
+.loginForm { margin: 28px 0 22px; display: grid; gap: 11px; }
+.loginForm button { min-height: 50px; border: 0; border-radius: 11px; background: var(--green); color: white; font: inherit; font-weight: 800; cursor: pointer; }
+.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+@media (max-width: 700px) {
+  .adminHeader { padding: 14px 18px; align-items: flex-start; }
+  .adminHeader nav { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  .adminHeader nav > a:first-child { display: none; }
+  .adminMain { width: calc(100% - 30px); padding-top: 45px; }
+  .pageHeading { align-items: stretch; flex-direction: column; }
+  .primaryLink { text-align: center; }
+  .formGrid { grid-template-columns: 1fr; }
+  .meetingForm { padding: 24px 18px; }
+  .primaryButton { width: 100%; }
+}

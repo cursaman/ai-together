@@ -26,10 +26,11 @@ AI 경험이 없는 사람도 관심 있는 주제로 직접 결과물을 만들
 **Day 7 - Database Connection ✅**
 **Day 8 - Participant Application ✅**
 **Day 9 - Application Flow Completion ✅**
+**Day 10 - Admin Meeting Management ✅**
 
 모임 조회와 참가 신청 화면을 Supabase에 연결했습니다. 신청 정보는 서버에서 검증하고, 공개 사용자는 신청 등록만 가능하도록 RLS 정책을 분리했습니다.
 
-다음 작업: **Day 10 - 관리자 모임 관리**
+다음 작업: **Day 11 - 관리자 신청자 관리**
 
 ## Supabase 로컬 설정
 
@@ -49,6 +50,8 @@ Day 7에는 `ait_meetings` 조회 모듈과 `ait_meetings`·`ait_applications` m
 Day 8에는 참가 신청 폼과 완료 화면을 추가했습니다. `ait_applications`에는 공개 `INSERT`만 허용하고 공개 조회·수정·삭제 권한은 제공하지 않습니다.
 
 Day 9에는 신청 저장과 신청 인원 증가를 하나의 DB 트랜잭션으로 묶고, 같은 이메일의 중복 신청과 정원 초과를 방지했습니다. 공개 사용자는 테이블에 직접 쓰지 않고 제한된 신청 함수만 실행할 수 있습니다.
+
+Day 10에는 서버 전용 관리자 로그인과 모임 목록·등록·수정 화면을 추가했습니다. 관리자 작업은 매 Server Action에서 세션을 확인하고 Supabase Service Role 키는 서버에서만 사용합니다.
 
 ## 향후 계획
 
