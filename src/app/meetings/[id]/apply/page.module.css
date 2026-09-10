@@ -1,0 +1,83 @@
+.shell,
+.completeShell {
+  min-height: 100vh;
+  padding: 55px max(20px, 4vw) 90px;
+  background: #f2ecdd;
+}
+.back { display: block; width: min(1050px, 100%); margin: 0 auto 25px; color: var(--green); font-size: .86rem; font-weight: 800; }
+.layout { width: min(1050px, 100%); margin: auto; display: grid; grid-template-columns: .85fr 1.15fr; overflow: hidden; border-radius: 30px; background: white; box-shadow: var(--shadow); }
+.intro { padding: 64px 52px; background: var(--green); color: white; }
+.kicker { margin: 0 0 14px; color: #bde1cf; font-size: .72rem; font-weight: 900; letter-spacing: .14em; }
+.intro h1 { margin: 0; font-size: clamp(2.6rem, 5vw, 4.2rem); letter-spacing: -.055em; }
+.intro > p { margin: 18px 0 35px; color: #d5e6de; line-height: 1.7; }
+.meetingCard { padding: 22px; border: 1px solid rgba(255,255,255,.18); border-radius: 20px; background: rgba(255,255,255,.1); display: flex; gap: 16px; }
+.meetingCard > span { flex: 0 0 auto; display: grid; width: 58px; height: 58px; place-items: center; border-radius: 17px; background: #f5c85b; font-size: 1.8rem; }
+.meetingCard small { color: #bde1cf; }
+.meetingCard h2 { margin: 7px 0; font-size: 1.2rem; }
+.meetingCard p { margin: 0; color: #d5e6de; font-size: .8rem; line-height: 1.6; }
+.intro ul { margin: 28px 0 0; padding: 0; display: grid; gap: 11px; list-style: none; color: #d5e6de; font-size: .82rem; }
+.intro li::before { content: "✓"; margin-right: 8px; color: #f5c85b; font-weight: 900; }
+.formCard { padding: 62px clamp(32px, 6vw, 72px); }
+.formHeading { margin-bottom: 34px; }
+.formHeading .kicker { color: var(--green); }
+.formHeading h2 { margin: 0; font-size: 2rem; letter-spacing: -.04em; }
+.formHeading > p:last-child { margin: 10px 0 0; color: var(--muted); font-size: .78rem; }
+.formHeading span,
+.field label > span,
+.consent label span { color: #c84f3a; }
+.form { display: grid; gap: 24px; }
+.field { display: grid; gap: 8px; }
+.field label { color: var(--ink); font-size: .86rem; font-weight: 800; }
+.field label small { margin-left: 6px; color: var(--muted); font-weight: 500; }
+.field input,
+.field textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #fffdf9; padding: 13px 14px; color: var(--ink); font: inherit; font-size: .9rem; outline: none; }
+.field textarea { resize: vertical; }
+.field input:focus,
+.field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(33,99,77,.1); }
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] { border-color: #c84f3a; }
+.help,
+.error { margin: 0; font-size: .73rem; }
+.help { color: var(--muted); }
+.error { color: #b53d2a; font-weight: 700; }
+.honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.consent { display: flex; align-items: flex-start; gap: 11px; }
+.consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--green); }
+.consent label { flex: 1; font-size: .82rem; }
+.consent strong,
+.consent small { display: block; }
+.consent small { margin-top: 7px; color: var(--muted); line-height: 1.55; }
+.formMessage { margin: 0; padding: 13px 15px; border-radius: 11px; background: #fff0ec; color: #a33b29; font-size: .82rem; font-weight: 700; }
+.submit { min-height: 54px; border: 0; border-radius: 14px; background: var(--green); color: white; font: inherit; font-weight: 800; cursor: pointer; }
+.submit:hover { background: var(--green-dark); }
+.submit:disabled { opacity: .65; cursor: wait; }
+.unavailable { padding: 40px 25px; border-radius: 18px; background: var(--green-pale); text-align: center; }
+.unavailable strong { font-size: 1.2rem; }
+.unavailable p { color: var(--muted); }
+.unavailable a { color: var(--green); font-weight: 800; }
+.completeShell { display: grid; place-items: center; }
+.completeCard { width: min(620px, 100%); padding: 65px 45px; border-radius: 28px; background: white; box-shadow: var(--shadow); text-align: center; }
+.completeIcon { display: grid; width: 70px; height: 70px; margin: 0 auto 25px; place-items: center; border-radius: 50%; background: var(--green); color: white; font-size: 2rem; }
+.completeCard .kicker { color: var(--green); }
+.completeCard h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.05em; }
+.completeCard > p:not(.kicker) { color: var(--muted); line-height: 1.8; }
+.completeActions { margin-top: 32px; display: flex; justify-content: center; gap: 10px; }
+.completeActions a { padding: 13px 17px; border: 1px solid var(--line); border-radius: 12px; font-size: .86rem; font-weight: 800; }
+.completeActions a:last-child { border-color: var(--green); background: var(--green); color: white; }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .intro { padding: 48px 36px; }
+  .formCard { padding: 48px 36px; }
+}
+
+@media (max-width: 520px) {
+  .shell,
+  .completeShell { padding: 28px 15px 60px; }
+  .layout { border-radius: 22px; }
+  .intro,
+  .formCard { padding: 38px 24px; }
+  .meetingCard { padding: 17px; }
+  .completeCard { padding: 48px 24px; }
+  .completeActions { flex-direction: column; }
+}

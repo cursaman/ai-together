@@ -56,6 +56,8 @@
 .applyCard dt { color: var(--muted); }
 .applyCard dd { margin: 0; font-weight: 800; text-align: right; }
 .applyCard button { width: 100%; min-height: 52px; border: 0; border-radius: 14px; background: #9aaba2; color: white; font: inherit; font-weight: 800; cursor: not-allowed; }
+.applyButton { display: grid; width: 100%; min-height: 52px; place-items: center; border-radius: 14px; background: var(--green); color: white; font-weight: 800; }
+.applyButton:hover { background: var(--green-dark); }
 .buttonNote { margin: 12px 0 0; color: var(--muted); font-size: .73rem; text-align: center; }
 .bottomBanner { width: min(1120px, calc(100% - 40px)); margin: 0 auto 110px; padding: 55px 60px; border-radius: 28px; background: var(--green); color: white; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .bottomBanner .kicker { color: #bde1cf; }
