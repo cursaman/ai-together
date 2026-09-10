@@ -3,6 +3,10 @@ const requiredEnvironmentVariables = [
   "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
 ] as const;
 
+export function isSupabaseConfigured() {
+  return requiredEnvironmentVariables.every((name) => Boolean(process.env[name]));
+}
+
 export function getSupabaseEnvironment() {
   const missingVariables = requiredEnvironmentVariables.filter(
     (name) => !process.env[name],

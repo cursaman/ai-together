@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { meetings } from "@/data/meetings";
+import { getMeetingById } from "@/lib/meetings";
 import styles from "./page.module.css";
 
 type MeetingDetailPageProps = {
@@ -23,7 +24,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: MeetingDetailPageProps): Promise<Metadata> {
   const { id } = await params;
-  const meeting = meetings.find((item) => item.id === id);
+  const meeting = await getMeetingById(id);
 
   if (!meeting) {
     return { title: "모임을 찾을 수 없어요 | AI 같이해요" };
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: MeetingDetailPageProps): Prom
 
 export default async function MeetingDetailPage({ params }: MeetingDetailPageProps) {
   const { id } = await params;
-  const meeting = meetings.find((item) => item.id === id);
+  const meeting = await getMeetingById(id);
 
   if (!meeting) {
     notFound();

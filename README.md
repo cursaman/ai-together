@@ -23,11 +23,12 @@ AI 경험이 없는 사람도 관심 있는 주제로 직접 결과물을 만들
 **Day 4 - Meetings List ✅**  
 **Day 5 - Meeting Detail ✅**
 **Day 6 - Supabase Connection Setup ✅**
+**Day 7 - Database Connection (환경변수 입력 대기)**
 
 프로젝트 기획 문서를 기준으로 Next.js, React, TypeScript, App Router 개발환경과 실행 확인용 기본 메인 화면을 구성했습니다. Supabase와 배포 설정은 아직 연결하지 않았습니다.
 
 남은 확인: Git remote 설정 및 첫 커밋, 브라우저 시각 검증  
-다음 작업: **Day 7 - Database Connection**
+다음 작업: **Supabase 환경변수 입력 및 migration 실행 확인**
 
 ## Supabase 로컬 설정
 
@@ -42,7 +43,7 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 ```
 
-실제 데이터 조회와 `ait_` 테이블 연결은 Day 7에 진행합니다.
+Day 7에는 `ait_meetings` 조회 모듈과 `ait_meetings`·`ait_applications` migration을 준비했습니다. 환경변수가 없을 때는 기존 샘플 데이터를 안전하게 사용합니다.
 
 ## 향후 계획
 

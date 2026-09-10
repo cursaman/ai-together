@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { meetingCategories, meetings } from "@/data/meetings";
+import { meetingCategories } from "@/data/meetings";
+import { getMeetings } from "@/lib/meetings";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ type MeetingsPageProps = {
 
 export default async function MeetingsPage({ searchParams }: MeetingsPageProps) {
   const { category } = await searchParams;
+  const meetings = await getMeetings();
   const selectedCategory = meetingCategories.includes(
     category as (typeof meetingCategories)[number],
   )
