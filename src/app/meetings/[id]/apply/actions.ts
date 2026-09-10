@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { getMeetingById } from "@/lib/meetings";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createClient } from "@/lib/supabase/server";
@@ -51,17 +52,28 @@ export async function submitApplication(
   if (meeting.applicants >= meeting.capacity) return { message: "신청이 마감된 모임입니다." };
 
   const supabase = await createClient();
-  const { error } = await supabase.from("ait_applications").insert({
-    meeting_id: meeting.id,
-    applicant_name: name,
-    email,
-    phone: phone || null,
-    message: message || null,
+  const { error } = await supabase.rpc("submit_ait_application", {
+    p_meeting_id: meeting.id,
+    p_applicant_name: name,
+    p_email: email,
+    p_phone: phone || null,
+    p_message: message || null,
   });
 
   if (error) {
+    if (error.message.includes("duplicate_application")) {
+      return { message: "이미 같은 이메일로 신청한 모임입니다." };
+    }
+    if (error.message.includes("meeting_full")) {
+      return { message: "아쉽지만 방금 신청이 마감됐습니다. 다른 모임을 확인해주세요." };
+    }
+    if (error.message.includes("meeting_not_open")) {
+      return { message: "현재 신청할 수 없는 모임입니다." };
+    }
     return { message: "신청을 저장하지 못했습니다. 잠시 후 다시 시도해주세요." };
   }
 
+  revalidatePath("/meetings");
+  revalidatePath(`/meetings/${meeting.id}`);
   redirect(`/meetings/${meeting.id}/apply/complete`);
 }
