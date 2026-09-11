@@ -72,6 +72,25 @@
 .statusForm button { padding: 9px 13px; border: 0; border-radius: 9px; background: var(--green); color: white; font: inherit; font-weight: 800; cursor: pointer; }
 .statusForm button:disabled { opacity: .6; cursor: wait; }
 .success { color: var(--green); font-weight: 700; }
+.dashboardGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.dashboardCard { min-height:230px; padding:25px; border:1px solid var(--line); border-top:5px solid var(--green); border-radius:12px; display:flex; flex-direction:column; background:white; transition:transform .2s ease,box-shadow .2s ease; }
+.dashboardCard:hover { box-shadow:0 14px 32px rgba(50,17,58,.08); transform:translateY(-2px); }
+.dashboardCard>span { color:var(--muted); font-size:.78rem; font-weight:800; }
+.dashboardCard>strong { margin:22px 0 8px; font-family:Georgia,"Times New Roman",serif; font-size:3.4rem; line-height:1; }
+.dashboardCard>strong small { margin-left:5px; font-family:inherit; font-size:1rem; }
+.dashboardCard>p { margin:0; color:var(--muted); font-size:.8rem; }
+.dashboardCard>b { margin-top:auto; color:var(--green); font-size:.76rem; }
+.dashboardCard.yellow { border-top-color:#e6ad2c; }
+.dashboardCard.blue { border-top-color:#4485bd; }
+.dashboardCard.coral { border-top-color:#dc6a50; }
+.dashboardCard.pink { border-top-color:#d56594; }
+.dashboardActions { margin-top:60px; }
+.dashboardActions h2 { margin:0 0 24px; font-size:1.8rem; letter-spacing:-.04em; }
+.dashboardActions>div:last-child { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.dashboardActions a { padding:22px; border:1px solid var(--line); border-radius:12px; display:grid; grid-template-columns:auto 1fr; gap:5px 13px; background:white; }
+.dashboardActions a>span { grid-row:1/3; width:42px; height:42px; display:grid; place-items:center; border-radius:10px; background:var(--green-pale); color:var(--green); font-size:1.25rem; font-weight:900; }
+.dashboardActions a>strong { align-self:end; font-size:.9rem; }
+.dashboardActions a>small { color:var(--muted); font-size:.7rem; }
 .reviewForm { margin-bottom:30px; padding:30px; border:1px solid var(--line); border-radius:14px; display:grid; gap:20px; background:white; }
 .publishCheck { display:flex; align-items:center; gap:9px; font-size:.84rem; font-weight:800; }
 .publishCheck input { width:18px; height:18px; accent-color:var(--green); }
@@ -100,6 +119,7 @@
   .meetingForm { padding: 24px 18px; }
   .primaryButton { width: 100%; }
   .applicationTop { align-items: flex-start; flex-direction: column-reverse; }
+  .dashboardGrid,.dashboardActions>div:last-child { grid-template-columns:1fr; }
   .reviewForm { padding:22px 18px; }
   .reviewAdminList { grid-template-columns:1fr; }
   .applicationSearch > div { display:grid; grid-template-columns:1fr auto; }
