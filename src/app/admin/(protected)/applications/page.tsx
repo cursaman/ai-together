@@ -25,6 +25,12 @@ export default async function AdminApplicationsPage({ searchParams }: { searchPa
     return value ? `/admin/applications?${value}` : "/admin/applications";
   };
 
+  const exportQuery = new URLSearchParams();
+  if (params.meeting) exportQuery.set("meeting", params.meeting);
+  if (params.status) exportQuery.set("status", params.status);
+  if (params.q?.trim()) exportQuery.set("q", params.q.trim());
+  const exportHref = `/admin/applications/export${exportQuery.size ? `?${exportQuery.toString()}` : ""}`;
+
   return <main className={styles.adminMain} id="main-content">
     <div className={styles.pageHeading}><div><p className={styles.kicker}>APPLICATION MANAGEMENT</p><h1>신청자 관리</h1><p>최근 신청 200건을 확인하고 상태를 관리합니다.</p></div></div>
     <div className={styles.applicationFilters}>
@@ -34,7 +40,7 @@ export default async function AdminApplicationsPage({ searchParams }: { searchPa
         <label htmlFor="application-search">이름 또는 이메일 검색</label>
         <div><input id="application-search" name="q" type="search" defaultValue={params.q ?? ""} maxLength={100} placeholder="예: 홍길동 또는 email@example.com" /><button type="submit">검색</button>{params.q ? <Link href={hrefFor(params.meeting, params.status, "")}>초기화</Link> : null}</div>
       </form>
-      <div className={styles.applicationSummary} aria-live="polite"><span>전체 신청 <strong>{totalCount}</strong>명</span><span>현재 결과 <strong>{applications.length}</strong>명</span></div>
+      <div className={styles.applicationSummary} aria-live="polite"><div><span>전체 신청 <strong>{totalCount}</strong>명</span><span>현재 결과 <strong>{applications.length}</strong>명</span></div><a className={styles.csvButton} href={exportHref}>CSV 다운로드 ↓</a></div>
       <div className={styles.filterLinks} aria-label="모임 필터"><Link className={!params.meeting ? styles.activeFilter : ""} href={hrefFor(undefined, params.status)}>전체 모임</Link>{meetings.map((meeting) => <Link className={params.meeting === meeting.id ? styles.activeFilter : ""} href={hrefFor(meeting.id, params.status)} key={meeting.id}>{meeting.title}</Link>)}</div>
       <div className={styles.filterLinks} aria-label="신청 상태 필터">{["", "신청", "확정", "취소"].map((status) => <Link className={(params.status ?? "") === status ? styles.activeFilter : ""} href={hrefFor(params.meeting, status || undefined)} key={status || "전체"}>{status || "전체 상태"}</Link>)}</div>
     </div>
