@@ -18,6 +18,11 @@ const steps = [
 export default function Home() {
   return (
     <>
+      <aside className="resource-bar" aria-label="홈페이지 교육 안내">
+        <span>홈페이지 만들기가 궁금하신가요?</span>
+        <a href="https://autosites-jd3d.vercel.app/" target="_blank" rel="noreferrer">홈페이지 과정 <span aria-hidden="true">↗</span></a>
+        <a href="https://homepages-rosy.vercel.app/" target="_blank" rel="noreferrer">제작방법 보기 <span aria-hidden="true">↗</span></a>
+      </aside>
       <header className="site-header">
         <div className="nav-shell">
           <Link className="brand" href="/" aria-label="AI 같이해요 홈"><span className="brand-mark" aria-hidden="true">같이</span><span>AI 같이해요</span></Link>

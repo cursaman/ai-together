@@ -22,6 +22,11 @@ button, input, select, textarea { font: inherit; }
 .skip-link { position: fixed; z-index: 1000; top: 10px; left: 10px; padding: 12px 16px; border-radius: 10px; background: var(--ink); color: white; font-weight: 800; transform: translateY(-150%); }
 .skip-link:focus { transform: translateY(0); }
 
+.resource-bar { min-height: 42px; padding: 8px 20px; display: flex; align-items: center; justify-content: center; gap: 20px; background: var(--green-dark); color: white; font-size: .82rem; }
+.resource-bar > span { color: #d5e6de; }
+.resource-bar a { min-height: 28px; display: inline-flex; align-items: center; gap: 4px; font-weight: 800; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, .35); text-underline-offset: 4px; }
+.resource-bar a:hover { color: var(--yellow); }
+
 .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(32, 37, 31, 0.08); background: rgba(255, 250, 241, 0.9); backdrop-filter: blur(14px); }
 .nav-shell { width: min(1180px, calc(100% - 40px)); min-height: 72px; margin: auto; display: flex; align-items: center; gap: 36px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 800; letter-spacing: -0.03em; }
@@ -142,6 +147,8 @@ button, input, select, textarea { font: inherit; }
 }
 
 @media (max-width: 600px) {
+  .resource-bar { padding: 9px 15px; gap: 15px; }
+  .resource-bar > span { display: none; }
   .nav-shell { width: calc(100% - 30px); min-height: 64px; }
   .brand-mark { width: 34px; height: 34px; }
   .nav-cta { padding: 9px 13px; font-size: .8rem; }
