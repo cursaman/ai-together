@@ -78,6 +78,9 @@
   .intro,
   .formCard { padding: 38px 24px; }
   .meetingCard { padding: 17px; }
+  .field input,
+  .field textarea { font-size: 16px; }
+  .consent input { flex: 0 0 22px; width: 22px; height: 22px; }
   .completeCard { padding: 48px 24px; }
   .completeActions { flex-direction: column; }
 }

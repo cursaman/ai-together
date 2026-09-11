@@ -65,9 +65,10 @@
 .success { color: var(--green); font-weight: 700; }
 
 @media (max-width: 700px) {
-  .adminHeader { padding: 14px 18px; align-items: flex-start; }
-  .adminHeader nav { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
-  .adminHeader nav > a:first-child { display: none; }
+  .adminHeader { padding: 14px 18px; align-items: stretch; flex-direction: column; gap: 12px; }
+  .adminHeader nav { overflow-x: auto; width: 100%; gap: 8px; flex-wrap: nowrap; justify-content: flex-start; scrollbar-width: none; }
+  .adminHeader nav a,
+  .adminHeader nav button { min-height: 44px; padding: 0 11px; display: inline-flex; align-items: center; white-space: nowrap; }
   .adminMain { width: calc(100% - 30px); padding-top: 45px; }
   .pageHeading { align-items: stretch; flex-direction: column; }
   .primaryLink { text-align: center; }
@@ -79,4 +80,9 @@
   .applicationCard .messageRow { grid-column: auto; }
   .statusForm { justify-items: stretch; }
   .statusForm > div { display: grid; grid-template-columns: 1fr auto; }
+  .statusForm select,
+  .field input,
+  .field select,
+  .field textarea,
+  .loginForm input { font-size: 16px; }
 }

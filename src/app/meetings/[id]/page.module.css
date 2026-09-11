@@ -81,12 +81,13 @@
   .brand > span { width: 34px; height: 34px; }
   .listLink { padding: 8px 12px; font-size: .78rem; }
   .breadcrumb, .hero, .contentLayout, .bottomBanner, .footer { width: calc(100% - 30px); }
-  .breadcrumb { overflow: hidden; white-space: nowrap; }
+  .breadcrumb { overflow-x: auto; padding-bottom: 6px; white-space: nowrap; scrollbar-width: none; }
   .hero { border-radius: 23px; }
   .art { min-height: 330px; }
   .circle { width: 230px; height: 230px; }
   .icon { font-size: 5rem; }
   .summary { padding: 38px 26px; }
+  .summary h1 { font-size: clamp(2.1rem, 11vw, 3rem); }
   .quickInfo { grid-template-columns: 1fr; }
   .quickInfo div:nth-child(odd) { margin-right: 0; }
   .contentLayout { margin: 75px auto; }

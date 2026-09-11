@@ -28,10 +28,11 @@ AI 경험이 없는 사람도 관심 있는 주제로 직접 결과물을 만들
 **Day 9 - Application Flow Completion ✅**
 **Day 10 - Admin Meeting Management ✅**
 **Day 11 - Admin Application Management ✅**
+**Day 12 - Responsive UI and Accessibility ✅**
 
 모임 조회와 참가 신청 화면을 Supabase에 연결했습니다. 신청 정보는 서버에서 검증하고, 공개 사용자는 신청 등록만 가능하도록 RLS 정책을 분리했습니다.
 
-다음 작업: **Day 12 - 반응형 UI 및 사용성 점검**
+다음 작업: **Day 13 - Vercel 배포 및 QA**
 
 ## Supabase 로컬 설정
 
@@ -55,6 +56,8 @@ Day 9에는 신청 저장과 신청 인원 증가를 하나의 DB 트랜잭션�
 Day 10에는 서버 전용 관리자 로그인과 모임 목록·등록·수정 화면을 추가했습니다. 관리자 작업은 매 Server Action에서 세션을 확인하고 Supabase Service Role 키는 서버에서만 사용합니다.
 
 Day 11에는 관리자 신청자 목록, 모임·상태별 필터와 신청·확정·취소 상태 변경을 추가했습니다. 취소와 재활성화 시 모임 신청 인원도 DB 트랜잭션으로 함께 조정합니다.
+
+Day 12에는 모바일 레이아웃과 터치 영역을 보완하고, 키보드 본문 바로가기·포커스 표시·동작 줄이기 설정·모바일 폼 확대 방지를 적용했습니다.
 
 ## 향후 계획
 

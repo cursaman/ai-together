@@ -28,7 +28,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main>
+      <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-glow hero-glow-one" aria-hidden="true" /><div className="hero-glow hero-glow-two" aria-hidden="true" />
           <div className="hero-content">

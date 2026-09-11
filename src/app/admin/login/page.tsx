@@ -11,7 +11,7 @@ export default async function AdminLoginPage() {
   if (await hasAdminSession()) redirect("/admin/meetings");
 
   return (
-    <main className={styles.loginShell}>
+    <main className={styles.loginShell} id="main-content">
       <section className={styles.loginCard}>
         <p className={styles.kicker}>AI TOGETHER ADMIN</p>
         <h1>관리자 로그인</h1>

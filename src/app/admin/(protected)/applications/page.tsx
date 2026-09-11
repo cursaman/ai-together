@@ -24,7 +24,7 @@ export default async function AdminApplicationsPage({ searchParams }: { searchPa
     return value ? `/admin/applications?${value}` : "/admin/applications";
   };
 
-  return <main className={styles.adminMain}>
+  return <main className={styles.adminMain} id="main-content">
     <div className={styles.pageHeading}><div><p className={styles.kicker}>APPLICATION MANAGEMENT</p><h1>신청자 관리</h1><p>최근 신청 200건을 확인하고 상태를 관리합니다.</p></div></div>
     <div className={styles.applicationFilters}>
       <div className={styles.filterLinks} aria-label="모임 필터"><Link className={!params.meeting ? styles.activeFilter : ""} href={hrefFor(undefined, params.status)}>전체 모임</Link>{meetings.map((meeting) => <Link className={params.meeting === meeting.id ? styles.activeFilter : ""} href={hrefFor(meeting.id, params.status)} key={meeting.id}>{meeting.title}</Link>)}</div>

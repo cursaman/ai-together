@@ -45,7 +45,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
         </div>
       </header>
 
-      <main>
+      <main id="main-content">
         <section className={styles.intro}>
           <p className={styles.kicker}>FIND YOUR TOGETHER</p>
           <h1>이번에는 뭘<br className={styles.mobileBreak} /> 같이 만들어볼까요?</h1>

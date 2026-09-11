@@ -60,7 +60,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
         </div>
       </header>
 
-      <main>
+      <main id="main-content">
         <div className={styles.breadcrumb}><Link href="/">홈</Link><span aria-hidden="true">/</span><Link href="/meetings">모임</Link><span aria-hidden="true">/</span><strong>{meeting.category}</strong></div>
 
         <section className={styles.hero}>

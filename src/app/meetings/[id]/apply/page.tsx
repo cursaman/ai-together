@@ -20,7 +20,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
   const unavailable = meeting.status === "모집 예정" || meeting.applicants >= meeting.capacity;
 
   return (
-    <main className={styles.shell}>
+    <main className={styles.shell} id="main-content">
       <Link className={styles.back} href={`/meetings/${meeting.id}`}>← 모임 상세로 돌아가기</Link>
       <div className={styles.layout}>
         <section className={styles.intro}>

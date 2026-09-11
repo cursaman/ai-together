@@ -73,9 +73,11 @@
   .mobileBreak { display: block; }
   .listSection { width: calc(100% - 30px); padding-top: 36px; }
   .listHeading { margin-top: 30px; }
+  .listHeading { align-items: flex-start; flex-direction: column; gap: 8px; }
   .grid { grid-template-columns: 1fr; }
   .cardArt { height: 225px; }
   .subtitle { min-height: auto; }
   .guideBanner { width: calc(100% - 30px); padding: 28px; flex-direction: column; align-items: flex-start; }
+  .guideBanner > a { width: 100%; min-height: 48px; display: grid; place-items: center; border-radius: 12px; background: white; }
   .footer { width: calc(100% - 30px); align-items: flex-start; flex-direction: column; gap: 24px; }
 }

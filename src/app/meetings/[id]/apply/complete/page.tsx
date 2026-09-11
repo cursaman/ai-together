@@ -15,7 +15,7 @@ export default async function ApplicationCompletePage({ params }: { params: Prom
   if (!meeting) notFound();
 
   return (
-    <main className={styles.completeShell}>
+    <main className={styles.completeShell} id="main-content">
       <section className={styles.completeCard}>
         <span className={styles.completeIcon} aria-hidden="true">✓</span>
         <p className={styles.kicker}>APPLICATION COMPLETE</p>
