@@ -7,8 +7,8 @@
 .back { display: block; width: min(1050px, 100%); margin: 0 auto 25px; color: var(--green); font-size: .86rem; font-weight: 800; }
 .layout { width: min(1050px, 100%); margin: auto; display: grid; grid-template-columns: .85fr 1.15fr; overflow: hidden; border-radius: 30px; background: white; box-shadow: var(--shadow); }
 .intro { padding: 64px 52px; background: var(--green); color: white; }
-.kicker { margin: 0 0 14px; color: #ffc6dc; font-size: .72rem; font-weight: 900; letter-spacing: .14em; }
-.intro h1 { margin: 0; font-size: clamp(2.6rem, 5vw, 4.2rem); letter-spacing: -.055em; }
+.kicker { margin: 0 0 14px; color: #ffc6dc; font-size: .75rem; font-weight: 900; letter-spacing: .12em; }
+.intro h1 { margin: 0; font-size: clamp(2.6rem, 5vw, 4.2rem); line-height:1.15; letter-spacing: -.025em; }
 .intro > p { margin: 18px 0 35px; color: #eadbea; line-height: 1.7; }
 .meetingCard { padding: 22px; border: 1px solid rgba(255,255,255,.18); border-radius: 20px; background: rgba(255,255,255,.1); display: flex; gap: 16px; }
 .meetingCard > span { flex: 0 0 auto; display: grid; width: 58px; height: 58px; place-items: center; border-radius: 17px; background: #f5c85b; font-size: 1.8rem; }
@@ -37,7 +37,7 @@
 .field input[aria-invalid="true"],
 .field textarea[aria-invalid="true"] { border-color: #c84f3a; }
 .help,
-.error { margin: 0; font-size: .73rem; }
+.error { margin: 0; font-size: .75rem; }
 .help { color: var(--muted); }
 .error { color: #b53d2a; font-weight: 700; }
 .honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -66,7 +66,7 @@
 .completeInfo > div+div { border-top:1px solid var(--line); }
 .completeInfo > div > span { font-size:1.25rem; }
 .completeInfo dl,.completeInfo dd { margin:0; }
-.completeInfo dt { margin-bottom:4px; color:var(--muted); font-size:.72rem; font-weight:700; }
+.completeInfo dt { margin-bottom:4px; color:var(--muted); font-size:.75rem; font-weight:700; }
 .completeInfo dd { font-size:.9rem; font-weight:800; }
 .scheduleActions { margin-top:14px; display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
 .scheduleActions a { min-height:46px; padding:10px 12px; border:1px solid var(--green); border-radius:9px; display:grid; place-items:center; color:var(--green); font-size:.78rem; font-weight:800; }

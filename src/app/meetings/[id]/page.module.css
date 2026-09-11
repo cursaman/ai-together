@@ -19,8 +19,8 @@
 .art > p strong { color: #fff3bc; font-size: 1.2rem; }
 .summary { padding: clamp(42px, 6vw, 72px); display: flex; flex-direction: column; justify-content: center; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tags span { padding: 7px 11px; border-radius: 999px; background: var(--green-pale); color: var(--green); font-size: .74rem; font-weight: 800; }
-.summary h1 { margin: 25px 0 10px; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -.055em; }
+.tags span { padding: 7px 11px; border-radius: 999px; background: var(--green-pale); color: var(--green); font-size: .75rem; font-weight: 800; }
+.summary h1 { margin: 25px 0 10px; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.15; letter-spacing: -.025em; }
 .subtitle { margin: 0; color: var(--green); font-size: 1.05rem; font-weight: 800; }
 .quickInfo { margin: 35px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
 .quickInfo div { padding: 18px 0; border-bottom: 1px solid var(--line); }
@@ -29,9 +29,9 @@
 .quickInfo dd { margin: 7px 0 0; font-size: .9rem; font-weight: 800; }
 .contentLayout { width: min(1040px, calc(100% - 40px)); margin: 110px auto; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 80px; align-items: start; }
 .mainContent { display: grid; gap: 100px; }
-.mainContent h2 { margin: 0 0 24px; font-size: clamp(1.9rem, 4vw, 2.7rem); letter-spacing: -.045em; }
+.mainContent h2 { margin: 0 0 24px; font-size: clamp(1.9rem, 4vw, 2.7rem); letter-spacing: -.025em; }
 .mainContent section > p:last-child { color: #586158; line-height: 1.9; }
-.kicker { margin: 0 0 15px; color: var(--green); font-size: .72rem; font-weight: 900; letter-spacing: .14em; }
+.kicker { margin: 0 0 15px; color: var(--green); font-size: .75rem; font-weight: 900; letter-spacing: .12em; }
 .quote { margin-top: 32px; padding: 28px 32px; border-left: 4px solid var(--green); border-radius: 0 18px 18px 0; background: var(--green-pale); color: var(--green-dark); font-size: 1.2rem; font-weight: 800; line-height: 1.65; }
 .activities { margin: 0; padding: 0; list-style: none; }
 .activities li { padding: 22px 0; border-bottom: 1px solid var(--line); display: flex; gap: 22px; }
@@ -62,7 +62,7 @@
 .applyCard :global(.meeting-share) button:hover { background:var(--green-pale); }
 .applyButton { display: grid; width: 100%; min-height: 52px; place-items: center; border-radius: 14px; background: var(--green); color: white; font-weight: 800; }
 .applyButton:hover { background: var(--green-dark); }
-.buttonNote { margin: 12px 0 0; color: var(--muted); font-size: .73rem; text-align: center; }
+.buttonNote { margin: 12px 0 0; color: var(--muted); font-size: .75rem; text-align: center; }
 .bottomBanner { width: min(1120px, calc(100% - 40px)); margin: 0 auto 110px; padding: 55px 60px; border-radius: 28px; background: var(--green); color: white; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .bottomBanner .kicker { color: #bde1cf; }
 .bottomBanner h2 { margin: 0; font-size: 2rem; }
