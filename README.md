@@ -29,11 +29,12 @@ AI 경험이 없는 사람도 관심 있는 주제로 직접 결과물을 만들
 **Day 10 - Admin Meeting Management ✅**
 **Day 11 - Admin Application Management ✅**
 **Day 12 - Responsive UI and Accessibility ✅**
-**Day 13 - Vercel Deployment and QA (수정 배포 확인 대기)**
+**Day 13 - Vercel Deployment and QA ✅**
+**Day 14 - Production Readiness ✅**
 
 모임 조회와 참가 신청 화면을 Supabase에 연결했습니다. 신청 정보는 서버에서 검증하고, 공개 사용자는 신청 등록만 가능하도록 RLS 정책을 분리했습니다.
 
-다음 작업: **Day 13 QA 수정 배포 확인 후 Day 14 - 실제 운영 준비**
+1차 MVP 개발 일정과 운영 준비를 완료했습니다. 실제 운영 절차는 `OPERATIONS.md`에서 확인할 수 있습니다.
 
 ## Supabase 로컬 설정
 
@@ -61,6 +62,8 @@ Day 11에는 관리자 신청자 목록, 모임·상태별 필터와 신청·확
 Day 12에는 모바일 레이아웃과 터치 영역을 보완하고, 키보드 본문 바로가기·포커스 표시·동작 줄이기 설정·모바일 폼 확대 방지를 적용했습니다.
 
 Day 13에는 Vercel 프로덕션 배포·공개 화면·관리자 접근 차단·런타임 오류를 점검했습니다. QA에서 발견한 관리자 신청자 목록의 관계 조회 오류 가능성을 제거하고 서버 결합 방식으로 보완했습니다.
+
+Day 14에는 최신 프로덕션 배포와 핵심 공개 경로, 관리자 접근 차단, 런타임 오류를 다시 확인하고 운영 전·배포 후·일상 운영·장애 대응·비밀번호 변경 절차를 체크리스트로 정리했습니다.
 
 ## 향후 계획
 
