@@ -9,6 +9,8 @@ export type Meeting = {
   imageUrl: string;
   date: string;
   time: string;
+  dateValue?: string;
+  timeValue?: string;
   location: string;
   difficulty: string;
   supplies: string;

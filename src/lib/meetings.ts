@@ -67,6 +67,8 @@ function toMeeting(row: MeetingRow): Meeting {
     imageUrl: row.representative_image_url || categoryImages[row.category] || "/images/meetings/ai-first-step.webp",
     date: formatDate(row.meeting_date),
     time: formatTime(row.meeting_time),
+    dateValue: row.meeting_date,
+    timeValue: row.meeting_time,
     location: row.location,
     difficulty: row.difficulty,
     supplies: row.supplies,

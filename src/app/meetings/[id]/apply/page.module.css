@@ -61,6 +61,17 @@
 .completeCard .kicker { color: var(--green); }
 .completeCard h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.05em; }
 .completeCard > p:not(.kicker) { color: var(--muted); line-height: 1.8; }
+.completeInfo { margin:30px 0 0; padding:6px 24px; border:1px solid var(--line); border-radius:14px; background:var(--cream-deep); text-align:left; }
+.completeInfo > div { padding:16px 0; display:flex; align-items:center; gap:14px; }
+.completeInfo > div+div { border-top:1px solid var(--line); }
+.completeInfo > div > span { font-size:1.25rem; }
+.completeInfo dl,.completeInfo dd { margin:0; }
+.completeInfo dt { margin-bottom:4px; color:var(--muted); font-size:.72rem; font-weight:700; }
+.completeInfo dd { font-size:.9rem; font-weight:800; }
+.scheduleActions { margin-top:14px; display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+.scheduleActions a { min-height:46px; padding:10px 12px; border:1px solid var(--green); border-radius:9px; display:grid; place-items:center; color:var(--green); font-size:.78rem; font-weight:800; }
+.scheduleActions a:hover { background:var(--green-pale); }
+.completeCard .completeNotice { margin:18px 0 0; padding:12px; border-radius:9px; background:#fff0d4; color:#5f5949; font-size:.76rem; line-height:1.6; }
 .completeActions { margin-top: 32px; display: flex; justify-content: center; gap: 10px; }
 .completeActions a { padding: 13px 17px; border: 1px solid var(--line); border-radius: 12px; font-size: .86rem; font-weight: 800; }
 .completeActions a:last-child { border-color: var(--green); background: var(--green); color: white; }
@@ -83,4 +94,6 @@
   .consent input { flex: 0 0 22px; width: 22px; height: 22px; }
   .completeCard { padding: 48px 24px; }
   .completeActions { flex-direction: column; }
+  .scheduleActions { grid-template-columns:1fr; }
+  .completeInfo { padding:4px 16px; }
 }
