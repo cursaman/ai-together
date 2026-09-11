@@ -1,4 +1,4 @@
-export type MeetingStatus = "모집 중" | "마감 임박" | "모집 예정";
+export type MeetingStatus = "모집 중" | "마감 임박" | "모집 예정" | "모집 마감";
 
 export type Meeting = {
   id: string;

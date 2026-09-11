@@ -43,6 +43,15 @@
 .loginForm button { min-height: 50px; border: 0; border-radius: 11px; background: var(--green); color: white; font: inherit; font-weight: 800; cursor: pointer; }
 .srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .applicationFilters { margin-bottom: 28px; display: grid; gap: 11px; }
+.applicationSearch { display:grid; gap:8px; }
+.applicationSearch label { font-size:.78rem; font-weight:800; }
+.applicationSearch > div { display:flex; gap:8px; }
+.applicationSearch input { min-width:0; flex:1; padding:12px 14px; border:1px solid var(--line); border-radius:9px; background:white; color:var(--ink); font:inherit; }
+.applicationSearch input:focus { border-color:var(--green); outline:3px solid rgba(185,45,104,.12); }
+.applicationSearch button,.applicationSearch a { min-height:46px; padding:0 17px; border:0; border-radius:9px; display:inline-flex; align-items:center; justify-content:center; background:var(--green); color:white; font:inherit; font-weight:800; cursor:pointer; }
+.applicationSearch a { border:1px solid var(--line); background:white; color:var(--muted); }
+.applicationSummary { padding:15px 17px; border:1px solid var(--line); border-radius:10px; display:flex; gap:24px; background:white; color:var(--muted); font-size:.84rem; }
+.applicationSummary strong { color:var(--green); font-size:1.05rem; }
 .filterLinks { overflow-x: auto; display: flex; gap: 8px; padding-bottom: 3px; scrollbar-width: none; }
 .filterLinks a { flex: 0 0 auto; padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--muted); font-size: .76rem; font-weight: 700; }
 .filterLinks .activeFilter { border-color: var(--green); background: var(--green); color: white; }
@@ -76,6 +85,9 @@
   .meetingForm { padding: 24px 18px; }
   .primaryButton { width: 100%; }
   .applicationTop { align-items: flex-start; flex-direction: column-reverse; }
+  .applicationSearch > div { display:grid; grid-template-columns:1fr auto; }
+  .applicationSearch input { grid-column:1 / -1; font-size:16px; }
+  .applicationSummary { justify-content:space-between; gap:12px; }
   .applicationCard dl { grid-template-columns: 1fr; }
   .applicationCard .messageRow { grid-column: auto; }
   .statusForm { justify-items: stretch; }

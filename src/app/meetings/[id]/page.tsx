@@ -48,8 +48,9 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
 
   const activities = activityByCategory[meeting.category] ?? [];
   const remainingSeats = Math.max(meeting.capacity - meeting.applicants, 0);
-  const percentage = Math.round((meeting.applicants / meeting.capacity) * 100);
+  const percentage = Math.min(Math.round((meeting.applicants / meeting.capacity) * 100), 100);
   const isUpcoming = meeting.status === "모집 예정";
+  const isClosed = meeting.status === "모집 마감";
 
   return (
     <>
@@ -113,15 +114,15 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
 
           <aside className={styles.applyCard} aria-label="참가 신청 정보">
             <p className={styles.cardLabel}>{meeting.status}</p>
-            <div className={styles.seats}><strong>{isUpcoming ? "곧 모집을 시작해요" : `${remainingSeats}자리 남았어요`}</strong><span>{meeting.applicants}명 신청 · 정원 {meeting.capacity}명</span></div>
+            <div className={styles.seats}><strong>{isUpcoming ? "곧 모집을 시작해요" : isClosed ? "신청이 마감됐어요" : `${remainingSeats}자리 남았어요`}</strong><span>{meeting.applicants}명 신청 · 정원 {meeting.capacity}명</span></div>
             <div className={styles.progress} aria-label={`정원 ${percentage}% 신청`}><span style={{ width: `${percentage}%` }} /></div>
             <dl><div><dt>참가비</dt><dd>{meeting.fee}</dd></div><div><dt>난이도</dt><dd>{meeting.difficulty}</dd></div><div><dt>준비물</dt><dd>{meeting.supplies}</dd></div></dl>
-            {isUpcoming ? (
-              <button type="button" disabled>모집 예정이에요</button>
+            {isUpcoming || isClosed ? (
+              <button type="button" disabled>{isUpcoming ? "모집 예정이에요" : "모집이 마감됐어요"}</button>
             ) : (
               <Link className={styles.applyButton} href={`/meetings/${meeting.id}/apply`}>참가 신청하기</Link>
             )}
-            <p className={styles.buttonNote}>{isUpcoming ? "모집이 시작되면 신청할 수 있어요." : "신청 정보를 안전하게 입력해주세요."}</p>
+            <p className={styles.buttonNote}>{isUpcoming ? "모집이 시작되면 신청할 수 있어요." : isClosed ? "다른 모임의 남은 자리를 확인해주세요." : "신청 정보를 안전하게 입력해주세요."}</p>
           </aside>
         </div>
 

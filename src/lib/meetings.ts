@@ -50,8 +50,15 @@ function formatTime(value: string) {
   return `${period} ${displayHour}:${minute}`;
 }
 
+function withDerivedStatus(meeting: Meeting): Meeting {
+  if (meeting.status === "모집 예정") return meeting;
+  const remainingSeats = meeting.capacity - meeting.applicants;
+  const status: MeetingStatus = remainingSeats <= 0 ? "모집 마감" : remainingSeats <= 2 ? "마감 임박" : "모집 중";
+  return { ...meeting, status };
+}
+
 function toMeeting(row: MeetingRow): Meeting {
-  return {
+  return withDerivedStatus({
     id: row.id,
     title: row.title,
     subtitle: row.subtitle,
@@ -68,12 +75,12 @@ function toMeeting(row: MeetingRow): Meeting {
     fee: row.fee === 0 ? "무료" : `${row.fee.toLocaleString("ko-KR")}원`,
     status: row.recruitment_status,
     color: row.color,
-  };
+  });
 }
 
 export async function getMeetings(): Promise<Meeting[]> {
   if (!isSupabaseConfigured()) {
-    return sampleMeetings;
+    return sampleMeetings.map(withDerivedStatus);
   }
 
   const supabase = await createClient();
@@ -84,7 +91,7 @@ export async function getMeetings(): Promise<Meeting[]> {
 
   if (error) {
     console.error("ait_meetings 조회 실패", error.message);
-    return sampleMeetings;
+    return sampleMeetings.map(withDerivedStatus);
   }
 
   return (data as MeetingRow[]).map(toMeeting);
@@ -92,7 +99,8 @@ export async function getMeetings(): Promise<Meeting[]> {
 
 export async function getMeetingById(id: string): Promise<Meeting | undefined> {
   if (!isSupabaseConfigured()) {
-    return sampleMeetings.find((meeting) => meeting.id === id);
+    const meeting = sampleMeetings.find((item) => item.id === id);
+    return meeting ? withDerivedStatus(meeting) : undefined;
   }
 
   const supabase = await createClient();
@@ -104,7 +112,8 @@ export async function getMeetingById(id: string): Promise<Meeting | undefined> {
 
   if (error) {
     console.error("ait_meetings 상세 조회 실패", error.message);
-    return sampleMeetings.find((meeting) => meeting.id === id);
+    const meeting = sampleMeetings.find((item) => item.id === id);
+    return meeting ? withDerivedStatus(meeting) : undefined;
   }
 
   return data ? toMeeting(data as MeetingRow) : undefined;

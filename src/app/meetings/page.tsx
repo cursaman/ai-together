@@ -95,7 +95,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
 
           <div className={styles.grid}>
             {visibleMeetings.map((meeting) => {
-              const percentage = Math.round((meeting.applicants / meeting.capacity) * 100);
+              const percentage = Math.min(Math.round((meeting.applicants / meeting.capacity) * 100), 100);
               const courseType = getCourseType(meeting.title);
 
               return (
@@ -103,7 +103,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
                   <Link className={styles.cardLink} href={`/meetings/${meeting.id}`} aria-label={`${meeting.title} 상세보기`}>
                     <div className={`${styles.cardArt} ${styles[meeting.color]}`}>
                       <Image className={styles.cardImage} src={meeting.imageUrl} alt="" fill sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw" />
-                      <span className={styles.status}>{meeting.status}</span>
+                      <span className={`${styles.status} ${meeting.status === "마감 임박" ? styles.statusUrgent : ""} ${meeting.status === "모집 마감" ? styles.statusClosed : ""}`}>{meeting.status}</span>
                       <span className={styles.category}>{meeting.category}</span>
                       <span className={styles.courseType}>{courseType}</span>
                     </div>
