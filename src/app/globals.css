@@ -37,6 +37,16 @@ h1,h2,h3 { text-wrap:balance; }
 
 .market-hero { position:relative; min-height:610px; overflow:hidden; display:flex; align-items:center; }
 .market-hero-image { object-fit:cover; }
+.hero-swiper { position:absolute; inset:0; overflow:hidden; }
+.hero-slide { object-fit:cover; opacity:0; transform:scale(1.03); transition:opacity .7s ease,transform 3.6s ease; }
+.hero-slide.is-active { opacity:1; transform:scale(1); }
+.hero-arrow { position:absolute; z-index:5; top:50%; width:44px; height:44px; border:1px solid rgba(255,255,255,.55); border-radius:50%; background:rgba(43,23,48,.35); color:#fff; font-size:2rem; line-height:1; cursor:pointer; transform:translateY(-50%); backdrop-filter:blur(6px); }
+.hero-arrow:hover { background:var(--green); }
+.hero-arrow-prev { left:24px; }
+.hero-arrow-next { right:24px; }
+.hero-dots { position:absolute; z-index:5; right:28px; bottom:28px; display:flex; gap:7px; }
+.hero-dots button { width:8px; height:8px; padding:0; border:0; border-radius:50%; background:rgba(255,255,255,.55); cursor:pointer; transition:width .2s ease,background .2s ease; }
+.hero-dots button.is-active { width:24px; border-radius:10px; background:#fff; }
 .market-hero-shade { position:absolute; inset:0; background:linear-gradient(90deg,rgba(37,13,41,.88) 0%,rgba(37,13,41,.5) 48%,rgba(37,13,41,.08) 78%); }
 .market-hero-copy { position:relative; z-index:2; width:min(1180px,calc(100% - 40px)); margin:0 auto; padding-bottom:85px; color:white; }
 .market-hero-copy p,.market-heading p,.course-feature-copy > p,.story-section > div:first-child > p,.mission-section > div > p { margin:0 0 14px; color:var(--green); font-size:.72rem; font-weight:900; letter-spacing:.15em; }
