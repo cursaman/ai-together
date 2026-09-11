@@ -25,3 +25,16 @@ export async function deleteReview(id:string) {
   await createAdminClient().from("ait_reviews").delete().eq("id",id);
   revalidatePath("/reviews"); revalidatePath("/admin/reviews");
 }
+
+export async function updateReview(id:string,formData:FormData) {
+  await requireAdmin();
+  const nickname=String(formData.get("nickname")??"").trim();
+  const content=String(formData.get("content")??"").trim();
+  const meeting_id=String(formData.get("meeting_id")??"").trim()||null;
+  const result_image_url=String(formData.get("result_image_url")??"").trim()||null;
+  if (nickname.length<1||nickname.length>30||content.length<10||content.length>500) redirect(`/admin/reviews/${id}/edit?error=invalid`);
+  const { error }=await createAdminClient().from("ait_reviews").update({nickname,content,meeting_id,result_image_url,is_published:formData.get("is_published")==="on",updated_at:new Date().toISOString()}).eq("id",id);
+  if (error) redirect(`/admin/reviews/${id}/edit?error=save`);
+  revalidatePath("/reviews"); revalidatePath("/admin/reviews");
+  redirect("/admin/reviews?updated=1");
+}
