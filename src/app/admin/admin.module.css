@@ -24,6 +24,11 @@
 .tableWrap small { display: block; margin-top: 5px; color: var(--muted); }
 .status { padding: 6px 9px; border-radius: 999px; background: var(--green-pale); color: var(--green); font-size: .72rem; font-weight: 800; }
 .editLink { color: var(--green); font-weight: 900; }
+.rowActions { display:flex; align-items:center; gap:7px; }
+.rowActions a { padding:7px 10px; border-radius:7px; font-size:.76rem; }
+.copyLink { border:1px solid var(--line); color:var(--muted); font-weight:800; }
+.copyLink:hover { border-color:var(--green); color:var(--green); }
+.copyNotice { margin:-14px 0 20px; padding:13px 16px; border-radius:10px; background:#fff0d4; color:#5f5949; font-size:.8rem; line-height:1.6; }
 .empty { padding: 50px; color: var(--muted); text-align: center; }
 .backLink { display: inline-block; margin-bottom: 24px; color: var(--green); font-size: .85rem; font-weight: 800; }
 .formHeading { margin-bottom: 32px; }
@@ -68,6 +73,11 @@
 .applicationCard dd { margin: 6px 0 0; overflow-wrap: anywhere; font-size: .86rem; font-weight: 700; }
 .applicationCard dd a { color: var(--green); }
 .applicationCard .messageRow { grid-column: 1 / -1; padding-top: 15px; border-top: 1px dashed var(--line); }
+.contactActions { margin:0 0 18px; display:flex; flex-wrap:wrap; gap:8px; }
+.contactActions a,.noPhone { min-height:44px; padding:0 14px; border:1px solid var(--green); border-radius:9px; display:inline-flex; align-items:center; justify-content:center; gap:6px; color:var(--green); font-size:.78rem; font-weight:850; }
+.contactActions a:hover { background:var(--green-pale); }
+.contactActions a:nth-child(2) { border-color:var(--green-dark); background:var(--green-dark); color:white; }
+.noPhone { border-color:var(--line); color:var(--muted); }
 .statusForm { display: grid; gap: 7px; justify-items: end; }
 .statusForm > div { display: flex; gap: 8px; }
 .statusForm select { padding: 9px 12px; border: 1px solid var(--line); border-radius: 9px; background: #fffdf9; font: inherit; }
@@ -130,6 +140,8 @@
   .applicationSummary>div { justify-content:space-between; gap:12px; }
   .applicationCard dl { grid-template-columns: 1fr; }
   .applicationCard .messageRow { grid-column: auto; }
+  .contactActions { display:grid; grid-template-columns:1fr 1fr; }
+  .contactActions a,.noPhone { width:100%; }
   .statusForm { justify-items: stretch; }
   .statusForm > div { display: grid; grid-template-columns: 1fr auto; }
   .statusForm select,

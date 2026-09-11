@@ -49,6 +49,7 @@ export default async function AdminApplicationsPage({ searchParams }: { searchPa
       return <article className={styles.applicationCard} key={application.id}>
         <div className={styles.applicationTop}><div><span className={styles.status}>{application.status}</span><small>{dateTimeFormatter.format(new Date(application.created_at))}</small></div><strong>{application.ait_meetings?.title ?? "삭제된 모임"}</strong></div>
         <dl><div><dt>이름</dt><dd>{application.applicant_name}</dd></div><div><dt>이메일</dt><dd><a href={`mailto:${application.email}`}>{application.email}</a></dd></div><div><dt>전화번호</dt><dd>{application.phone ? <a href={`tel:${application.phone}`}>{application.phone}</a> : "-"}</dd></div><div className={styles.messageRow}><dt>남기실 말</dt><dd>{application.message || "-"}</dd></div></dl>
+        <div className={styles.contactActions}><a href={`mailto:${application.email}?subject=${encodeURIComponent(`[AI Together] ${application.ait_meetings?.title ?? "모임"} 안내`)}`}><span aria-hidden="true">✉</span> 이메일 보내기</a>{application.phone ? <a href={`tel:${application.phone.replace(/[^0-9+]/g, "")}`}><span aria-hidden="true">☎</span> 전화 걸기</a> : <span className={styles.noPhone}>전화번호 없음</span>}</div>
         <StatusForm action={action} currentStatus={application.status} />
       </article>;
     })}</div>
