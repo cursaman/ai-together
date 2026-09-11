@@ -29,6 +29,11 @@ h1,h2,h3 { text-wrap:balance; }
 .mobile-menu nav a { padding:13px 14px; border-radius:7px; color:var(--ink); font-size:.94rem; font-weight:750; }
 .mobile-menu nav a:hover { background:var(--pink-pale); color:var(--green); }
 .mobile-menu nav .mobile-menu-cta { margin-top:6px; background:var(--green); color:#fff; text-align:center; }
+.meeting-share { margin-top:12px; text-align:center; }
+.meeting-share button { width:100%; min-height:48px; padding:0 16px; border:1px solid var(--green); border-radius:9px; background:white; color:var(--green); font:inherit; font-weight:850; cursor:pointer; }
+.meeting-share button:hover { background:var(--green-pale); }
+.meeting-share button span { margin-right:5px; }
+.meeting-share p { min-height:20px; margin:7px 0 0; color:var(--green); font-size:.74rem; font-weight:750; }
 .button { min-height:50px; padding:0 22px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-weight:850; transition:transform .2s ease,background .2s ease; }
 .button:hover { transform:translateY(-2px); }
 .button-primary { background:var(--green); color:white; }

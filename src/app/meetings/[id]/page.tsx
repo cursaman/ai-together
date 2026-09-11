@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { meetings } from "@/data/meetings";
 import { getMeetingById } from "@/lib/meetings";
 import styles from "./page.module.css";
+import { ShareButton } from "./share-button";
 
 type MeetingDetailPageProps = {
   params: Promise<{ id: string }>;
@@ -123,6 +124,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
               <Link className={styles.applyButton} href={`/meetings/${meeting.id}/apply`}>참가 신청하기</Link>
             )}
             <p className={styles.buttonNote}>{isUpcoming ? "모집이 시작되면 신청할 수 있어요." : isClosed ? "다른 모임의 남은 자리를 확인해주세요." : "신청 정보를 안전하게 입력해주세요."}</p>
+            <ShareButton title={`${meeting.title} | AI Together`} text={`${meeting.date} ${meeting.time} · ${meeting.location}`} />
           </aside>
         </div>
 

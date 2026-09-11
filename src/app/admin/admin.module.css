@@ -72,6 +72,21 @@
 .statusForm button { padding: 9px 13px; border: 0; border-radius: 9px; background: var(--green); color: white; font: inherit; font-weight: 800; cursor: pointer; }
 .statusForm button:disabled { opacity: .6; cursor: wait; }
 .success { color: var(--green); font-weight: 700; }
+.reviewForm { margin-bottom:30px; padding:30px; border:1px solid var(--line); border-radius:14px; display:grid; gap:20px; background:white; }
+.publishCheck { display:flex; align-items:center; gap:9px; font-size:.84rem; font-weight:800; }
+.publishCheck input { width:18px; height:18px; accent-color:var(--green); }
+.reviewAdminList { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }
+.reviewAdminCard { padding:24px; border:1px solid var(--line); border-radius:12px; background:white; }
+.reviewAdminCard > div:first-child { display:flex; align-items:center; gap:10px; }
+.reviewAdminCard small { color:var(--muted); }
+.reviewAdminCard h2 { margin:18px 0 8px; font-size:1.2rem; }
+.reviewAdminCard > p { min-height:76px; margin:0; color:var(--muted); line-height:1.7; white-space:pre-wrap; }
+.published,.privateReview { padding:5px 9px; border-radius:999px; font-size:.7rem; font-weight:900; }
+.published { background:var(--green-pale); color:var(--green); }
+.privateReview { background:#eee9e5; color:var(--muted); }
+.reviewActions { margin-top:20px; display:flex; gap:8px; }
+.reviewActions button { padding:9px 12px; border:1px solid var(--line); border-radius:8px; background:white; color:var(--ink); font:inherit; font-size:.78rem; font-weight:800; cursor:pointer; }
+.reviewActions .deleteButton { color:#b53d2a; }
 
 @media (max-width: 700px) {
   .adminHeader { padding: 14px 18px; align-items: stretch; flex-direction: column; gap: 12px; }
@@ -85,6 +100,8 @@
   .meetingForm { padding: 24px 18px; }
   .primaryButton { width: 100%; }
   .applicationTop { align-items: flex-start; flex-direction: column-reverse; }
+  .reviewForm { padding:22px 18px; }
+  .reviewAdminList { grid-template-columns:1fr; }
   .applicationSearch > div { display:grid; grid-template-columns:1fr auto; }
   .applicationSearch input { grid-column:1 / -1; font-size:16px; }
   .applicationSummary { justify-content:space-between; gap:12px; }

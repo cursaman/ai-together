@@ -58,6 +58,8 @@
 .applyCard dt { color: var(--muted); }
 .applyCard dd { margin: 0; font-weight: 800; text-align: right; }
 .applyCard button { width: 100%; min-height: 52px; border: 0; border-radius: 14px; background: #9aaba2; color: white; font: inherit; font-weight: 800; cursor: not-allowed; }
+.applyCard :global(.meeting-share) button { min-height:48px; border:1px solid var(--green); border-radius:9px; background:white; color:var(--green); cursor:pointer; }
+.applyCard :global(.meeting-share) button:hover { background:var(--green-pale); }
 .applyButton { display: grid; width: 100%; min-height: 52px; place-items: center; border-radius: 14px; background: var(--green); color: white; font-weight: 800; }
 .applyButton:hover { background: var(--green-dark); }
 .buttonNote { margin: 12px 0 0; color: var(--muted); font-size: .73rem; text-align: center; }
