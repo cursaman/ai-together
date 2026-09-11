@@ -50,8 +50,8 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
       <header className={styles.header}>
         <div className={styles.navShell}>
           <Link className={styles.brand} href="/">
-            <span aria-hidden="true">같이</span>
-            AI 같이해요
+            <span aria-hidden="true">AI</span>
+            AI Together
           </Link>
           <nav aria-label="주요 메뉴">
             <Link className={styles.activeNav} href="/meetings">모임</Link>
@@ -138,7 +138,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
       </main>
 
       <footer className={styles.footer}>
-        <div><Link className={styles.brand} href="/">AI 같이해요</Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div>
+        <div><Link className={styles.brand} href="/">AI Together</Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div>
         <small>© 2026 AI Together</small>
       </footer>
     </>

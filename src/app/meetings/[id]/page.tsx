@@ -55,7 +55,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
     <>
       <header className={styles.header}>
         <div className={styles.navShell}>
-          <Link className={styles.brand} href="/"><span aria-hidden="true">같이</span>AI 같이해요</Link>
+          <Link className={styles.brand} href="/"><span aria-hidden="true">AI</span>AI Together</Link>
           <nav aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><MobileMenu />
           <Link className={styles.listLink} href="/meetings">목록으로</Link>
         </div>
@@ -128,7 +128,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
         <section className={styles.bottomBanner}><div><p className={styles.kicker}>MORE TOGETHER</p><h2>다른 모임도 둘러보세요</h2><p>사진부터 여행, 글쓰기, 홈페이지까지 재미있는 주제가 기다리고 있어요.</p></div><Link href="/meetings">모든 모임 보기 →</Link></section>
       </main>
 
-      <footer className={styles.footer}><Link className={styles.brand} href="/">AI 같이해요</Link><small>© 2026 AI Together</small></footer>
+      <footer className={styles.footer}><Link className={styles.brand} href="/">AI Together</Link><small>© 2026 AI Together</small></footer>
     </>
   );
 }
