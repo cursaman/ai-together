@@ -1,83 +1,33 @@
+import Image from "next/image";
 import Link from "next/link";
 
-const categories = [
-  { icon: "📷", name: "사진", description: "상상을 이미지로 만들어요" },
-  { icon: "✍️", name: "글쓰기", description: "내 이야기를 함께 다듬어요" },
-  { icon: "🧳", name: "여행", description: "나만의 여행 계획을 세워요" },
-  { icon: "🎬", name: "영상", description: "재미있는 영상 아이디어를 찾아요" },
-  { icon: "🖥️", name: "홈페이지", description: "작은 웹페이지를 완성해요" },
-  { icon: "⚡", name: "자동화", description: "반복 작업을 더 간단하게 해요" },
+const experiences = [
+  { image: "/images/meetings/ai-first-step.webp", icon: "📷", title: "AI 이미지·앨범", text: "이미지를 만들고 온라인 앨범으로 완성해요", href: "/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98&category=%EC%82%AC%EC%A7%84" },
+  { image: "/images/meetings/short-video-ideas.webp", icon: "🎬", title: "AI 동영상", text: "짧은 영상을 만들어 홈페이지에 올려요", href: "/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98&category=%EC%98%81%EC%83%81" },
+  { image: "/images/meetings/one-page-site.webp", icon: "🖥️", title: "영화 API 홈페이지", text: "실시간 영화 정보를 보여주는 사이트를 만들어요", href: "/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98&category=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80" },
+  { image: "/images/meetings/easy-automation.webp", icon: "⚡", title: "콘텐츠 자동화", text: "블로그와 영상 기획 흐름을 자동화해요", href: "/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98&category=%EC%9E%90%EB%8F%99%ED%99%94" },
 ];
 
 const steps = [
-  { number: "01", title: "모임 선택", description: "관심 있는 주제와 시간을 골라요." },
-  { number: "02", title: "참가 신청", description: "간단한 정보만 남기면 신청 끝이에요." },
-  { number: "03", title: "함께 만들기", description: "준비물을 챙겨 편하게 참여해요." },
+  { number: "01", title: "마음에 드는 과정 선택", text: "1일 체험 또는 4주 완성반에서 관심 있는 주제를 골라요." },
+  { number: "02", title: "간단하게 참가 신청", text: "일정과 남은 자리를 확인하고 필요한 정보만 입력해요." },
+  { number: "03", title: "내 결과물 완성", text: "노트북을 가지고 와서 AI와 함께 직접 만들고 공개해요." },
 ];
 
 export default function Home() {
-  return (
-    <>
-      <aside className="resource-bar" aria-label="홈페이지 교육 안내">
-        <span>홈페이지 만들기가 궁금하신가요?</span>
-        <a href="https://autosites-jd3d.vercel.app/" target="_blank" rel="noreferrer">홈페이지 과정 <span aria-hidden="true">↗</span></a>
-        <a href="https://homepages-rosy.vercel.app/" target="_blank" rel="noreferrer">제작방법 보기 <span aria-hidden="true">↗</span></a>
-      </aside>
-      <header className="site-header">
-        <div className="nav-shell">
-          <Link className="brand" href="/" aria-label="AI 같이해요 홈"><span className="brand-mark" aria-hidden="true">같이</span><span>AI 같이해요</span></Link>
-          <nav className="desktop-nav" aria-label="주요 메뉴">
-            <Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link>
-          </nav>
-          <Link className="nav-cta" href="/meetings">모임 찾기</Link>
-        </div>
-      </header>
-
-      <main id="main-content">
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-glow hero-glow-one" aria-hidden="true" /><div className="hero-glow hero-glow-two" aria-hidden="true" />
-          <div className="hero-content">
-            <p className="eyebrow"><span aria-hidden="true">✦</span> AI가 처음이어도 환영해요</p>
-            <h1 id="hero-title">AI 몰라도 괜찮아요.<br /><span>같이 하나 만들어봐요.</span></h1>
-            <p className="hero-description">어려운 공부보다 즐거운 만들기부터.<br />관심 있는 사람들과 AI로 작은 결과물을 완성해보세요.</p>
-            <div className="hero-actions"><Link className="button button-primary" href="/meetings">모임 둘러보기 <span aria-hidden="true">→</span></Link><Link className="text-link" href="/guide">처음이라면 읽어보기</Link></div>
-            <ul className="trust-list" aria-label="모임 특징"><li><span aria-hidden="true">✓</span> 사전 지식 필요 없음</li><li><span aria-hidden="true">✓</span> 소규모 모임</li><li><span aria-hidden="true">✓</span> 직접 만드는 경험</li></ul>
-          </div>
-          <div className="hero-visual" aria-hidden="true">
-            <div className="visual-card visual-card-back"><span>좋아하는 것</span><strong>＋ AI</strong></div>
-            <div className="visual-card visual-card-main"><div className="spark">✦</div><p>오늘의 작은 프로젝트</p><strong>상상을<br />직접 만들어보기</strong><div className="people"><span>🙂</span><span>😊</span><span>🤩</span><small>함께해요!</small></div></div>
-          </div>
-        </section>
-
-        <section className="section" aria-labelledby="categories-title">
-          <div className="section-heading"><p className="section-kicker">WHAT WE MAKE</p><h2 id="categories-title">어떤 걸 하나요?</h2><p>잘하는 것보다 좋아하는 것에서 시작해요.</p></div>
-          <div className="category-grid">{categories.map((category) => <article className="category-card" key={category.name}><span className="category-icon" aria-hidden="true">{category.icon}</span><h3>{category.name}</h3><p>{category.description}</p></article>)}</div>
-        </section>
-
-        <section className="section meeting-section" aria-labelledby="meeting-title">
-          <div className="section-heading section-heading-row"><div><p className="section-kicker">THIS WEEK</p><h2 id="meeting-title">이번 주 모임</h2></div><Link className="text-link" href="/meetings">전체 모임 보기 →</Link></div>
-          <article className="meeting-card">
-            <div className="meeting-art" aria-hidden="true"><span className="art-badge">첫 모임</span><span className="art-emoji">💡</span><div className="art-bubble">나도 할 수 있을까?</div><div className="art-bubble art-bubble-answer">물론이죠!</div></div>
-            <div className="meeting-info"><div className="meeting-tags"><span>무료</span><span>난이도 · 처음</span></div><h3>AI 처음인 사람만 오세요</h3><p className="meeting-subtitle">AI로 재미있는 것 하나 만들어보기</p><p className="meeting-copy">AI를 한 번도 사용하지 않았어도 괜찮아요. 사진, 여행 계획, 글, 영상 아이디어, 홈페이지 중 하나를 골라 직접 만들어봅니다.</p><dl className="meeting-details"><div><dt>준비물</dt><dd>스마트폰 또는 노트북</dd></div><div><dt>정원</dt><dd>8명 · 소규모 진행</dd></div></dl><Link className="button button-primary" href="/meetings">모임 자세히 보기 <span aria-hidden="true">→</span></Link></div>
-          </article>
-        </section>
-
-        <section className="welcome-section" aria-labelledby="welcome-title">
-          <div className="welcome-copy"><p className="section-kicker">FIRST TIME?</p><h2 id="welcome-title">처음 오셨나요?</h2><p className="welcome-lead">AI를 몰라도, 컴퓨터가 익숙하지 않아도 괜찮아요.</p><p>강의를 듣고 외우는 자리가 아니에요. 천천히 따라 하며 내 손으로 무언가를 만들어보는 모임입니다. 막히면 옆에서 함께 해결해드려요.</p><Link className="text-link" href="/guide">모임이 더 궁금하다면 →</Link></div>
-          <div className="welcome-note" aria-label="초보자 환영 안내"><span aria-hidden="true">🌱</span><strong>완전 초보 환영</strong><p>질문은 많을수록 좋아요.<br />속도보다 경험이 중요해요.</p></div>
-        </section>
-
-        <section className="section" aria-labelledby="steps-title">
-          <div className="section-heading"><p className="section-kicker">HOW TO JOIN</p><h2 id="steps-title">참여는 이렇게 해요</h2></div>
-          <ol className="steps">{steps.map((step) => <li key={step.number}><span>{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol>
-        </section>
-
-        <section className="review-section" aria-labelledby="review-title"><p className="section-kicker">TOGETHER STORY</p><h2 id="review-title">첫 번째 함께 만든 이야기를 기다리고 있어요.</h2><blockquote>실제 참여자의 동의를 받은 후기와 완성 결과물만 소개합니다.</blockquote><Link className="text-link" href="/reviews">후기 안내 보기 →</Link></section>
-
-        <section className="final-cta" aria-labelledby="final-cta-title"><div><p className="section-kicker">READY TO MAKE?</p><h2 id="final-cta-title">이번에는 같이 시작해볼까요?</h2><p>완벽한 준비보다 작은 호기심 하나면 충분해요.</p></div><Link className="button button-light" href="/meetings">모임 둘러보기 <span aria-hidden="true">→</span></Link></section>
-      </main>
-
-      <footer className="site-footer"><div><Link className="brand footer-brand" href="/">AI 같이해요</Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div><nav aria-label="하단 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><small>© 2026 AI Together</small></footer>
-    </>
-  );
+  return <>
+    <aside className="resource-bar" aria-label="홈페이지 교육 안내"><span>홈페이지 만들기가 궁금하신가요?</span><a href="https://autosites-jd3d.vercel.app/" target="_blank" rel="noreferrer">홈페이지 과정 ↗</a><a href="https://homepages-rosy.vercel.app/" target="_blank" rel="noreferrer">제작방법 보기 ↗</a></aside>
+    <header className="site-header"><div className="nav-shell"><Link className="brand" href="/" aria-label="AI 같이해요 홈"><span className="brand-mark" aria-hidden="true">같이</span><span>AI 같이해요</span></Link><nav className="desktop-nav" aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><Link className="nav-cta" href="/meetings">모임 찾기</Link></div></header>
+    <main id="main-content">
+      <section className="market-hero" aria-labelledby="hero-title"><Image className="market-hero-image" src="/images/meetings/ai-first-step.webp" alt="AI 이미지와 홈페이지를 함께 만드는 체험" fill priority sizes="100vw" /><div className="market-hero-shade" /><div className="market-hero-copy"><p>BEGINNER-FRIENDLY AI WORKSHOP</p><h1 id="hero-title">AI로 다시<br />만드는 즐거움.</h1><span>사진·영상·홈페이지·자동화를 직접 만들고 실제 결과물로 가져가세요.</span></div><div className="hero-search-card"><strong>어떤 경험을 시작해볼까요?</strong><div><Link href="/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98"><small>가볍게 시작</small><b>1일 체험 · 15시–17시</b></Link><Link href="/meetings?course=4%EC%A3%BC+%EC%99%84%EC%84%B1"><small>제대로 완성</small><b>4주 과정 · 18시–20시</b></Link><Link className="hero-search-button" href="/meetings">과정 찾기 →</Link></div></div></section>
+      <section className="proof-strip" aria-label="모임 특징"><span><b>최대 8명</b> 소규모 실습</span><span><b>완전 초보</b> 환영</span><span><b>개인 노트북</b> 하나면 준비 끝</span><span><b>부산 교대 인근</b> 오프라인 진행</span></section>
+      <section className="market-section" aria-labelledby="experience-title"><div className="market-heading"><div><p>ONE-DAY EXPERIENCES</p><h2 id="experience-title">두 시간 안에 만나는<br />작은 성취</h2></div><Link href="/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98">1일 체험 모두 보기 →</Link></div><div className="experience-grid">{experiences.map((item) => <Link className="experience-card" href={item.href} key={item.title}><div><Image src={item.image} alt="" fill sizes="(max-width: 700px) 100vw, 25vw" /><span aria-hidden="true">{item.icon}</span></div><small>1일 체험 · 10,000원</small><h3>{item.title}</h3><p>{item.text}</p><b>자세히 보기 →</b></Link>)}</div></section>
+      <section className="course-feature" aria-labelledby="course-title"><div className="course-feature-copy"><p>4-WEEK COMPLETE COURSE</p><h2 id="course-title">배우는 데서 끝내지 않고,<br />내 것으로 완성해요.</h2><p>매주 토요일 저녁, 같은 목표를 가진 사람들과 하나의 프로젝트를 완성합니다. 기획부터 제작, 수정, 실제 인터넷 공개까지 함께합니다.</p><ul><li>✓ 홈페이지 4주 완성</li><li>✓ 유튜브 4주 완성</li><li>✓ 총 8시간 소규모 실습</li><li>✓ 4주 전체 80,000원</li></ul><Link className="button button-light" href="/meetings?course=4%EC%A3%BC+%EC%99%84%EC%84%B1">4주 과정 확인하기 →</Link></div><div className="course-collage"><Image src="/images/meetings/one-page-site.webp" alt="AI 홈페이지 제작 결과 예시" fill sizes="(max-width: 800px) 100vw, 45vw" /></div></section>
+      <section className="market-section category-market" aria-labelledby="category-title"><div className="market-heading centered"><div><p>DISCOVER YOUR INTEREST</p><h2 id="category-title">좋아하는 것에서 시작하세요</h2></div></div><div className="category-market-grid"><Link href="/meetings?category=%EC%82%AC%EC%A7%84"><span>📷</span><strong>이미지</strong></Link><Link href="/meetings?category=%EC%98%81%EC%83%81"><span>🎬</span><strong>영상</strong></Link><Link href="/meetings?category=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80"><span>🖥️</span><strong>홈페이지</strong></Link><Link href="/meetings?category=%EC%9E%90%EB%8F%99%ED%99%94"><span>⚡</span><strong>자동화</strong></Link></div></section>
+      <section className="how-section" aria-labelledby="how-title"><div className="market-heading centered light"><div><p>HOW TO JOIN</p><h2 id="how-title">처음이어도 이렇게 시작해요</h2></div></div><ol>{steps.map((step) => <li key={step.number}><span>{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol><Link className="button button-light" href="/guide">처음 오신 분 안내 →</Link></section>
+      <section className="story-section" aria-labelledby="story-title"><div><p>REAL STORIES ONLY</p><h2 id="story-title">만든 사람의 이야기가<br />가장 좋은 안내가 됩니다.</h2><p>실제 참여자의 동의를 받은 후기와 완성 결과물만 소개합니다. 첫 번째 이야기를 함께 만들어주세요.</p><Link className="button button-primary" href="/reviews">후기 공간 보기 →</Link></div><div className="story-images"><Image src="/images/meetings/travel-with-ai.webp" alt="함께 아이디어를 나누는 모습" fill sizes="(max-width: 800px) 100vw, 45vw" /></div></section>
+      <section className="mission-section"><div><p>OUR MISSION</p><h2>AI를 공부하는 곳보다,<br />AI로 함께 만드는 곳.</h2><p>기술이 낯선 사람도 부담 없이 시작하고, 작더라도 자신의 결과물을 완성할 수 있는 자리를 만듭니다.</p><Link className="text-link" href="/contact">장소와 문의 확인하기 →</Link></div><span aria-hidden="true">✦<br />AI<br />＋<br />YOU</span></section>
+    </main>
+    <footer className="site-footer"><div><Link className="brand footer-brand" href="/">AI 같이해요</Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div><nav aria-label="하단 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><small>© 2026 AI Together</small></footer>
+  </>;
 }

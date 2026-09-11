@@ -1,4 +1,4 @@
-.header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(32, 37, 31, .08); background: rgba(255, 250, 241, .92); backdrop-filter: blur(14px); }
+.header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(43,23,48,.08); background: rgba(255,255,255,.95); backdrop-filter: blur(14px); }
 .navShell { width: min(1180px, calc(100% - 40px)); min-height: 72px; margin: auto; display: flex; align-items: center; gap: 36px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 800; letter-spacing: -.03em; }
 .brand > span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 13px 13px 13px 4px; background: var(--green); color: white; font-size: .74rem; }
@@ -6,14 +6,14 @@
 .navShell nav a:hover, .activeNav { color: var(--green); }
 .activeNav { font-weight: 800; }
 .homeLink { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; }
-.intro { padding: 100px 20px 86px; background: #f2ecdd; text-align: center; }
+.intro { padding: 100px 20px 86px; background: var(--green-dark); color: white; text-align: center; }
 .kicker { margin: 0 0 18px; color: var(--green); font-size: .76rem; font-weight: 800; letter-spacing: .14em; }
-.intro h1 { margin: 0; font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.08; letter-spacing: -.06em; }
-.intro > p:last-child { max-width: 650px; margin: 24px auto 0; color: var(--muted); line-height: 1.8; }
+.intro h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.08; letter-spacing: -.06em; }
+.intro > p:last-child { max-width: 650px; margin: 24px auto 0; color: #eadbea; line-height: 1.8; }
 .mobileBreak { display: none; }
 .listSection { width: min(1120px, calc(100% - 40px)); margin: auto; padding: 60px 0 110px; }
 .courseFilters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
-.courseFilters a { min-height: 82px; padding: 17px 20px; border: 1px solid var(--line); border-radius: 18px; background: white; display: flex; flex-direction: column; justify-content: center; transition: border-color .2s ease, transform .2s ease, background .2s ease; }
+.courseFilters a { min-height: 82px; padding: 17px 20px; border: 1px solid var(--line); border-radius: 9px; background: white; display: flex; flex-direction: column; justify-content: center; transition: border-color .2s ease, transform .2s ease, background .2s ease; }
 .courseFilters a:hover { border-color: var(--green); transform: translateY(-2px); }
 .courseFilters span { color: var(--muted); font-size: .72rem; }
 .courseFilters strong { margin-top: 5px; font-size: 1.02rem; }
@@ -29,16 +29,16 @@
 .listHeading p { margin: 0; color: var(--muted); font-size: .9rem; }
 .listHeading strong { color: var(--green); }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.card { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: white; transition: transform .2s ease, box-shadow .2s ease; }
+.card { overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: white; transition: transform .2s ease, box-shadow .2s ease; }
 .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .cardLink { display: block; height: 100%; }
 .cardArt { position: relative; height: 210px; overflow: hidden; display: grid; place-items: center; }
 .cardImage { object-fit: cover; transition: transform .35s ease; }
 .card:hover .cardImage { transform: scale(1.035); }
-.green { background: #286b53; }
+.green { background: #b92d68; }
 .yellow { background: #e2b94e; }
-.coral { background: #e7806a; }
-.blue { background: #547ba5; }
+.coral { background: #ee7182; }
+.blue { background: #735078; }
 .status, .category, .courseType { position: absolute; z-index: 2; padding: 7px 11px; border-radius: 999px; background: white; font-size: .73rem; font-weight: 800; }
 .status { left: 16px; color: var(--green); }
 .status, .category { top: 16px; }
@@ -51,7 +51,7 @@
 .fee { flex: 0 0 auto; color: var(--green-dark); font-size: 1.12rem; }
 .cardBody h3 { margin: 18px 0 8px; font-size: 1.28rem; letter-spacing: -.035em; }
 .subtitle { min-height: 44px; margin: 0; color: var(--muted); font-size: .87rem; line-height: 1.55; }
-.result { margin: 16px 0 0; padding: 13px 14px; border-radius: 12px; background: #f7f4ec; color: #4e574f; font-size: .78rem; line-height: 1.5; }
+.result { margin: 16px 0 0; padding: 13px 14px; border-radius: 8px; background: var(--green-pale); color: #5d4d60; font-size: .78rem; line-height: 1.5; }
 .result span { display: block; margin-bottom: 3px; color: var(--green); font-size: .66rem; font-weight: 900; letter-spacing: .08em; }
 .details { margin: 20px 0; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .details div { display: flex; gap: 9px; font-size: .79rem; }

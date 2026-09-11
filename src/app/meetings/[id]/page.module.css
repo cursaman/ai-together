@@ -1,4 +1,4 @@
-.header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(32,37,31,.08); background: rgba(255,250,241,.92); backdrop-filter: blur(14px); }
+.header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(43,23,48,.08); background: rgba(255,255,255,.95); backdrop-filter: blur(14px); }
 .navShell { width: min(1180px, calc(100% - 40px)); min-height: 72px; margin: auto; display: flex; align-items: center; gap: 36px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.03em; }
 .brand > span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 13px 13px 13px 4px; background: var(--green); color: white; font-size: .74rem; }
@@ -10,7 +10,7 @@
 .hero { width: min(1120px, calc(100% - 40px)); margin: auto; display: grid; grid-template-columns: .92fr 1.08fr; overflow: hidden; border: 1px solid var(--line); border-radius: 30px; background: white; box-shadow: var(--shadow); }
 .art { position: relative; min-height: 520px; overflow: hidden; display: grid; place-items: center; }
 .heroImage { object-fit: cover; }
-.green { background: #286b53; } .yellow { background: #e2b94e; } .coral { background: #e7806a; } .blue { background: #547ba5; }
+.green { background: #b92d68; } .yellow { background: #e2b94e; } .coral { background: #ee7182; } .blue { background: #735078; }
 .circle { position: absolute; width: 340px; height: 340px; border-radius: 50%; background: rgba(255,255,255,.2); box-shadow: 0 0 0 55px rgba(255,255,255,.08); }
 .icon { position: relative; z-index: 1; font-size: 7rem; filter: drop-shadow(0 15px 18px rgba(0,0,0,.15)); }
 .artCategory { position: absolute; z-index: 2; top: 28px; left: 28px; padding: 8px 13px; border-radius: 999px; background: white; color: #37443c; font-size: .78rem; font-weight: 800; }
@@ -45,7 +45,7 @@
 .notice > span { font-size: 2.5rem; }
 .notice h2 { margin: 0 0 10px; font-size: 1.3rem; }
 .notice p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.7; }
-.applyCard { position: sticky; top: 100px; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: white; box-shadow: 0 16px 45px rgba(33,54,43,.1); }
+.applyCard { position: sticky; top: 100px; padding: 28px; border: 1px solid var(--line); border-radius: 10px; background: white; box-shadow: var(--shadow); }
 .cardLabel { margin: 0 0 15px; color: var(--green); font-size: .75rem; font-weight: 900; }
 .seats strong, .seats span { display: block; }
 .seats strong { font-size: 1.25rem; }

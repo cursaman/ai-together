@@ -2,20 +2,20 @@
 .completeShell {
   min-height: 100vh;
   padding: 55px max(20px, 4vw) 90px;
-  background: #f2ecdd;
+  background: var(--cream-deep);
 }
 .back { display: block; width: min(1050px, 100%); margin: 0 auto 25px; color: var(--green); font-size: .86rem; font-weight: 800; }
 .layout { width: min(1050px, 100%); margin: auto; display: grid; grid-template-columns: .85fr 1.15fr; overflow: hidden; border-radius: 30px; background: white; box-shadow: var(--shadow); }
 .intro { padding: 64px 52px; background: var(--green); color: white; }
-.kicker { margin: 0 0 14px; color: #bde1cf; font-size: .72rem; font-weight: 900; letter-spacing: .14em; }
+.kicker { margin: 0 0 14px; color: #ffc6dc; font-size: .72rem; font-weight: 900; letter-spacing: .14em; }
 .intro h1 { margin: 0; font-size: clamp(2.6rem, 5vw, 4.2rem); letter-spacing: -.055em; }
-.intro > p { margin: 18px 0 35px; color: #d5e6de; line-height: 1.7; }
+.intro > p { margin: 18px 0 35px; color: #eadbea; line-height: 1.7; }
 .meetingCard { padding: 22px; border: 1px solid rgba(255,255,255,.18); border-radius: 20px; background: rgba(255,255,255,.1); display: flex; gap: 16px; }
 .meetingCard > span { flex: 0 0 auto; display: grid; width: 58px; height: 58px; place-items: center; border-radius: 17px; background: #f5c85b; font-size: 1.8rem; }
-.meetingCard small { color: #bde1cf; }
+.meetingCard small { color: #ffc6dc; }
 .meetingCard h2 { margin: 7px 0; font-size: 1.2rem; }
-.meetingCard p { margin: 0; color: #d5e6de; font-size: .8rem; line-height: 1.6; }
-.intro ul { margin: 28px 0 0; padding: 0; display: grid; gap: 11px; list-style: none; color: #d5e6de; font-size: .82rem; }
+.meetingCard p { margin: 0; color: #eadbea; font-size: .8rem; line-height: 1.6; }
+.intro ul { margin: 28px 0 0; padding: 0; display: grid; gap: 11px; list-style: none; color: #eadbea; font-size: .82rem; }
 .intro li::before { content: "✓"; margin-right: 8px; color: #f5c85b; font-weight: 900; }
 .formCard { padding: 62px clamp(32px, 6vw, 72px); }
 .formHeading { margin-bottom: 34px; }
@@ -33,7 +33,7 @@
 .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #fffdf9; padding: 13px 14px; color: var(--ink); font: inherit; font-size: .9rem; outline: none; }
 .field textarea { resize: vertical; }
 .field input:focus,
-.field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(33,99,77,.1); }
+.field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(185,45,104,.12); }
 .field input[aria-invalid="true"],
 .field textarea[aria-invalid="true"] { border-color: #c84f3a; }
 .help,
