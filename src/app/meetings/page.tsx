@@ -11,21 +11,38 @@ export const metadata: Metadata = {
 };
 
 type MeetingsPageProps = {
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ category?: string; course?: string }>;
 };
 
+const courseTypes = ["전체", "1일 체험", "4주 완성"] as const;
+
+function getCourseType(title: string) {
+  return title.includes("4주") ? "4주 완성" : "1일 체험";
+}
+
 export default async function MeetingsPage({ searchParams }: MeetingsPageProps) {
-  const { category } = await searchParams;
+  const { category, course } = await searchParams;
   const meetings = await getMeetings();
   const selectedCategory = meetingCategories.includes(
     category as (typeof meetingCategories)[number],
   )
     ? category ?? "전체"
     : "전체";
+  const selectedCourse = courseTypes.includes(course as (typeof courseTypes)[number]) ? course ?? "전체" : "전체";
   const visibleMeetings =
-    selectedCategory === "전체"
-      ? meetings
-      : meetings.filter((meeting) => meeting.category === selectedCategory);
+    meetings.filter((meeting) => {
+      const matchesCategory = selectedCategory === "전체" || meeting.category === selectedCategory;
+      const matchesCourse = selectedCourse === "전체" || getCourseType(meeting.title) === selectedCourse;
+      return matchesCategory && matchesCourse;
+    });
+
+  function filterHref(nextCourse: string, nextCategory: string) {
+    const query = new URLSearchParams();
+    if (nextCourse !== "전체") query.set("course", nextCourse);
+    if (nextCategory !== "전체") query.set("category", nextCategory);
+    const value = query.toString();
+    return value ? `/meetings?${value}` : "/meetings";
+  }
 
   return (
     <>
@@ -53,11 +70,14 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
         </section>
 
         <section className={styles.listSection} aria-labelledby="meeting-list-title">
+          <div className={styles.courseFilters} aria-label="과정 유형 필터">
+            {courseTypes.map((item) => <Link className={selectedCourse === item ? styles.selectedCourse : ""} href={filterHref(item, selectedCategory)} key={item} aria-current={selectedCourse === item ? "page" : undefined}><span>{item === "1일 체험" ? "2시간" : item === "4주 완성" ? "총 8시간" : "모두 보기"}</span><strong>{item}</strong></Link>)}
+          </div>
           <div className={styles.filters} aria-label="카테고리 필터">
             {meetingCategories.map((item) => (
               <Link
                 className={selectedCategory === item ? styles.selectedFilter : ""}
-                href={item === "전체" ? "/meetings" : `/meetings?category=${encodeURIComponent(item)}`}
+                href={filterHref(selectedCourse, item)}
                 key={item}
                 aria-current={selectedCategory === item ? "page" : undefined}
               >
@@ -74,6 +94,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
           <div className={styles.grid}>
             {visibleMeetings.map((meeting) => {
               const percentage = Math.round((meeting.applicants / meeting.capacity) * 100);
+              const courseType = getCourseType(meeting.title);
 
               return (
                 <article className={styles.card} key={meeting.id}>
@@ -82,14 +103,17 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
                       <Image className={styles.cardImage} src={meeting.imageUrl} alt="" fill sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw" />
                       <span className={styles.status}>{meeting.status}</span>
                       <span className={styles.category}>{meeting.category}</span>
+                      <span className={styles.courseType}>{courseType}</span>
                     </div>
                     <div className={styles.cardBody}>
-                      <div className={styles.badges}><span>{meeting.fee}</span><span>난이도 · {meeting.difficulty}</span></div>
+                      <div className={styles.cardTop}><div className={styles.badges}><span>난이도 · {meeting.difficulty}</span><span>{courseType === "4주 완성" ? "4회 과정" : "1회 과정"}</span></div><strong className={styles.fee}>{meeting.fee}</strong></div>
                       <h3>{meeting.title}</h3>
                       <p className={styles.subtitle}>{meeting.subtitle}</p>
+                      <p className={styles.result}><span>완성 결과</span>{meeting.subtitle}</p>
                       <dl className={styles.details}>
                         <div><dt aria-label="날짜">📅</dt><dd>{meeting.date} · {meeting.time}</dd></div>
                         <div><dt aria-label="장소">📍</dt><dd>{meeting.location}</dd></div>
+                        <div><dt aria-label="준비물">💻</dt><dd>{meeting.supplies}</dd></div>
                       </dl>
                       <div className={styles.capacity}>
                         <div><span>신청 {meeting.applicants}명</span><span>정원 {meeting.capacity}명</span></div>

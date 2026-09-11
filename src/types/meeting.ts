@@ -11,6 +11,7 @@ export type Meeting = {
   time: string;
   location: string;
   difficulty: string;
+  supplies: string;
   capacity: number;
   applicants: number;
   fee: string;

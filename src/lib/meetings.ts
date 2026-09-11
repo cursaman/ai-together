@@ -16,6 +16,7 @@ type MeetingRow = {
   meeting_time: string;
   location: string;
   difficulty: string;
+  supplies: string;
   capacity: number;
   current_applicants: number;
   fee: number;
@@ -56,11 +57,12 @@ function toMeeting(row: MeetingRow): Meeting {
     subtitle: row.subtitle,
     category: row.category,
     icon: row.icon,
-    imageUrl: categoryImages[row.category] || row.representative_image_url || "/images/meetings/ai-first-step.webp",
+    imageUrl: row.representative_image_url || categoryImages[row.category] || "/images/meetings/ai-first-step.webp",
     date: formatDate(row.meeting_date),
     time: formatTime(row.meeting_time),
     location: row.location,
     difficulty: row.difficulty,
+    supplies: row.supplies,
     capacity: row.capacity,
     applicants: row.current_applicants,
     fee: row.fee === 0 ? "무료" : `${row.fee.toLocaleString("ko-KR")}원`,
@@ -77,7 +79,7 @@ export async function getMeetings(): Promise<Meeting[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("ait_meetings")
-    .select("id,title,subtitle,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,capacity,current_applicants,fee,recruitment_status,color")
+    .select("id,title,subtitle,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,supplies,capacity,current_applicants,fee,recruitment_status,color")
     .order("meeting_date", { ascending: true });
 
   if (error) {
@@ -96,7 +98,7 @@ export async function getMeetingById(id: string): Promise<Meeting | undefined> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("ait_meetings")
-    .select("id,title,subtitle,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,capacity,current_applicants,fee,recruitment_status,color")
+    .select("id,title,subtitle,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,supplies,capacity,current_applicants,fee,recruitment_status,color")
     .eq("id", id)
     .maybeSingle();
 

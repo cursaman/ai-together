@@ -77,7 +77,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
               <div><dt>📅 날짜</dt><dd>{meeting.date}</dd></div>
               <div><dt>🕒 시간</dt><dd>{meeting.time}</dd></div>
               <div><dt>📍 장소</dt><dd>{meeting.location}</dd></div>
-              <div><dt>🎒 준비물</dt><dd>스마트폰 또는 노트북</dd></div>
+              <div><dt>🎒 준비물</dt><dd>{meeting.supplies}</dd></div>
             </dl>
           </div>
         </section>
@@ -114,7 +114,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
             <p className={styles.cardLabel}>{meeting.status}</p>
             <div className={styles.seats}><strong>{isUpcoming ? "곧 모집을 시작해요" : `${remainingSeats}자리 남았어요`}</strong><span>{meeting.applicants}명 신청 · 정원 {meeting.capacity}명</span></div>
             <div className={styles.progress} aria-label={`정원 ${percentage}% 신청`}><span style={{ width: `${percentage}%` }} /></div>
-            <dl><div><dt>참가비</dt><dd>{meeting.fee}</dd></div><div><dt>난이도</dt><dd>{meeting.difficulty}</dd></div><div><dt>준비물</dt><dd>스마트폰 또는 노트북</dd></div></dl>
+            <dl><div><dt>참가비</dt><dd>{meeting.fee}</dd></div><div><dt>난이도</dt><dd>{meeting.difficulty}</dd></div><div><dt>준비물</dt><dd>{meeting.supplies}</dd></div></dl>
             {isUpcoming ? (
               <button type="button" disabled>모집 예정이에요</button>
             ) : (
