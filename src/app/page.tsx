@@ -72,12 +72,12 @@ export default function Home() {
           <ol className="steps">{steps.map((step) => <li key={step.number}><span>{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol>
         </section>
 
-        <section className="review-section" aria-labelledby="review-title"><p className="section-kicker">TOGETHER STORY</p><h2 id="review-title">“혼자였다면 시작도 못 했을 거예요.”</h2><blockquote>어렵게만 느껴졌던 AI로 여행 계획을 직접 만들었어요. 정답을 맞히는 시간이 아니라 서로 아이디어를 나누는 시간이라 편하고 재미있었습니다.</blockquote><p className="reviewer">첫 모임에 참여한 AI 초보자의 이야기</p></section>
+        <section className="review-section" aria-labelledby="review-title"><p className="section-kicker">TOGETHER STORY</p><h2 id="review-title">첫 번째 함께 만든 이야기를 기다리고 있어요.</h2><blockquote>실제 참여자의 동의를 받은 후기와 완성 결과물만 소개합니다.</blockquote><Link className="text-link" href="/reviews">후기 안내 보기 →</Link></section>
 
         <section className="final-cta" aria-labelledby="final-cta-title"><div><p className="section-kicker">READY TO MAKE?</p><h2 id="final-cta-title">이번에는 같이 시작해볼까요?</h2><p>완벽한 준비보다 작은 호기심 하나면 충분해요.</p></div><Link className="button button-light" href="/meetings">모임 둘러보기 <span aria-hidden="true">→</span></Link></section>
       </main>
 
-      <footer className="site-footer"><div><Link className="brand footer-brand" href="/">AI 같이해요</Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div><nav aria-label="하단 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/contact">문의</Link></nav><small>© 2026 AI Together</small></footer>
+      <footer className="site-footer"><div><Link className="brand footer-brand" href="/">AI 같이해요</Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div><nav aria-label="하단 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><small>© 2026 AI Together</small></footer>
     </>
   );
 }
