@@ -4,6 +4,7 @@
 .brand > span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 13px 13px 13px 4px; background: var(--green); color: white; font-size: .74rem; }
 .navShell nav { margin-left: auto; display: flex; gap: 28px; color: #4f584f; font-size: .94rem; }
 .navShell nav a:hover, .activeNav { color: var(--green); }
+.navShell :global(.mobile-menu) nav { margin-left:0; display:grid; gap:2px; color:var(--ink); font-size:.94rem; }
 .activeNav { font-weight: 800; }
 .homeLink { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; }
 .intro { padding: 100px 20px 86px; background: var(--green-dark); color: white; text-align: center; }
@@ -74,6 +75,7 @@
 
 @media (max-width: 900px) {
   .navShell nav { display: none; }
+  .navShell :global(.mobile-menu) nav { display:grid; }
   .homeLink { margin-left: auto; }
   .grid { grid-template-columns: repeat(2, 1fr); }
 }

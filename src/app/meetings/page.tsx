@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileMenu from "../mobile-menu";
 import { meetingCategories } from "@/data/meetings";
 import { getMeetings } from "@/lib/meetings";
 import styles from "./page.module.css";
@@ -58,6 +59,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
             <Link href="/reviews">후기</Link>
             <Link href="/contact">문의</Link>
           </nav>
+          <MobileMenu />
           <Link className={styles.homeLink} href="/">홈으로</Link>
         </div>
       </header>

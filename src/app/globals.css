@@ -18,6 +18,17 @@ h1,h2,h3 { text-wrap:balance; }
 .desktop-nav { margin-left:auto; display:flex; align-items:center; gap:28px; color:#5b4e5d; font-size:.9rem; }
 .desktop-nav a:hover,.site-footer nav a:hover,.text-link:hover { color:var(--green); }
 .nav-cta { padding:11px 18px; border-radius:8px; background:var(--green); color:white; font-size:.88rem; font-weight:800; }
+.mobile-menu { display:none; position:relative; margin-left:auto; }
+.mobile-menu summary { width:44px; height:44px; display:grid; place-content:center; gap:5px; border:1px solid var(--line); border-radius:8px; background:#fff; cursor:pointer; list-style:none; }
+.mobile-menu summary::-webkit-details-marker { display:none; }
+.mobile-menu summary span { width:20px; height:2px; border-radius:2px; background:var(--ink); transition:transform .2s ease,opacity .2s ease; }
+.mobile-menu[open] summary span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.mobile-menu[open] summary span:nth-child(2) { opacity:0; }
+.mobile-menu[open] summary span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+.mobile-menu nav { position:absolute; z-index:30; top:calc(100% + 10px); right:0; width:min(290px,calc(100vw - 28px)); padding:10px; display:grid; gap:2px; border:1px solid var(--line); border-radius:10px; background:#fff; box-shadow:0 18px 45px rgba(43,23,48,.16); }
+.mobile-menu nav a { padding:13px 14px; border-radius:7px; color:var(--ink); font-size:.94rem; font-weight:750; }
+.mobile-menu nav a:hover { background:var(--pink-pale); color:var(--green); }
+.mobile-menu nav .mobile-menu-cta { margin-top:6px; background:var(--green); color:#fff; text-align:center; }
 .button { min-height:50px; padding:0 22px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-weight:850; transition:transform .2s ease,background .2s ease; }
 .button:hover { transform:translateY(-2px); }
 .button-primary { background:var(--green); color:white; }
@@ -79,3 +90,4 @@ h1,h2,h3 { text-wrap:balance; }
 @media (max-width:600px) { .resource-bar { padding:8px 12px; gap:14px; }.resource-bar > span { display:none; }.nav-shell { width:calc(100% - 28px); min-height:62px; }.brand-mark { width:34px; height:34px; }.nav-cta { padding:9px 12px; font-size:.78rem; }.market-hero { min-height:620px; align-items:flex-start; }.market-hero-copy { width:calc(100% - 32px); padding-top:76px; }.market-hero-copy h1 { font-size:3.75rem; }.market-hero-copy > span { font-size:.95rem; }.hero-search-card { left:16px; bottom:18px; width:calc(100% - 32px); padding:14px; }.hero-search-card > div { grid-template-columns:1fr 1fr; }.hero-search-card .hero-search-button { grid-column:1/-1; min-height:50px; }.proof-strip { padding:18px 12px; font-size:.72rem; }.market-section { width:calc(100% - 30px); padding:76px 0; }.market-heading { align-items:flex-start; flex-direction:column; }.experience-grid { grid-template-columns:1fr; }.experience-card > div { height:250px; }.experience-card p { min-height:0; }.course-feature { width:calc(100% - 20px); padding:38px 24px; border-radius:14px; gap:38px; }.course-feature ul { grid-template-columns:1fr; }.course-collage { min-height:260px; }.category-market-grid { grid-template-columns:1fr 1fr; }.category-market-grid a { min-height:120px; }.how-section { padding:72px 20px; }.how-section ol { grid-template-columns:1fr; }.story-section { width:calc(100% - 30px); padding:76px 0; gap:36px; }.story-images { min-height:260px; }.mission-section { padding:72px 24px; }.mission-section > span { width:180px; height:180px; font-size:1.8rem; }.site-footer { grid-template-columns:1fr; }.site-footer nav { flex-wrap:wrap; }.site-footer small { grid-column:auto; }.button { width:100%; } input,select,textarea { font-size:16px; } }
 @media (pointer:coarse) { :where(a,button,select,input[type="checkbox"]) { min-height:44px; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; animation-iteration-count:1!important; } }
+@media (max-width:900px) { .nav-cta { display:none; }.mobile-menu { display:block; } }

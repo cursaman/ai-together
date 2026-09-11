@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileMenu from "../../mobile-menu";
 import { notFound } from "next/navigation";
 import { meetings } from "@/data/meetings";
 import { getMeetingById } from "@/lib/meetings";
@@ -55,7 +56,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
       <header className={styles.header}>
         <div className={styles.navShell}>
           <Link className={styles.brand} href="/"><span aria-hidden="true">같이</span>AI 같이해요</Link>
-          <nav aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav>
+          <nav aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><MobileMenu />
           <Link className={styles.listLink} href="/meetings">목록으로</Link>
         </div>
       </header>

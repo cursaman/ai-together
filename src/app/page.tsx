@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileMenu from "./mobile-menu";
 
 const experiences = [
   { image: "/images/meetings/ai-first-step.webp", icon: "📷", title: "AI 이미지·앨범", text: "이미지를 만들고 온라인 앨범으로 완성해요", href: "/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98&category=%EC%82%AC%EC%A7%84" },
@@ -17,7 +18,7 @@ const steps = [
 export default function Home() {
   return <>
     <aside className="resource-bar" aria-label="홈페이지 교육 안내"><span>홈페이지 만들기가 궁금하신가요?</span><a href="https://autosites-jd3d.vercel.app/" target="_blank" rel="noreferrer">홈페이지 과정 ↗</a><a href="https://homepages-rosy.vercel.app/" target="_blank" rel="noreferrer">제작방법 보기 ↗</a></aside>
-    <header className="site-header"><div className="nav-shell"><Link className="brand" href="/" aria-label="AI 같이해요 홈"><span className="brand-mark" aria-hidden="true">같이</span><span>AI 같이해요</span></Link><nav className="desktop-nav" aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><Link className="nav-cta" href="/meetings">모임 찾기</Link></div></header>
+    <header className="site-header"><div className="nav-shell"><Link className="brand" href="/" aria-label="AI 같이해요 홈"><span className="brand-mark" aria-hidden="true">같이</span><span>AI 같이해요</span></Link><nav className="desktop-nav" aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><Link className="nav-cta" href="/meetings">모임 찾기</Link><MobileMenu /></div></header>
     <main id="main-content">
       <section className="market-hero" aria-labelledby="hero-title"><Image className="market-hero-image" src="/images/meetings/ai-first-step.webp" alt="AI 이미지와 홈페이지를 함께 만드는 체험" fill priority sizes="100vw" /><div className="market-hero-shade" /><div className="market-hero-copy"><p>BEGINNER-FRIENDLY AI WORKSHOP</p><h1 id="hero-title">AI로 다시<br />만드는 즐거움.</h1><span>사진·영상·홈페이지·자동화를 직접 만들고 실제 결과물로 가져가세요.</span></div><div className="hero-search-card"><strong>어떤 경험을 시작해볼까요?</strong><div><Link href="/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98"><small>가볍게 시작</small><b>1일 체험 · 15시–17시</b></Link><Link href="/meetings?course=4%EC%A3%BC+%EC%99%84%EC%84%B1"><small>제대로 완성</small><b>4주 과정 · 18시–20시</b></Link><Link className="hero-search-button" href="/meetings">과정 찾기 →</Link></div></div></section>
       <section className="proof-strip" aria-label="모임 특징"><span><b>최대 8명</b> 소규모 실습</span><span><b>완전 초보</b> 환영</span><span><b>개인 노트북</b> 하나면 준비 끝</span><span><b>부산 교대 인근</b> 오프라인 진행</span></section>
