@@ -31,7 +31,7 @@ export function MeetingForm({ action, meeting = {} }: Props) {
         <Field label="모집 상태" name="recruitment_status" error={error("recruitment_status")}><select id="recruitment_status" name="recruitment_status" defaultValue={meeting.recruitment_status ?? "모집 예정"}>{statuses.map((item) => <option key={item}>{item}</option>)}</select></Field>
         <Field label="대표 색상" name="color" error={error("color")}><select id="color" name="color" defaultValue={meeting.color ?? "green"}><option value="green">초록</option><option value="yellow">노랑</option><option value="coral">코랄</option><option value="blue">파랑</option></select></Field>
       </div>
-      <Field label="준비물" name="supplies"><input id="supplies" name="supplies" defaultValue={meeting.supplies ?? "스마트폰 또는 노트북"} maxLength={120} /></Field>
+      <Field label="준비물" name="supplies"><input id="supplies" name="supplies" defaultValue={meeting.supplies ?? "개인 노트북과 충전기"} maxLength={120} /></Field>
       <Field label="간단 설명" name="summary"><textarea id="summary" name="summary" defaultValue={meeting.summary} rows={3} maxLength={500} /></Field>
       <Field label="상세 설명" name="description"><textarea id="description" name="description" defaultValue={meeting.description} rows={7} maxLength={5000} /></Field>
       {state.message ? <p className={styles.formMessage} role="alert">{state.message}</p> : null}

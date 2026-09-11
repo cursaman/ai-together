@@ -14,7 +14,7 @@ create table if not exists public.ait_meetings (
   meeting_time time not null,
   location text not null,
   difficulty text not null default '처음',
-  supplies text not null default '스마트폰 또는 노트북',
+  supplies text not null default '개인 노트북과 충전기',
   capacity integer not null check (capacity > 0),
   current_applicants integer not null default 0 check (current_applicants >= 0 and current_applicants <= capacity),
   fee integer not null default 0 check (fee >= 0),

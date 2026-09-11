@@ -14,13 +14,14 @@ const slides = [
 
 export default function HeroSwiper() {
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
   const touchStart = useRef<number | null>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => setCurrent((index) => (index + 1) % slides.length), 3000);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [paused]);
 
   const move = (direction: number) => setCurrent((index) => (index + direction + slides.length) % slides.length);
 
@@ -39,11 +40,14 @@ export default function HeroSwiper() {
       ))}
       <button className="hero-arrow hero-arrow-prev" type="button" onClick={() => move(-1)} aria-label="이전 이미지">‹</button>
       <button className="hero-arrow hero-arrow-next" type="button" onClick={() => move(1)} aria-label="다음 이미지">›</button>
-      <div className="hero-dots" aria-label={`${current + 1} / ${slides.length}`}>
-        {slides.map((slide, index) => (
-          <button className={index === current ? "is-active" : ""} type="button" onClick={() => setCurrent(index)}
-            aria-label={`${index + 1}번 이미지 보기`} aria-current={index === current ? "true" : undefined} key={slide.src} />
-        ))}
+      <div className="hero-controls">
+        <button className="hero-pause" type="button" onClick={() => setPaused((value) => !value)} aria-label={paused ? "슬라이드 자동 재생" : "슬라이드 일시정지"}>{paused ? "▶" : "Ⅱ"}</button>
+        <div className="hero-dots" aria-label={`${current + 1} / ${slides.length}`}>
+          {slides.map((slide, index) => (
+            <button className={index === current ? "is-active" : ""} type="button" onClick={() => setCurrent(index)}
+              aria-label={`${index + 1}번 이미지 보기`} aria-current={index === current ? "true" : undefined} key={slide.src} />
+          ))}
+        </div>
       </div>
     </div>
   );

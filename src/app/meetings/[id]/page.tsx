@@ -109,7 +109,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
             </section>
 
             <section className={styles.notice} aria-labelledby="notice-title">
-              <span aria-hidden="true">🌱</span><div><h2 id="notice-title">부담 없이 오세요</h2><p>노트북이 없어도 스마트폰만 있으면 참여할 수 있어요. 사용하는 AI 서비스가 없어도 현장에서 함께 안내합니다.</p></div>
+              <span aria-hidden="true">🌱</span><div><h2 id="notice-title">부담 없이 오세요</h2><p>개인 노트북과 충전기를 준비해주세요. 사용하는 AI 서비스가 없어도 현장에서 함께 안내합니다.</p></div>
             </section>
           </div>
 

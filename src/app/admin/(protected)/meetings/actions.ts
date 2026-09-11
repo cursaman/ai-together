@@ -28,7 +28,7 @@ function parseMeeting(formData: FormData, minimumCapacity = 1) {
     meeting_time: textValue(formData, "meeting_time"),
     location: textValue(formData, "location"),
     difficulty: textValue(formData, "difficulty") || "처음",
-    supplies: textValue(formData, "supplies") || "스마트폰 또는 노트북",
+    supplies: textValue(formData, "supplies") || "개인 노트북과 충전기",
     capacity: Number(textValue(formData, "capacity")),
     fee: Number(textValue(formData, "fee")),
     recruitment_status: textValue(formData, "recruitment_status"),

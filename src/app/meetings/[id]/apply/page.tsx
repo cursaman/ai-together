@@ -31,7 +31,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
             <span aria-hidden="true">{meeting.icon}</span>
             <div><small>{meeting.category} · {meeting.status}</small><h2>{meeting.title}</h2><p>{meeting.date} · {meeting.time}<br />{meeting.location}</p></div>
           </article>
-          <ul><li>참가비 {meeting.fee}</li><li>준비물: 스마트폰 또는 노트북</li><li>현재 {meeting.applicants}명 신청 · 정원 {meeting.capacity}명</li></ul>
+          <ul><li>참가비 {meeting.fee}</li><li>준비물: {meeting.supplies}</li><li>현재 {meeting.applicants}명 신청 · 정원 {meeting.capacity}명</li></ul>
         </section>
         <section className={styles.formCard} aria-labelledby="form-title">
           <div className={styles.formHeading}><p className={styles.kicker}>APPLICATION</p><h2 id="form-title">신청자 정보</h2><p><span>*</span> 표시는 필수 항목이에요.</p></div>
