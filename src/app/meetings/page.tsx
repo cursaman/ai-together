@@ -58,6 +58,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
             <Link href="/guide">처음 오셨나요?</Link>
             <Link href="/reviews">후기</Link>
             <Link href="/contact">문의</Link>
+            <Link href="/resources">참고자료</Link>
           </nav>
           <MobileMenu />
           <Link className={styles.homeLink} href="/">홈으로</Link>

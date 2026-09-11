@@ -13,6 +13,7 @@ export default function MobileMenu() {
         <Link href="/guide">처음 오셨나요?</Link>
         <Link href="/reviews">후기</Link>
         <Link href="/contact">문의</Link>
+        <Link href="/resources">참고자료</Link>
         <Link className="mobile-menu-cta" href="/meetings">모임 찾기 →</Link>
       </nav>
     </details>

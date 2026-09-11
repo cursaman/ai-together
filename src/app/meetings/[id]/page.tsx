@@ -58,7 +58,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
       <header className={styles.header}>
         <div className={styles.navShell}>
           <Link className={styles.brand} href="/"><span aria-hidden="true">AI</span>AI Together</Link>
-          <nav aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link></nav><MobileMenu />
+          <nav aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link><Link href="/resources">참고자료</Link></nav><MobileMenu />
           <Link className={styles.listLink} href="/meetings">목록으로</Link>
         </div>
       </header>
