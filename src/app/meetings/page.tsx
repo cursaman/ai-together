@@ -139,7 +139,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
       </main>
 
       <footer className={styles.footer}>
-        <div><Link className={styles.brand} href="/">AI Together</Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div>
+        <div><Link className={styles.brand} href="/" aria-label="AI Together 홈"><span>AI</span><span>Together</span></Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div>
         <small>© 2026 AI Together</small>
       </footer>
     </>

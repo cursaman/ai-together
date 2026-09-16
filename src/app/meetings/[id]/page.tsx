@@ -131,7 +131,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
         <section className={styles.bottomBanner}><div><p className={styles.kicker}>MORE TOGETHER</p><h2>다른 모임도 둘러보세요</h2><p>사진부터 여행, 글쓰기, 홈페이지까지 재미있는 주제가 기다리고 있어요.</p></div><Link href="/meetings">모든 모임 보기 →</Link></section>
       </main>
 
-      <footer className={styles.footer}><Link className={styles.brand} href="/">AI Together</Link><small>© 2026 AI Together</small></footer>
+      <footer className={styles.footer}><Link className={styles.brand} href="/" aria-label="AI Together 홈"><span>AI</span><span>Together</span></Link><small>© 2026 AI Together</small></footer>
     </>
   );
 }
