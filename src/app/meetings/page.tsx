@@ -51,7 +51,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
         <div className={styles.navShell}>
           <Link className={styles.brand} href="/">
             <span>AI</span>
-            <span>TOGETHER</span>
+            <span>Together</span>
           </Link>
           <nav aria-label="주요 메뉴">
             <Link className={styles.activeNav} href="/meetings">모임</Link>
