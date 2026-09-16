@@ -14,7 +14,7 @@ h1,h2,h3 { text-wrap:balance; }
 .resource-bar a:hover { color:#ffcce0; }
 .site-header { position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(43,23,48,.08); background:rgba(255,255,255,.95); backdrop-filter:blur(14px); }
 .nav-shell { width:min(1180px,calc(100% - 40px)); min-height:70px; margin:auto; display:flex; align-items:center; gap:34px; }
-.brand { display:inline-flex; align-items:baseline; gap:5px; color:var(--ink); font-size:1rem; font-weight:800; letter-spacing:-.025em; line-height:1; }
+.brand { display:inline-flex; align-items:baseline; gap:5px; color:var(--ink); font-size:1rem; font-weight:800; letter-spacing:-.025em; line-height:1; white-space:nowrap; }
 .brand-mark { color:var(--green); font-size:1.12rem; font-weight:900; letter-spacing:-.04em; }
 .desktop-nav { margin-left:auto; display:flex; align-items:center; gap:28px; color:#5b4e5d; font-size:.9rem; }
 .desktop-nav a:hover,.site-footer nav a:hover,.text-link:hover { color:var(--green); }

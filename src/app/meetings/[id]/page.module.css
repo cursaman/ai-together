@@ -1,6 +1,6 @@
 .header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(43,23,48,.08); background: rgba(255,255,255,.95); backdrop-filter: blur(14px); }
 .navShell { width: min(1180px, calc(100% - 40px)); min-height: 72px; margin: auto; display: flex; align-items: center; gap: 36px; }
-.brand { display: inline-flex; align-items: baseline; gap: 5px; color: var(--ink); font-size: 1rem; font-weight: 800; letter-spacing: -.025em; line-height: 1; }
+.brand { display: inline-flex; align-items: baseline; gap: 5px; color: var(--ink); font-size: 1rem; font-weight: 800; letter-spacing: -.025em; line-height: 1; white-space: nowrap; }
 .brand > span:first-child { color: var(--green); font-size: 1.12rem; font-weight: 900; letter-spacing: -.04em; }
 .navShell nav { margin-left: auto; display: flex; gap: 28px; color: #4f584f; font-size: .94rem; }
 .navShell nav a:first-child { color: var(--green); font-weight: 800; }
@@ -81,10 +81,10 @@
 }
 
 @media (max-width: 620px) {
-  .navShell { width: calc(100% - 30px); min-height: 64px; }
+  .navShell { width: calc(100% - 30px); min-height: 64px; gap: 12px; }
   .brand { font-size: .92rem; }
   .brand > span:first-child { font-size: 1.02rem; }
-  .listLink { padding: 8px 12px; font-size: .78rem; }
+  .listLink { margin-left: 0; padding: 8px 12px; font-size: .78rem; }
   .breadcrumb, .hero, .contentLayout, .bottomBanner, .footer { width: calc(100% - 30px); }
   .breadcrumb { overflow-x: auto; padding-bottom: 6px; white-space: nowrap; scrollbar-width: none; }
   .hero { border-radius: 23px; }
