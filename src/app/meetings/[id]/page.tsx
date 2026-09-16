@@ -57,13 +57,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
   return (
     <>
       <ResourceBar />
-      <header className={styles.header}>
-        <div className={styles.navShell}>
-          <Link className={styles.brand} href="/"><span>AI</span><span>Together</span></Link>
-          <nav aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link><Link href="/resources">참고자료</Link></nav><MobileMenu />
-          <Link className={styles.listLink} href="/meetings">목록으로</Link>
-        </div>
-      </header>
+      <header className="site-header"><div className="nav-shell"><Link className="brand" href="/" aria-label="AI Together 홈"><span className="brand-mark">AI</span><span>Together</span></Link><nav className="desktop-nav" aria-label="주요 메뉴"><Link href="/meetings" aria-current="page">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link><Link href="/resources">참고자료</Link></nav><Link className="nav-cta" href="/meetings">모임 찾기</Link><MobileMenu /></div></header>
 
       <main id="main-content">
         <div className={styles.breadcrumb}><Link href="/">홈</Link><span aria-hidden="true">/</span><Link href="/meetings">모임</Link><span aria-hidden="true">/</span><strong>{meeting.category}</strong></div>
