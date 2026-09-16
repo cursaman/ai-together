@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MobileMenu from "../mobile-menu";
+import ResourceBar from "../resource-bar";
 import { meetingCategories } from "@/data/meetings";
 import { getMeetings } from "@/lib/meetings";
 import styles from "./page.module.css";
@@ -47,6 +48,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
 
   return (
     <>
+      <ResourceBar />
       <header className={styles.header}>
         <div className={styles.navShell}>
           <Link className={styles.brand} href="/">
