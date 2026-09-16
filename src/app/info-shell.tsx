@@ -8,6 +8,8 @@ export function InfoShell({ children }: { children: React.ReactNode }) {
         <span>홈페이지 만들기가 궁금하신가요?</span>
         <a href="https://autosites-jd3d.vercel.app/" target="_blank" rel="noreferrer">홈페이지 과정 <span aria-hidden="true">↗</span></a>
         <a href="https://homepages-rosy.vercel.app/" target="_blank" rel="noreferrer">제작방법 보기 <span aria-hidden="true">↗</span></a>
+        <a href="https://what-to-ai.vercel.app/" target="_blank" rel="noreferrer">AI 샘플 <span aria-hidden="true">↗</span></a>
+        <a href="https://what-to-db.vercel.app/" target="_blank" rel="noreferrer">DB 샘플 <span aria-hidden="true">↗</span></a>
       </aside>
       <header className="site-header"><div className="nav-shell"><Link className="brand" href="/" aria-label="AI Together 홈"><span className="brand-mark" aria-hidden="true">AI</span><span>AI Together</span></Link><nav className="desktop-nav" aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link><Link href="/resources">참고자료</Link></nav><Link className="nav-cta" href="/meetings">모임 찾기</Link><MobileMenu /></div></header>
       {children}
