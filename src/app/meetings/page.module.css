@@ -1,7 +1,7 @@
 .header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(43,23,48,.08); background: rgba(255,255,255,.95); backdrop-filter: blur(14px); }
 .navShell { width: min(1180px, calc(100% - 40px)); min-height: 72px; margin: auto; display: flex; align-items: center; gap: 36px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-size: .92rem; font-weight: 800; letter-spacing: .08em; }
-.brand > span { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(43,23,48,.14); border-radius: 10px; background: white; color: var(--green); box-shadow: 0 5px 16px rgba(50,17,58,.08); font-size: 1rem; line-height: 1; }
+.brand { display: inline-flex; align-items: baseline; gap: 6px; color: var(--ink); font-size: .9rem; font-weight: 700; letter-spacing: .12em; line-height: 1; }
+.brand > span:first-child { color: var(--green); font-size: 1.12rem; font-weight: 900; letter-spacing: -.04em; }
 .navShell nav { margin-left: auto; display: flex; gap: 28px; color: #4f584f; font-size: .94rem; }
 .navShell nav a:hover, .activeNav { color: var(--green); }
 .navShell :global(.mobile-menu) nav { margin-left:0; display:grid; gap:2px; color:var(--ink); font-size:.94rem; }
@@ -84,7 +84,8 @@
 
 @media (max-width: 620px) {
   .navShell { width: calc(100% - 30px); min-height: 64px; }
-  .brand > span { width: 32px; height: 32px; }
+  .brand { font-size: .82rem; }
+  .brand > span:first-child { font-size: 1.02rem; }
   .homeLink { padding: 8px 12px; font-size: .78rem; }
   .intro { padding: 72px 22px 68px; }
   .mobileBreak { display: block; }
