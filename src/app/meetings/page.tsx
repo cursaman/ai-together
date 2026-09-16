@@ -7,7 +7,7 @@ import { getMeetings } from "@/lib/meetings";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "모임 둘러보기 | AI 같이해요",
+  title: "모임 둘러보기 | AI Together",
   description: "AI를 몰라도 즐겁게 참여할 수 있는 작은 모임을 찾아보세요.",
 };
 

@@ -7,8 +7,8 @@ import { submitApplication } from "./actions";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "참가 신청 | AI 같이해요",
-  description: "AI 같이해요 모임에 참가 신청합니다.",
+  title: "참가 신청 | AI Together",
+  description: "AI Together 모임에 참가 신청합니다.",
 };
 
 export default async function ApplyPage({ params }: { params: Promise<{ id: string }> }) {

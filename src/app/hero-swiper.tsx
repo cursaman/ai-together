@@ -26,7 +26,7 @@ export default function HeroSwiper() {
   const move = (direction: number) => setCurrent((index) => (index + direction + slides.length) % slides.length);
 
   return (
-    <div className="hero-swiper" aria-roledescription="carousel" aria-label="AI 같이해요 모임 이미지"
+    <div className="hero-swiper" aria-roledescription="carousel" aria-label="AI Together 모임 이미지"
       onTouchStart={(event) => { touchStart.current = event.touches[0].clientX; }}
       onTouchEnd={(event) => {
         if (touchStart.current === null) return;

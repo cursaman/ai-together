@@ -5,7 +5,7 @@ import { hasAdminSession } from "@/lib/admin-auth";
 import { LoginForm } from "./login-form";
 import styles from "../admin.module.css";
 
-export const metadata: Metadata = { title: "관리자 로그인 | AI 같이해요", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "관리자 로그인 | AI Together", robots: { index: false, follow: false } };
 
 export default async function AdminLoginPage() {
   if (await hasAdminSession()) redirect("/admin/meetings");
@@ -13,7 +13,7 @@ export default async function AdminLoginPage() {
   return (
     <main className={styles.loginShell} id="main-content">
       <section className={styles.loginCard}>
-        <p className={styles.kicker}>AI TOGETHER ADMIN</p>
+        <p className={styles.kicker}>AI Together ADMIN</p>
         <h1>관리자 로그인</h1>
         <p>모임을 등록하고 수정하려면 관리자 비밀번호를 입력해주세요.</p>
         <LoginForm />

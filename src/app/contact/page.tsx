@@ -3,7 +3,7 @@ import Link from "next/link";
 import { InfoShell } from "../info-shell";
 import styles from "../info-page.module.css";
 
-export const metadata: Metadata = { title: "문의·장소 안내 | AI 같이해요", description: "AI 같이해요 교육 장소와 문의 방법을 안내합니다." };
+export const metadata: Metadata = { title: "문의·장소 안내 | AI Together", description: "AI Together 교육 장소와 문의 방법을 안내합니다." };
 
 const daangnUrl = "https://www.daangn.com/kr/group/%EB%B6%80%EC%82%B0-%EC%82%AC%EC%A7%81%EB%8F%99-%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9-%EB%AA%A8%EC%9E%84-vxbz4quk5ntg/";
 const mapUrl = "https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%97%B0%EC%A0%9C%EA%B5%AC%20%EA%B5%90%EB%8C%80%EB%A1%9C24%EB%B2%88%EA%B8%B8%207";

@@ -30,11 +30,11 @@ export async function generateMetadata({ params }: MeetingDetailPageProps): Prom
   const meeting = await getMeetingById(id);
 
   if (!meeting) {
-    return { title: "모임을 찾을 수 없어요 | AI 같이해요" };
+    return { title: "모임을 찾을 수 없어요 | AI Together" };
   }
 
   return {
-    title: `${meeting.title} | AI 같이해요`,
+    title: `${meeting.title} | AI Together`,
     description: meeting.subtitle,
   };
 }

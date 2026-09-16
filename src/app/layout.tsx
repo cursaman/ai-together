@@ -15,7 +15,7 @@ const notoSerifKr = Noto_Serif_KR({
 });
 
 export const metadata: Metadata = {
-  title: "AI 같이해요",
+  title: "AI Together",
   description: "AI 몰라도 괜찮아요. 같이 하나 만들어봐요.",
 };
 
