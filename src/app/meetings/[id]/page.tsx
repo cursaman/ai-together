@@ -128,6 +128,10 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
       </main>
 
       <footer className={styles.footer}><Link className={styles.brand} href="/" aria-label="AI Together 홈"><span>AI</span><span>Together</span></Link><small>© 2026 AI Together</small></footer>
+      <aside className={styles.mobileApplyBar} aria-label="모바일 참가 신청">
+        <div><strong>{meeting.fee}</strong><span>{isUpcoming ? "모집 예정" : isClosed ? "모집 마감" : `${remainingSeats}자리 남음`}</span></div>
+        {isUpcoming || isClosed ? <button type="button" disabled>{isUpcoming ? "모집 예정" : "모집 마감"}</button>:<Link href={`/meetings/${meeting.id}/apply`}>참가 신청하기</Link>}
+      </aside>
     </>
   );
 }
