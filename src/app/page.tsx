@@ -25,6 +25,9 @@ const showcases = [
   { number:"04",title:"EDU 웹개발",type:"EDUCATION",description:"웹 기초부터 React, GitHub와 Vercel 배포까지 단계별로 안내하는 웹개발 교육 홈페이지입니다.",href:"https://edu-two-indol.vercel.app/",image:"/images/showcase/edu-web.png" },
   { number:"05",title:"무비픽",type:"MOVIE API",description:"인기·상영 영화와 프로그램을 탐색하고 취향에 맞는 작품을 검색·보관하는 영화 API 홈페이지입니다.",href:"https://movie-delta-liard.vercel.app/",image:"/images/showcase/movie-pick.png" },
   { number:"06",title:"Trippik",type:"TRAVEL API",description:"날씨와 관광정보, 지도를 활용해 장소를 고르고 나만의 부산 여행 일정을 만드는 홈페이지입니다.",href:"https://cursaman.github.io/trippik/",image:"/images/showcase/trippik.png" },
+  { number:"07",title:"AI Together",type:"AI WORKSHOP",description:"AI 초보자가 이미지·영상·홈페이지·자동화를 직접 만들고 모임까지 신청할 수 있는 교육 홈페이지입니다.",href:"https://ai-together-mu.vercel.app/",image:"/images/showcase/ai-together.png" },
+  { number:"08",title:"AX START",type:"AI LEARNING",description:"AI 핵심 용어를 단계별로 익히고 예시 프로젝트를 따라가며 첫 개발 문서까지 완성하는 학습 홈페이지입니다.",href:"https://aiterminology-rho.vercel.app/",image:"/images/showcase/ai-terminology.png" },
+  { number:"09",title:"what-to-AI",type:"DEVELOPMENT GUIDE",description:"아이디어 정리부터 기능 연결과 배포까지, 처음 만드는 사이트의 전체 과정을 8단계로 안내하는 개발 가이드입니다.",href:"https://what-to-ai.vercel.app/",image:"/images/showcase/what-to-ai.png" },
 ];
 
 export default async function Home() {
