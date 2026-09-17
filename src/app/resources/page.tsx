@@ -8,6 +8,13 @@ export const metadata: Metadata = {
 };
 
 const groups = [
+  { title:"AI·홈페이지 학습", description:"수업 전 기초학습부터 홈페이지 제작과 데이터베이스 실습까지 이어서 배워보세요.", icon:"AI", links:[
+    {name:"AI 기초학습",url:"https://aiterminology-rho.vercel.app/",text:"AI 용어와 핵심 개념부터 첫 프로젝트 설계까지 단계별 학습"},
+    {name:"4주 홈페이지 과정",url:"https://autosites-jd3d.vercel.app/",text:"홈페이지 4주 완성 과정과 수업 장소 안내"},
+    {name:"홈페이지 제작 실습",url:"https://homepages-rosy.vercel.app/",text:"기획부터 제작·배포까지 따라 하는 홈페이지 실습"},
+    {name:"AI 개발 가이드",url:"https://what-to-ai.vercel.app/",text:"AI를 활용한 개발 과정과 작업 방법 안내"},
+    {name:"DB·회원가입 실습",url:"https://what-to-db.vercel.app/",text:"데이터베이스와 회원가입 기능을 연결하는 실습"},
+  ]},
   { title:"디자인 참고 사이트", description:"웹사이트의 색상, 구성과 표현 방법을 찾아보세요.", icon:"✦", links:[
     {name:"Behance",url:"https://www.behance.net/",text:"세계 디자이너들의 웹·그래픽 프로젝트"},
     {name:"디비컷",url:"https://www.dbcut.com/bbs/index.php",text:"국내 웹사이트 디자인 사례"},
@@ -33,7 +40,7 @@ const groups = [
 
 export default function ResourcesPage() {
   return <InfoShell><main className={styles.main} id="main-content">
-    <section className={styles.hero}><p>DESIGN &amp; CODE RESOURCES</p><h1>좋은 결과물을 만드는<br/>든든한 참고자료.</h1><p>홈페이지를 기획하고 제작할 때 활용할 수 있는 디자인, 코딩 문서와 아이콘 사이트를 모았습니다.</p></section>
+    <section className={styles.hero}><p>LEARNING &amp; CREATION RESOURCES</p><h1>배우고 만드는 데 필요한<br/>든든한 참고자료.</h1><p>AI 기초학습부터 홈페이지 제작, 디자인, 코딩 문서와 아이콘 사이트까지 한곳에 모았습니다.</p></section>
     <section className={styles.section} aria-label="참고 사이트 목록">{groups.map((group)=><div className={styles.group} key={group.title}><div className={styles.groupHeading}><span aria-hidden="true">{group.icon}</span><div><h2>{group.title}</h2><p>{group.description}</p></div></div><div className={styles.grid}>{group.links.map((link)=><a href={link.url} target="_blank" rel="noreferrer" key={link.name}><div><strong>{link.name}</strong><p>{link.text}</p></div><span aria-hidden="true">↗</span></a>)}</div></div>)}</section>
     <aside className={styles.notice}><span aria-hidden="true">!</span><div><h2>사용 전에 확인해주세요</h2><p>사이트마다 무료·유료 범위와 출처 표시 조건이 다릅니다. 이미지와 아이콘을 내려받아 사용할 때는 해당 사이트의 라이선스를 먼저 확인해주세요.</p></div></aside>
   </main></InfoShell>;

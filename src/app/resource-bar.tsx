@@ -1,12 +1,12 @@
+import Link from "next/link";
+
 export default function ResourceBar() {
   return (
     <aside className="resource-bar" aria-label="AI 및 홈페이지 교육 안내">
-      <span>홈페이지 만들기가 궁금하신가요?</span>
+      <span>배우고 직접 만들어보세요</span>
       <a href="https://aiterminology-rho.vercel.app/" target="_blank" rel="noreferrer">AI 기초학습 ↗</a>
       <a href="https://autosites-jd3d.vercel.app/" target="_blank" rel="noreferrer">4주 홈페이지 과정 ↗</a>
-      <a href="https://homepages-rosy.vercel.app/" target="_blank" rel="noreferrer">홈페이지 제작 실습 ↗</a>
-      <a href="https://what-to-ai.vercel.app/" target="_blank" rel="noreferrer">AI 개발 가이드 ↗</a>
-      <a href="https://what-to-db.vercel.app/" target="_blank" rel="noreferrer">DB·회원가입 실습 ↗</a>
+      <Link href="/resources">교육자료 전체보기 →</Link>
     </aside>
   );
 }
