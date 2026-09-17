@@ -7,10 +7,10 @@
 .navShell :global(.mobile-menu) nav { margin-left:0; display:grid; gap:2px; color:var(--ink); font-size:.94rem; }
 .activeNav { font-weight: 800; }
 .homeLink { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; }
-.intro { padding: 100px 20px 86px; background: var(--green-dark); color: white; text-align: center; }
-.kicker { margin: 0 0 18px; color: var(--green); font-size: .76rem; font-weight: 800; letter-spacing: .14em; }
-.intro h1 { margin: 0; font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.15; letter-spacing: -.025em; }
-.intro > p:last-child { max-width: 650px; margin: 24px auto 0; color: #eadbea; line-height: 1.8; }
+.intro { width:min(1040px,calc(100% - 40px)); margin:56px auto 0; padding:clamp(42px,7vw,76px); border-radius:12px; background:var(--green-dark); color:white; text-align:left; }
+.kicker { margin:0 0 14px; color:#ffc6dc; font-size:.76rem; font-weight:900; letter-spacing:.14em; }
+.intro h1 { max-width:760px; margin:0; font-size:clamp(2.5rem,6vw,4.8rem); line-height:1.15; letter-spacing:-.025em; }
+.intro > p:last-child { max-width:720px; margin:24px 0 0; color:#eadbea; font-size:1.05rem; line-height:1.8; }
 .mobileBreak { display: none; }
 .listSection { width: min(1120px, calc(100% - 40px)); margin: auto; padding: 60px 0 110px; }
 .courseFilters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
@@ -87,7 +87,7 @@
   .brand { font-size: .92rem; }
   .brand > span:first-child { font-size: 1.02rem; }
   .homeLink { display: none; }
-  .intro { padding: 72px 22px 68px; }
+  .intro { width:calc(100% - 24px); margin-top:28px; padding:42px 26px; border-radius:14px; }
   .mobileBreak { display: block; }
   .listSection { width: calc(100% - 30px); padding-top: 36px; }
   .courseFilters { grid-template-columns: 1fr 1fr; }
