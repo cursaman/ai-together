@@ -3,6 +3,7 @@ import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import HeroSwiper from "./hero-swiper";
 import ResourceBar from "./resource-bar";
+import { getPublishedReviews } from "@/lib/reviews";
 
 const experiences = [
   { image: "/images/meetings/ai-first-step.webp", icon: "📷", title: "AI 이미지·앨범", text: "이미지를 만들고 온라인 앨범으로 완성해요", href: "/meetings?course=1%EC%9D%BC+%EC%B2%B4%ED%97%98&category=%EC%82%AC%EC%A7%84" },
@@ -26,7 +27,9 @@ const showcases = [
   { number:"06",title:"Trippik",type:"TRAVEL API",description:"날씨와 관광정보, 지도를 활용해 장소를 고르고 나만의 부산 여행 일정을 만드는 홈페이지입니다.",href:"https://cursaman.github.io/trippik/" },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const reviews = await getPublishedReviews(3);
+
   return <>
     <ResourceBar />
     <header className="site-header"><div className="nav-shell"><Link className="brand" href="/" aria-label="AI Together 홈"><span className="brand-mark">AI</span><span>Together</span></Link><nav className="desktop-nav" aria-label="주요 메뉴"><Link href="/meetings">모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link><Link href="/resources">참고자료</Link></nav><Link className="nav-cta" href="/meetings">모임 찾기</Link><MobileMenu /></div></header>
@@ -39,6 +42,7 @@ export default function Home() {
       <section className="showcase-section" aria-labelledby="showcase-title"><div className="market-heading"><div><p>PROJECT SHOWCASE</p><h2 id="showcase-title">수업에서 이런 결과물을 만들어요</h2><span>아이디어를 실제로 작동하는 홈페이지까지 발전시킨 대표 샘플입니다.</span></div><Link href="/resources">제작 참고자료 보기 →</Link></div><div className="showcase-grid">{showcases.map((site)=><a href={site.href} target="_blank" rel="noreferrer" key={site.href}><div className="showcase-top"><span>{site.number}</span><small>{site.type}</small></div><h3>{site.title}</h3><p>{site.description}</p><strong>샘플 사이트 보기 ↗</strong></a>)}</div></section>
       <section className="market-section category-market" aria-labelledby="category-title"><div className="market-heading centered"><div><p>DISCOVER YOUR INTEREST</p><h2 id="category-title">좋아하는 것에서 시작하세요</h2></div></div><div className="category-market-grid"><Link href="/meetings?category=%EC%82%AC%EC%A7%84"><span>📷</span><strong>이미지</strong></Link><Link href="/meetings?category=%EC%98%81%EC%83%81"><span>🎬</span><strong>영상</strong></Link><Link href="/meetings?category=%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80"><span>🖥️</span><strong>홈페이지</strong></Link><Link href="/meetings?category=%EC%9E%90%EB%8F%99%ED%99%94"><span>⚡</span><strong>자동화</strong></Link></div></section>
       <section className="how-section" aria-labelledby="how-title"><div className="market-heading centered light"><div><p>HOW TO JOIN</p><h2 id="how-title">처음이어도 이렇게 시작해요</h2></div></div><ol>{steps.map((step) => <li key={step.number}><span>{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol><Link className="button button-light" href="/guide">처음 오신 분 안내 →</Link></section>
+      {reviews.length > 0 ? <section className="home-reviews" aria-labelledby="home-reviews-title"><div className="market-heading"><div><p>REAL REVIEWS</p><h2 id="home-reviews-title">참여자가 직접 들려준 이야기</h2><span>공개에 동의한 실제 참여 후기만 소개합니다.</span></div><Link href="/reviews">전체 후기 보기 →</Link></div><div className="home-review-grid">{reviews.map((review)=><article key={review.id}>{review.result_image_url?<div className="home-review-image" role="img" aria-label={`${review.nickname}님의 결과물`} style={{backgroundImage:`url(${review.result_image_url})`}}/>:<span className="home-review-quote" aria-hidden="true">“</span>}<div><small>{review.ait_meetings?.title??"AI Together 모임"}</small><p>{review.content}</p><strong>{review.nickname}</strong></div></article>)}</div></section>:null}
       <section className="story-section" aria-labelledby="story-title"><div><p>REAL CLASS STORY</p><h2 id="story-title">함께 질문하고 만들며<br />완성하는 수업입니다.</h2><p>노트북으로 직접 실습하고 서로의 아이디어를 나누는 실제 강의 현장입니다. 참여자의 동의를 받은 후기와 완성 결과물도 차곡차곡 소개합니다.</p><Link className="button button-primary" href="/reviews">강의 후기 보기 →</Link></div><div className="story-images"><Image src="/images/class-review.webp" alt="노트북으로 AI 실습을 진행하며 이야기를 나누는 강의 현장" fill sizes="(max-width: 800px) 100vw, 45vw" /></div></section>
       <section className="mission-section"><div><p>OUR MISSION</p><h2>AI를 공부하는 곳보다,<br />AI로 함께 만드는 곳.</h2><p>기술이 낯선 사람도 부담 없이 시작하고, 작더라도 자신의 결과물을 완성할 수 있는 자리를 만듭니다.</p><Link className="text-link" href="/contact">장소와 문의 확인하기 →</Link></div><span aria-hidden="true">✦<br />AI<br />＋<br />YOU</span></section>
     </main>
