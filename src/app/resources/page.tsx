@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { InfoShell } from "../info-shell";
+import SubpageHero from "../subpage-hero";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -40,7 +41,7 @@ const groups = [
 
 export default function ResourcesPage() {
   return <InfoShell><main className={styles.main} id="main-content">
-    <section className={styles.hero}><p>LEARNING &amp; CREATION RESOURCES</p><h1>배우고 만드는 데 필요한<br/>든든한 참고자료.</h1><p>AI 기초학습부터 홈페이지 제작, 디자인, 코딩 문서와 아이콘 사이트까지 한곳에 모았습니다.</p></section>
+    <SubpageHero eyebrow="LEARNING & CREATION RESOURCES" title={<>배우고 만드는 데 필요한<br />든든한 참고자료.</>} description="AI 기초학습부터 홈페이지 제작, 디자인, 코딩 문서와 아이콘 사이트까지 한곳에 모았습니다." image="/images/subpages/resources-hero.png" imageAlt="AI와 웹 제작 참고자료가 정돈된 창작 작업 책상" />
     <section className={styles.section} aria-label="참고 사이트 목록">{groups.map((group)=><div className={styles.group} key={group.title}><div className={styles.groupHeading}><span aria-hidden="true">{group.icon}</span><div><h2>{group.title}</h2><p>{group.description}</p></div></div><div className={styles.grid}>{group.links.map((link)=><a href={link.url} target="_blank" rel="noreferrer" key={link.name}><div><strong>{link.name}</strong><p>{link.text}</p></div><span aria-hidden="true">↗</span></a>)}</div></div>)}</section>
     <aside className={styles.notice}><span aria-hidden="true">!</span><div><h2>사용 전에 확인해주세요</h2><p>사이트마다 무료·유료 범위와 출처 표시 조건이 다릅니다. 이미지와 아이콘을 내려받아 사용할 때는 해당 사이트의 라이선스를 먼저 확인해주세요.</p></div></aside>
   </main></InfoShell>;

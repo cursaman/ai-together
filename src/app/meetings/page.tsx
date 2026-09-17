@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ResourceBar from "../resource-bar";
 import SiteHeader from "../site-header";
+import SubpageHero from "../subpage-hero";
 import { meetingCategories } from "@/data/meetings";
 import { getMeetings } from "@/lib/meetings";
 import styles from "./page.module.css";
@@ -52,11 +53,14 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
       <SiteHeader />
 
       <main id="main-content">
-        <section className={styles.intro}>
-          <p className={styles.kicker}>FIND YOUR TOGETHER</p>
-          <h1>이번에는 뭘<br className={styles.mobileBreak} /> 같이 만들어볼까요?</h1>
-          <p>관심 가는 주제를 골라보세요. 모든 모임은 AI가 처음인 분도 편하게 참여할 수 있어요.</p>
-        </section>
+        <SubpageHero
+          eyebrow="FIND YOUR TOGETHER"
+          title={<>이번에는 뭘<br />같이 만들어볼까요?</>}
+          description="관심 가는 주제를 골라보세요. 모든 모임은 AI가 처음인 분도 편하게 참여할 수 있어요."
+          image="/images/subpages/meetings-hero.png"
+          imageAlt="노트북으로 창작 프로젝트를 함께 만드는 소규모 모임"
+          standalone
+        />
 
         <section className={styles.listSection} aria-labelledby="meeting-list-title">
           <div className={styles.courseFilters} aria-label="과정 유형 필터">
