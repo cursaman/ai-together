@@ -216,6 +216,10 @@ h1,h2,h3 { text-wrap:balance; }
 .visit-section li strong { color:var(--green); }.visit-section li span { color:var(--muted); }
 .visit-visual { min-height:330px; padding:44px; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:var(--green-pale); text-align:center; }
 .visit-visual span { font-size:4rem; }.visit-visual strong { margin-top:14px; font-family:var(--font-display),"Noto Serif KR",serif; font-size:1.8rem; }.visit-visual small { margin-top:8px; color:var(--muted); }
+.visit-menu { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:white; box-shadow:var(--shadow); }
+.visit-menu img { width:100%; height:auto; display:block; }
+.visit-menu figcaption { padding:18px 20px; display:flex; flex-direction:column; gap:4px; }
+.visit-menu figcaption strong { font-size:1rem; }.visit-menu figcaption span { color:var(--muted); font-size:.78rem; }
 .final-cta { padding:90px max(20px,calc((100% - 900px)/2)); background:var(--green-dark); color:white; text-align:center; }
 .final-cta > p { color:#ffc6dc; }.final-cta > span { display:block; max-width:650px; margin:22px auto 30px; color:#e6d8e8; }
 .final-cta > div { display:flex; justify-content:center; gap:10px; }
