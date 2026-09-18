@@ -41,6 +41,21 @@ function formatDate(value: string) {
   }).format(new Date(`${value}T00:00:00`));
 }
 
+function formatMeetingDate(value: string, title: string) {
+  if (!title.includes("4주")) return formatDate(value);
+
+  const start = new Date(`${value}T00:00:00`);
+  const end = new Date(start);
+  end.setDate(end.getDate() + 21);
+  const startLabel = new Intl.DateTimeFormat("ko-KR", { month: "long", day: "numeric" }).format(start);
+  const endLabel = new Intl.DateTimeFormat("ko-KR", {
+    month: start.getMonth() === end.getMonth() ? undefined : "long",
+    day: "numeric",
+  }).format(end);
+
+  return `${startLabel}~${endLabel} (매주 토)`;
+}
+
 function formatTime(value: string) {
   const [hour = "0", minute = "0"] = value.split(":");
   const numericHour = Number(hour);
@@ -65,7 +80,7 @@ function toMeeting(row: MeetingRow): Meeting {
     category: row.category,
     icon: row.icon,
     imageUrl: row.representative_image_url || categoryImages[row.category] || "/images/meetings/ai-first-step.webp",
-    date: formatDate(row.meeting_date),
+    date: formatMeetingDate(row.meeting_date, row.title),
     time: formatTime(row.meeting_time),
     dateValue: row.meeting_date,
     timeValue: row.meeting_time,
