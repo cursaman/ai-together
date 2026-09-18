@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "디자인·코딩 참고자료 | AI Together",
-  description: "홈페이지 디자인, 코딩 문서와 아이콘을 찾을 때 활용할 수 있는 참고 사이트를 안내합니다.",
+  description: "홈페이지 디자인, 코딩 문서, 아이콘과 수업에 활용하는 크롬 확장 프로그램을 안내합니다.",
 };
 
 const groups = [
@@ -15,6 +15,14 @@ const groups = [
     {name:"홈페이지 제작 실습",url:"https://homepages-rosy.vercel.app/",text:"기획부터 제작·배포까지 따라 하는 홈페이지 실습"},
     {name:"AI 개발 가이드",url:"https://what-to-ai.vercel.app/",text:"AI를 활용한 개발 과정과 작업 방법 안내"},
     {name:"DB·회원가입 실습",url:"https://what-to-db.vercel.app/",text:"데이터베이스와 회원가입 기능을 연결하는 실습"},
+  ]},
+  { title:"수업 필수 크롬 확장 프로그램", description:"디자인 분석부터 화면 기록까지 수업에서 바로 활용하는 도구입니다.", icon:"＋", links:[
+    {name:"GoFullPage",url:"https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl",text:"긴 웹페이지 전체를 한 장의 이미지나 PDF로 저장"},
+    {name:"ColorZilla",url:"https://chromewebstore.google.com/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp",text:"웹페이지에서 원하는 색상을 선택해 색상 코드 확인"},
+    {name:"WhatFont",url:"https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm",text:"마우스를 올려 웹사이트에 사용된 글꼴과 스타일 확인"},
+    {name:"VisBug",url:"https://chromewebstore.google.com/detail/visbug/cdockenadnadldjbbgcallicgledbeoc",text:"화면에서 글자·간격·정렬을 직접 바꾸며 디자인 실험"},
+    {name:"Responsive Viewer",url:"https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb",text:"홈페이지를 모바일·태블릿·PC 화면 크기로 동시에 확인"},
+    {name:"Loom",url:"https://chromewebstore.google.com/detail/loom-screen-recorder-sc/liecbddmkiiihnedobmlmillhodjkdmb",text:"화면과 음성을 녹화해 홈페이지 시연 영상 제작"},
   ]},
   { title:"디자인 참고 사이트", description:"웹사이트의 색상, 구성과 표현 방법을 찾아보세요.", icon:"✦", links:[
     {name:"Behance",url:"https://www.behance.net/",text:"세계 디자이너들의 웹·그래픽 프로젝트"},
@@ -41,7 +49,7 @@ const groups = [
 
 export default function ResourcesPage() {
   return <InfoShell><main className={styles.main} id="main-content">
-    <SubpageHero eyebrow="LEARNING & CREATION RESOURCES" title={<>배우고 만드는 데 필요한<br />든든한 참고자료.</>} description="AI 기초학습부터 홈페이지 제작, 디자인, 코딩 문서와 아이콘 사이트까지 한곳에 모았습니다." image="/images/subpages/resources-hero.png" imageAlt="AI와 웹 제작 참고자료가 정돈된 창작 작업 책상" />
+    <SubpageHero eyebrow="LEARNING & CREATION RESOURCES" title={<>배우고 만드는 데 필요한<br />든든한 참고자료.</>} description="AI 기초학습부터 홈페이지 제작, 디자인, 크롬 확장 프로그램과 코딩 문서까지 한곳에 모았습니다." image="/images/subpages/resources-hero.png" imageAlt="AI와 웹 제작 참고자료가 정돈된 창작 작업 책상" />
     <section className={styles.section} aria-label="참고 사이트 목록">{groups.map((group)=><div className={styles.group} key={group.title}><div className={styles.groupHeading}><span aria-hidden="true">{group.icon}</span><div><h2>{group.title}</h2><p>{group.description}</p></div></div><div className={styles.grid}>{group.links.map((link)=><a href={link.url} target="_blank" rel="noreferrer" key={link.name}><div><strong>{link.name}</strong><p>{link.text}</p></div><span aria-hidden="true">↗</span></a>)}</div></div>)}</section>
     <aside className={styles.notice}><span aria-hidden="true">!</span><div><h2>사용 전에 확인해주세요</h2><p>사이트마다 무료·유료 범위와 출처 표시 조건이 다릅니다. 이미지와 아이콘을 내려받아 사용할 때는 해당 사이트의 라이선스를 먼저 확인해주세요.</p></div></aside>
   </main></InfoShell>;
