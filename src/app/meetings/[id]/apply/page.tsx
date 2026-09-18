@@ -18,6 +18,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
 
   const action = submitApplication.bind(null, meeting.id);
   const unavailable = meeting.status === "모집 예정" || meeting.applicants >= meeting.capacity;
+  const isFourWeek = meeting.title.includes("4주");
 
   return (
     <main className={styles.shell} id="main-content">
@@ -32,6 +33,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
             <div><small>{meeting.category} · {meeting.status}</small><h2>{meeting.title}</h2><p>{meeting.date} · {meeting.time}<br />{meeting.location}</p></div>
           </article>
           <ul><li>참가비 {meeting.fee}</li><li>준비물: {meeting.supplies}</li><li>현재 {meeting.applicants}명 신청 · 정원 {meeting.capacity}명</li></ul>
+          {isFourWeek ? <Link className={styles.paymentLink} href="/payment">4주 과정 결제 안내 확인하기 →</Link> : null}
         </section>
         <section className={styles.formCard} aria-labelledby="form-title">
           <div className={styles.formHeading}><p className={styles.kicker}>APPLICATION</p><h2 id="form-title">신청자 정보</h2><p><span>*</span> 표시는 필수 항목이에요.</p></div>

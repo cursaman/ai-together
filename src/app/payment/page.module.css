@@ -1,0 +1,33 @@
+.main { padding: 64px 20px 100px; background: var(--cream-deep); }
+.card { width: min(820px, 100%); margin: auto; padding: clamp(34px, 6vw, 64px); border: 1px solid var(--line); border-radius: 24px; background: white; box-shadow: var(--shadow); }
+.kicker { margin: 0 0 12px; color: var(--green); font-size: .78rem; font-weight: 900; letter-spacing: .12em; }
+.card h1 { margin: 0; font-size: clamp(2.4rem, 7vw, 4.8rem); line-height: 1.1; letter-spacing: -.045em; }
+.intro { max-width: 620px; margin: 20px 0 0; color: var(--muted); line-height: 1.75; }
+.summary { margin: 34px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.summary div { padding: 19px; border: 1px solid var(--line); border-radius: 12px; background: #fffdf9; }
+.summary dt { color: var(--muted); font-size: .78rem; }
+.summary dd { margin: 7px 0 0; font-weight: 850; }
+.summary .fee { border-color: #e3a3bd; background: var(--green-pale); }
+.summary .fee dd { color: var(--green); font-size: 1.2rem; }
+.payment { padding: clamp(24px, 5vw, 36px); border-radius: 18px; background: var(--green-dark); color: white; }
+.payment > div:first-child p { margin: 0 0 8px; color: #ffc6dc; font-size: .7rem; font-weight: 900; letter-spacing: .14em; }
+.payment h2 { margin: 0; font-size: 1.5rem; }
+.bank { margin-top: 24px; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.bank span,.bank small { display: block; color: #eadbea; font-size: .78rem; }
+.bank strong { display: block; margin: 6px 0; font-size: clamp(1.45rem, 5vw, 2rem); letter-spacing: .02em; }
+.copyButton { min-height: 46px; padding: 0 17px; border: 0; border-radius: 9px; background: var(--green); color: white; font: inherit; font-size: .82rem; font-weight: 850; cursor: pointer; }
+.copyButton:hover { background: #cf3976; }
+.payment ul { margin: 24px 0 0; padding: 20px 0 0 20px; border-top: 1px solid rgba(255,255,255,.16); color: #eadbea; font-size: .8rem; line-height: 1.8; }
+.actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+.actions a { min-height: 48px; padding: 0 18px; border: 1px solid var(--green); border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; color: var(--green); font-size: .84rem; font-weight: 850; }
+.actions a:first-child { background: var(--green); color: white; }
+
+@media (max-width: 560px) {
+  .main { padding: 28px 12px 70px; }
+  .card { padding: 30px 20px; border-radius: 18px; }
+  .summary { grid-template-columns: 1fr; }
+  .bank { align-items: stretch; flex-direction: column; }
+  .copyButton { width: 100%; }
+  .actions { flex-direction: column; }
+  .actions a { width: 100%; }
+}
