@@ -105,7 +105,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
             </section>
 
             <section className={styles.notice} aria-labelledby="notice-title">
-              <span aria-hidden="true">🌱</span><div><h2 id="notice-title">부담 없이 오세요</h2><p>개인 노트북과 충전기를 준비해주세요. 사용하는 AI 서비스가 없어도 현장에서 함께 안내합니다.</p></div>
+              <span aria-hidden="true">☕</span><div><h2 id="notice-title">노트북만 챙겨오세요</h2><p>커피와 빵 50,000원은 진행자가 참가비에서 준비합니다. 참가자는 추가 결제 없이 개인 노트북과 충전기만 준비해주세요.</p></div>
             </section>
           </div>
 
