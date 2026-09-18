@@ -31,7 +31,7 @@ export default function SubpageHero({
           alt={imageAlt}
           fill
           priority
-          sizes="(max-width: 700px) calc(100vw - 52px), 420px"
+          sizes="(max-width: 700px) calc(100vw - 52px), (max-width: 1200px) 42vw, 500px"
         />
       </div>
     </section>
