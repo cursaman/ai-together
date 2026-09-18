@@ -16,7 +16,11 @@
   transform: translateX(-50%);
 }
 
-.standalone { width: min(1180px, calc(100vw - 40px)); }
+.standalone {
+  left: auto;
+  width: min(1180px, calc(100vw - 40px));
+  transform: none;
+}
 
 .copy { min-width: 0; }
 .eyebrow { margin: 0 0 14px; color: #ffc6dc; font-size: .76rem; font-weight: 900; letter-spacing: .14em; }
@@ -36,7 +40,11 @@
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .standalone { width: calc(100vw - 24px); }
+  .standalone {
+    left: auto;
+    width: calc(100vw - 24px);
+    transform: none;
+  }
   .copy h1 { font-size: clamp(2.2rem, 11vw, 3.25rem); }
   .description { font-size: .95rem; }
   .artwork { width: 100%; border-radius: 9px; }
