@@ -162,8 +162,8 @@ h1,h2,h3 { text-wrap:balance; }
 @media (max-width:600px) { .hero-arrow { display:none; }.hero-controls { right:50%; bottom:225px; transform:translateX(50%); } }
 
 /* Conversion-focused homepage */
-.conversion-hero { min-height:620px; }
-.conversion-hero .market-hero-copy { padding-bottom:126px; }
+.conversion-hero { min-height:580px; }
+.conversion-hero .market-hero-copy { padding-bottom:116px; }
 .conversion-hero .market-hero-copy h1 { max-width:900px; font-size:clamp(3.4rem,6.2vw,5.5rem); }
 .hero-beginner { display:block; width:max-content; max-width:100%; margin-top:18px; padding:8px 13px; border:1px solid rgba(255,255,255,.38); border-radius:999px; background:rgba(50,17,58,.42); color:white; font-size:.82rem; }
 .hero-choice-card { position:absolute; z-index:6; left:max(20px,calc((100% - 1180px)/2)); bottom:28px; width:min(820px,calc(100% - 40px)); display:grid; grid-template-columns:1fr 1fr; gap:10px; }
