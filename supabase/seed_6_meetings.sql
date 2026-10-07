@@ -41,7 +41,7 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  10000,
+  15000,
   '모집 중',
   'green'
 ),
@@ -60,7 +60,7 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  10000,
+  15000,
   '모집 중',
   'coral'
 ),
@@ -79,7 +79,7 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  10000,
+  15000,
   '모집 중',
   'blue'
 ),
@@ -98,7 +98,7 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  10000,
+  15000,
   '모집 중',
   'yellow'
 ),
