@@ -14,12 +14,12 @@ type MeetingDetailPageProps = {
 };
 
 const activityByCategory: Record<string, string[]> = {
-  사진: ["원하는 분위기를 말로 표현하기", "AI로 이미지 만들어보기", "결과를 함께 보고 다듬기"],
-  글쓰기: ["쓰고 싶은 이야기 찾기", "AI와 첫 문장 시작하기", "나만의 표현으로 다듬기"],
+  사진: ["상품·서비스 사진과 가게 분위기 정리하기", "AI로 홍보 이미지·소개 문구 만들기", "실제 상품 정보와 다른 부분 확인하기"],
+  글쓰기: ["고객이 궁금해하는 주제 찾기", "AI와 블로그 글 초안 작성하기", "실제 경험·사진·문의 정보를 넣어 다듬기"],
   여행: ["가고 싶은 여행 이야기하기", "AI와 일정 초안 만들기", "내 취향에 맞게 계획 완성하기"],
-  영상: ["재미있는 소재 찾기", "30초 장면 구성하기", "서로의 아이디어 나누기"],
-  홈페이지: ["담고 싶은 내용 정하기", "한 페이지 구성 만들기", "내 화면을 직접 완성하기"],
-  자동화: ["반복하는 일 찾아보기", "AI 활용 방법 함께 설계하기", "작은 자동화 흐름 완성하기"],
+  영상: ["가게와 서비스의 강점 정리하기", "짧은 홍보 영상의 대본과 장면 만들기", "상품 정보와 문의 안내 점검하기"],
+  홈페이지: ["서비스·가격·위치·문의 정보 정리하기", "가게 홈페이지 제작·모바일 화면 점검하기", "공개 후 직접 수정하고 운영하기"],
+  자동화: ["블로그·홍보 콘텐츠 주제 정리하기", "글·이미지·영상 초안 제작 흐름 만들기", "사실 확인 후 직접 수정하고 게시하기"],
 };
 
 export function generateStaticParams() {
@@ -86,26 +86,27 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
             <section aria-labelledby="introduction-title">
               <p className={styles.kicker}>ABOUT THIS MEETING</p>
               <h2 id="introduction-title">이런 모임이에요</h2>
-              <p>관심 있는 주제로 직접 만들고 막힌 부분을 함께 해결하는 모임입니다. 원하는 날짜에 1회씩 참여하며, 프로젝트 모임은 이어지는 작업에 필요한 경험과 이전 진행 내용을 먼저 문의해주세요.</p>
+              <p>{meeting.summary || "소상공인·개인사업자가 내 가게의 블로그와 홈페이지를 직접 만드는 모임입니다. 필요한 작업부터 시작하고 프로젝트 모임의 이전 진행 내용은 먼저 문의해주세요."}</p>
               <div className={styles.quote}>“잘해야 참여하는 모임이 아니라,<br />함께 해보기 위해 모이는 자리예요.”</div>
             </section>
 
             <section aria-labelledby="activity-title">
               <p className={styles.kicker}>WHAT WE DO</p>
               <h2 id="activity-title">함께 이렇게 해봐요</h2>
+              {meeting.description ? <p className={styles.sessionDescription}>{meeting.description}</p> : null}
               <ol className={styles.activities}>
                 {activities.map((activity, index) => <li key={activity}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{activity}</strong><p>진행자와 참가자들이 천천히 이야기하며 함께 해봅니다.</p></div></li>)}
               </ol>
             </section>
 
             <section aria-labelledby="beginner-title">
-              <p className={styles.kicker}>FOR BEGINNERS</p>
+              <p className={styles.kicker}>FOR YOUR BUSINESS</p>
               <h2 id="beginner-title">이런 분께 잘 맞아요</h2>
-              <ul className={styles.checkList}><li>AI가 궁금하지만 어디서 시작할지 모르겠는 분</li><li>강의보다 직접 만들어보며 배우고 싶은 분</li><li>비슷한 관심사를 가진 사람과 편하게 이야기하고 싶은 분</li><li>작더라도 내 손으로 결과물을 완성해보고 싶은 분</li></ul>
+              <ul className={styles.checkList}><li>내 가게의 블로그·홈페이지를 직접 만들고 싶은 분</li><li>상품·서비스 소개 글과 홍보 사진을 준비하고 싶은 분</li><li>외주 이후에도 홈페이지 내용을 직접 수정하고 싶은 분</li><li>사업을 준비하며 소개 페이지가 필요한 예비 창업자</li></ul>
             </section>
 
             <section className={styles.notice} aria-labelledby="notice-title">
-              <span aria-hidden="true">☕</span><div><h2 id="notice-title">노트북만 챙겨오세요</h2><p>참가비는 회당 10,000원입니다. 음료는 각자 주문하고 카페에 직접 결제해주세요. 개인 노트북과 충전기를 준비하고, 프로젝트 모임은 이전 진행 내용과 준비 사항을 참여 전에 확인해주세요.</p></div>
+              <span aria-hidden="true">☕</span><div><h2 id="notice-title">가게 자료와 노트북을 준비해주세요</h2><p>참가비는 회당 10,000원입니다. 음료는 각자 주문하고 카페에 직접 결제해주세요. 가게 소개·상품 사진·개인 노트북과 충전기를 준비하고, 프로젝트 모임은 이전 진행 내용과 준비 사항을 참여 전에 확인해주세요.</p></div>
             </section>
           </div>
 
@@ -124,7 +125,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
           </aside>
         </div>
 
-        <section className={styles.bottomBanner}><div><p className={styles.kicker}>MORE TOGETHER</p><h2>다른 모임도 둘러보세요</h2><p>사진부터 여행, 글쓰기, 홈페이지까지 재미있는 주제가 기다리고 있어요.</p></div><Link href="/meetings">모든 모임 보기 →</Link></section>
+        <section className={styles.bottomBanner}><div><p className={styles.kicker}>MORE TOGETHER</p><h2>다른 모임도 둘러보세요</h2><p>블로그 글, 홍보 이미지, 홈페이지 중 내 사업에 필요한 작업을 골라보세요.</p></div><Link href="/meetings">모든 모임 보기 →</Link></section>
       </main>
 
       <footer className={styles.footer}><Link className={styles.brand} href="/" aria-label="AI Together 홈"><span>AI</span><span>Together</span></Link><small>© 2026 AI Together</small></footer>

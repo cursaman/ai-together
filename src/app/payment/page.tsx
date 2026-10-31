@@ -16,13 +16,13 @@ export default function PaymentPage() {
       <main className={styles.main} id="main-content">
         <section className={styles.card} aria-labelledby="payment-title">
           <p className={styles.kicker}>회차별 참여 안내</p>
-          <h1 id="payment-title">AI로 실제 결과물<br />하나 완성하기</h1>
-          <p className={styles.intro}>원하는 날짜의 모임을 1회씩 신청합니다. 주제 실습과 프로젝트 모임 모두 참가비는 회당 10,000원이며 음료는 각자 주문·결제합니다.</p>
+          <h1 id="payment-title">내 가게 홍보 자료,<br />직접 만들어보기</h1>
+          <p className={styles.intro}>내 가게의 블로그 글·사진·홈페이지를 만드는 모임을 날짜별로 1회씩 신청합니다. 주제 실습과 프로젝트 모임 모두 참가비는 회당 10,000원이며 음료는 각자 주문·결제합니다.</p>
 
           <dl className={styles.summary}>
             <div><dt>참여 방식</dt><dd>날짜별 1회 신청</dd></div>
             <div><dt>진행 시간</dt><dd>1회 2시간</dd></div>
-            <div><dt>준비물</dt><dd>개인 노트북 · 충전기</dd></div>
+            <div><dt>준비물</dt><dd>개인 노트북 · 충전기 · 가게 자료</dd></div>
             <div className={styles.fee}><dt>참가비</dt><dd>1인·1회 10,000원</dd></div>
           </dl>
 

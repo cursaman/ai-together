@@ -308,3 +308,7 @@ body { background-image: radial-gradient(ellipse at 0 0, rgba(213,163,75,.09), t
 .cohort-grid .showcase-top > span { font-family:inherit; font-size:.82rem; }
 .cohort-grid p { display:block; overflow:visible; -webkit-line-clamp:unset; }
 @media (max-width:600px) { .cohort-section { padding-top:60px; padding-bottom:0; } }
+
+/* Business-focused headline stays clear of the session links. */
+.conversion-hero .market-hero-copy h1 { max-width:880px; font-size:clamp(2.7rem,5.4vw,5rem); line-height:1.12; }
+@media (max-width:700px) { .conversion-hero .market-hero-copy h1 { font-size:clamp(2rem,8vw,3.3rem); } }

@@ -4,6 +4,8 @@ export type Meeting = {
   id: string;
   title: string;
   subtitle: string;
+  summary?: string;
+  description?: string;
   category: string;
   icon: string;
   imageUrl: string;

@@ -16,7 +16,7 @@ const notoSerifKr = Noto_Serif_KR({
 
 export const metadata: Metadata = {
   title: "AI Together",
-  description: "AI 몰라도 괜찮아요. 같이 하나 만들어봐요.",
+  description: "부산 소상공인·개인사업자를 위한 AI 홍보 실습 모임. 내 가게의 블로그 글과 홈페이지를 직접 만들고 운영합니다. 회당 10,000원, 음료 개별 결제.",
 };
 
 export default function RootLayout({

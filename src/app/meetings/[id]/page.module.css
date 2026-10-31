@@ -111,3 +111,5 @@
   .mobileApplyBar > a,.mobileApplyBar > button { min-width:142px; min-height:50px; padding:0 18px; border:0; border-radius:9px; display:grid; place-items:center; background:var(--green); color:white; font:inherit; font-size:.88rem; font-weight:900; }
   .mobileApplyBar > button { background:#9aaba2; cursor:not-allowed; }
 }
+
+.sessionDescription { white-space:pre-line; color:var(--muted); line-height:1.9; margin:0 0 28px; }

@@ -35,9 +35,9 @@ export function ApplicationForm({ action }: ApplicationFormProps) {
       </div>
 
       <div className={styles.field}>
-        <label htmlFor="message">남기실 말 <small>선택</small></label>
-        <textarea id="message" name="message" rows={5} maxLength={500} aria-invalid={Boolean(state.errors?.message)} aria-describedby={state.errors?.message ? "message-error" : "message-help"} placeholder="기대하는 점이나 궁금한 점을 편하게 적어주세요." />
-        <p className={styles.help} id="message-help">최대 500자</p>
+        <label htmlFor="message">업종·만들고 싶은 홍보 자료 <small>선택</small></label>
+        <textarea id="message" name="message" rows={5} maxLength={500} aria-invalid={Boolean(state.errors?.message)} aria-describedby={state.errors?.message ? "message-error" : "message-help"} placeholder="예: 동네 꽃집을 운영합니다. 가게 소개 블로그 글과 주문 문의가 가능한 홈페이지를 만들고 싶어요. AI 사용 경험도 알려주세요." />
+        <p className={styles.help} id="message-help">가게 이름·업종, 필요한 작업, 기존 블로그·홈페이지 주소와 AI 사용 경험을 적어주세요. 비밀번호는 입력하지 마세요. 최대 500자</p>
         {state.errors?.message ? <p className={styles.error} id="message-error">{state.errors.message}</p> : null}
       </div>
 

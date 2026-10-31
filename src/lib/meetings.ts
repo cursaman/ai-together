@@ -9,6 +9,8 @@ type MeetingRow = {
   id: string;
   title: string;
   subtitle: string;
+  summary: string;
+  description: string;
   category: string;
   icon: string;
   representative_image_url: string | null;
@@ -62,6 +64,8 @@ function toMeeting(row: MeetingRow): Meeting {
     id: row.id,
     title: row.title,
     subtitle: row.subtitle,
+    summary: row.summary,
+    description: row.description,
     category: row.category,
     icon: row.icon,
     imageUrl: row.representative_image_url || categoryImages[row.category] || "/images/meetings/ai-first-step.webp",
@@ -88,7 +92,7 @@ export async function getMeetings(): Promise<Meeting[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("ait_meetings")
-    .select("id,title,subtitle,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,supplies,capacity,current_applicants,fee,recruitment_status,color")
+    .select("id,title,subtitle,summary,description,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,supplies,capacity,current_applicants,fee,recruitment_status,color")
     .order("meeting_date", { ascending: true });
 
   if (error) {
@@ -108,7 +112,7 @@ export async function getMeetingById(id: string): Promise<Meeting | undefined> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("ait_meetings")
-    .select("id,title,subtitle,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,supplies,capacity,current_applicants,fee,recruitment_status,color")
+    .select("id,title,subtitle,summary,description,category,icon,representative_image_url,meeting_date,meeting_time,location,difficulty,supplies,capacity,current_applicants,fee,recruitment_status,color")
     .eq("id", id)
     .maybeSingle();
 

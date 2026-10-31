@@ -9,7 +9,6 @@ const slides = [
   { src: "/images/meetings/short-video-ideas.webp", alt: "AI 숏폼 동영상 만들기 체험" },
   { src: "/images/meetings/one-page-site.webp", alt: "나만의 홈페이지 만들기 체험" },
   { src: "/images/meetings/easy-automation.webp", alt: "AI 콘텐츠 자동화 체험" },
-  { src: "/images/meetings/travel-with-ai.webp", alt: "AI와 함께 여행 계획 만들기" },
 ];
 
 export default function HeroSwiper() {

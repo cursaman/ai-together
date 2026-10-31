@@ -11,7 +11,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "모임 둘러보기 | AI Together",
-  description: "AI를 몰라도 즐겁게 참여할 수 있는 작은 모임을 찾아보세요.",
+  description: "소상공인·개인사업자를 위한 블로그 글, 홍보 이미지와 홈페이지 제작 실습을 찾아보세요.",
 };
 
 type MeetingsPageProps = {
@@ -54,8 +54,8 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
       <main id="main-content">
         <SubpageHero
           eyebrow="FIND YOUR TOGETHER"
-          title={<>이번에는 뭘<br />같이 만들어볼까요?</>}
-          description="회당 10,000원으로 원하는 날짜에 참여하세요. 음료는 개별 결제하며, 프로젝트 모임은 이전 진행 내용을 확인해주세요."
+          title={<>내 가게에 필요한<br />홍보 작업을 골라요.</>}
+          description="블로그 글·가게 사진·홈페이지를 직접 만드는 모임입니다. 회당 10,000원, 음료 개별 결제이며 프로젝트 모임은 이전 진행 내용을 확인해주세요."
           image="/images/subpages/meetings-hero.png"
           imageAlt="노트북으로 창작 프로젝트를 함께 만드는 소규모 모임"
           standalone
@@ -123,12 +123,12 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
 
         <section className={styles.guideBanner}>
           <div><span aria-hidden="true">🌱</span><div><strong>어떤 모임을 골라야 할지 고민되나요?</strong><p>처음 참여하는 분을 위한 안내를 먼저 읽어보세요.</p></div></div>
-          <Link href="/guide">초보자 안내 보기 →</Link>
+          <Link href="/guide">참여·준비물 안내 →</Link>
         </section>
       </main>
 
       <footer className={styles.footer}>
-        <div><Link className={styles.brand} href="/" aria-label="AI Together 홈"><span>AI</span><span>Together</span></Link><p>AI로 재미있는 것을 같이 만들어보는 모임</p></div>
+        <div><Link className={styles.brand} href="/" aria-label="AI Together 홈"><span>AI</span><span>Together</span></Link><p>내 가게의 블로그·홈페이지를 AI로 함께 만드는 모임</p></div>
         <small>© 2026 AI Together</small>
       </footer>
     </>
