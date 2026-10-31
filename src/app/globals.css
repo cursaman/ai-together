@@ -294,3 +294,17 @@ body { background-image: radial-gradient(ellipse at 0 0, rgba(213,163,75,.09), t
 }
 
 @media (max-width:700px) { :root { --page-gutter:12px; } }
+
+/* Text-based project covers identify the brands; these are not site screenshots. */
+.cohort-section { padding-top:80px; padding-bottom:10px; }
+.cohort-cover { position:relative; min-height:210px; margin:-26px -26px 22px; padding:25px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; color:#fff; }
+.cohort-cover::after { content:""; position:absolute; right:-32px; bottom:-70px; width:200px; height:200px; border:1px solid rgba(255,255,255,.18); border-radius:50%; pointer-events:none; }
+.cohort-cover > span { font-size:.68rem; letter-spacing:.13em; opacity:.85; }
+.cohort-cover b { font-family:var(--font-display),serif; font-size:2.45rem; line-height:1.3; letter-spacing:.02em; }
+.cohort-cover small { font-size:.8rem; }
+.cohort-cover-craft { background:linear-gradient(125deg,#382b23,#745438); }
+.cohort-cover-golf { background:linear-gradient(125deg,#173d32,#386250); }
+.cohort-cover-industry { background:linear-gradient(125deg,#182c49,#325b7b); }
+.cohort-grid .showcase-top > span { font-family:inherit; font-size:.82rem; }
+.cohort-grid p { display:block; overflow:visible; -webkit-line-clamp:unset; }
+@media (max-width:600px) { .cohort-section { padding-top:60px; padding-bottom:0; } }
