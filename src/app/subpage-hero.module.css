@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   left: 50%;
-  width: min(1180px, calc(100vw - 40px));
+  width: min(var(--page-width), calc(100vw - var(--page-gutter) * 2));
   min-height: 500px;
   margin: 56px auto 0;
   padding: clamp(44px, 5vw, 64px);
@@ -18,7 +18,7 @@
 
 .standalone {
   left: auto;
-  width: min(1180px, calc(100vw - 40px));
+  width: min(var(--page-width), calc(100vw - var(--page-gutter) * 2));
   transform: none;
 }
 
@@ -32,7 +32,7 @@
 @media (max-width: 700px) {
   .hero {
     left: 50%;
-    width: calc(100vw - 24px);
+    width: calc(100vw - var(--page-gutter) * 2);
     min-height: 0;
     margin-top: 28px;
     padding: 36px 26px 26px;
@@ -42,7 +42,7 @@
   }
   .standalone {
     left: auto;
-    width: calc(100vw - 24px);
+    width: calc(100vw - var(--page-gutter) * 2);
     transform: none;
   }
   .copy h1 { font-size: clamp(2.2rem, 11vw, 3.25rem); }

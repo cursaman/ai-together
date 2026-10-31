@@ -1,11 +1,11 @@
 .shell,
 .completeShell {
   min-height: 100vh;
-  padding: 55px max(20px, 4vw) 90px;
+  padding: 55px var(--page-gutter) 90px;
   background: var(--cream-deep);
 }
-.back { display: block; width: min(1050px, 100%); margin: 0 auto 25px; color: var(--green); font-size: .86rem; font-weight: 800; }
-.layout { width: min(1050px, 100%); margin: auto; display: grid; grid-template-columns: .85fr 1.15fr; overflow: hidden; border-radius: 30px; background: white; box-shadow: var(--shadow); }
+.back { display: block; width: min(var(--page-width), 100%); margin: 0 auto 25px; color: var(--green); font-size: .86rem; font-weight: 800; }
+.layout { width: min(var(--page-width), 100%); margin: auto; display: grid; grid-template-columns: .85fr 1.15fr; overflow: hidden; border-radius: 30px; background: white; box-shadow: var(--shadow); }
 .intro { padding: 64px 52px; background: var(--green); color: white; }
 .kicker { margin: 0 0 14px; color: #f3c784; font-size: .75rem; font-weight: 900; letter-spacing: .12em; }
 .intro h1 { margin: 0; font-size: clamp(2.6rem, 5vw, 4.2rem); line-height:1.15; letter-spacing: -.025em; }
@@ -90,7 +90,7 @@
 
 @media (max-width: 520px) {
   .shell,
-  .completeShell { padding: 28px 15px 60px; }
+  .completeShell { padding: 28px var(--page-gutter) 60px; }
   .layout { border-radius: 22px; }
   .intro,
   .formCard { padding: 38px 24px; }

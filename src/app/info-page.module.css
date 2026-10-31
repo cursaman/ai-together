@@ -1,4 +1,4 @@
-.main { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 0 0 40px; }
+.main { width: min(var(--page-width), calc(100% - var(--page-gutter) * 2)); margin: 0 auto; padding: 0 0 40px; }
 .hero { margin-top:56px; padding:clamp(42px,7vw,76px); border-radius:12px; background:var(--green-dark); color:white; }
 .hero p:first-child, .sectionKicker { margin: 0 0 14px; color: #f3c784; font-size: .76rem; font-weight: 900; letter-spacing: .14em; }
 .sectionKicker { color:var(--green); }
@@ -39,7 +39,7 @@
 .reviewCard strong { font-size:.9rem; }
 
 @media (max-width: 700px) {
-  .main { width: calc(100% - 24px); }
+  .main { width: calc(100% - var(--page-gutter) * 2); }
   .hero { margin-top:28px; padding:42px 26px; border-radius:14px; }
   .grid, .steps, .contactGrid, .reviewGrid { grid-template-columns: 1fr; }
   .section { padding: 58px 0; }

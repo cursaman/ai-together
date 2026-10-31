@@ -1,12 +1,12 @@
 .adminShell, .loginShell { min-height: 100vh; background: var(--cream-deep); }
-.adminHeader { min-height: 70px; padding: 0 max(24px, calc((100% - 1120px) / 2)); border-bottom: 1px solid var(--line); background: white; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.adminHeader { min-height: 70px; padding: 0 max(var(--page-gutter), calc((100% - var(--page-width)) / 2)); border-bottom: 1px solid var(--line); background: white; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .adminBrand { display:inline-flex; align-items:baseline; gap:5px; color:var(--ink); font-size:1rem; font-weight:800; letter-spacing:-.025em; white-space:nowrap; }
 .adminBrand .adminBrandAi { color:var(--green); font-size:1.12rem; font-weight:900; letter-spacing:-.04em; }
 .adminBrand .adminBadge { margin-left:5px; padding:4px 7px; border-radius:999px; background:var(--green-pale); color:var(--green); font-size:.68rem; font-weight:800; letter-spacing:0; }
 .adminHeader nav { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: .85rem; font-weight: 700; }
 .adminHeader form { margin: 0; }
 .adminHeader button { border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
-.adminMain { width: min(1120px, calc(100% - 40px)); margin: auto; padding: 64px 0 100px; }
+.adminMain { width: min(var(--page-width), calc(100% - var(--page-gutter) * 2)); margin: auto; padding: 64px 0 100px; }
 .pageHeading { margin-bottom: 32px; display: flex; align-items: end; justify-content: space-between; gap: 24px; }
 .pageHeading h1, .formHeading h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 3.5rem); line-height:1.15; letter-spacing: -.025em; }
 .pageHeading div > p:last-child, .formHeading > p:last-child { margin: 12px 0 0; color: var(--muted); }
@@ -126,7 +126,7 @@
   .adminHeader nav { overflow-x: auto; width: 100%; gap: 8px; flex-wrap: nowrap; justify-content: flex-start; scrollbar-width: none; }
   .adminHeader nav a,
   .adminHeader nav button { min-height: 44px; padding: 0 11px; display: inline-flex; align-items: center; white-space: nowrap; }
-  .adminMain { width: calc(100% - 30px); padding-top: 45px; }
+  .adminMain { width: calc(100% - var(--page-gutter) * 2); padding-top: 45px; }
   .pageHeading { align-items: stretch; flex-direction: column; }
   .primaryLink { text-align: center; }
   .formGrid { grid-template-columns: 1fr; }
