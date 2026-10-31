@@ -48,7 +48,7 @@ export default async function Home() {
     <main id="main-content">
       <section className="market-hero conversion-hero" aria-labelledby="hero-title">
         <HeroSwiper /><div className="market-hero-shade" />
-        <div className="market-hero-copy"><p>완전 초보를 위한 소규모 AI 실습</p><h1 id="hero-title">AI로 만들고,<br />내 것으로 완성해요.</h1><span>AI로 사진도 만들고, 홈페이지도 만들고, 나만의 작은 서비스를 직접 만들어봅니다.</span><strong className="hero-beginner">코딩 몰라도 OK · 노트북만 준비</strong></div>
+        <div className="market-hero-copy"><p>가을에 만나는, 소규모 AI 창작 모임</p><h1 id="hero-title">AI로 만들고,<br />내 것으로 완성해요.</h1><span>AI로 사진도 만들고, 홈페이지도 만들고, 나만의 작은 서비스를 직접 만들어봅니다.</span><strong className="hero-beginner">코딩 몰라도 OK · 노트북만 준비</strong></div>
         <div className="hero-choice-card" aria-label="과정 바로 신청"><Link href={oneDayApplyHref}><span>가볍게 경험하기</span><strong>1일 체험 신청</strong><small>15시–17시 · 2시간 · 15,000원</small></Link><Link href={fourWeekApplyHref}><span>내 결과물 완성하기</span><strong>4주 과정 신청</strong><small>18시–20시 · 총 8시간 · 80,000원</small></Link></div>
       </section>
 

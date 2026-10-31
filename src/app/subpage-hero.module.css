@@ -23,10 +23,10 @@
 }
 
 .copy { min-width: 0; }
-.eyebrow { margin: 0 0 14px; color: #ffc6dc; font-size: .76rem; font-weight: 900; letter-spacing: .14em; }
+.eyebrow { margin: 0 0 14px; color: #f3c784; font-size: .76rem; font-weight: 900; letter-spacing: .14em; }
 .copy h1 { margin: 0; font-size: clamp(2.25rem, 4.8vw, 4.25rem); line-height: 1.15; letter-spacing: -.025em; }
-.description { max-width: 590px; margin: 24px 0 0; color: #eadbea; font-size: 1.02rem; line-height: 1.8; }
-.artwork { position: relative; aspect-ratio: 8 / 5; overflow: hidden; border-radius: 12px; background: #f4d9df; box-shadow: 0 20px 48px rgba(19, 4, 23, .28); }
+.description { max-width: 590px; margin: 24px 0 0; color: #eadbc9; font-size: 1.02rem; line-height: 1.8; }
+.artwork { position: relative; aspect-ratio: 8 / 5; overflow: hidden; border-radius: 12px; background: #ead7bc; box-shadow: 0 20px 48px rgba(40, 23, 12, .28); }
 .artwork img { object-fit: cover; }
 
 @media (max-width: 700px) {

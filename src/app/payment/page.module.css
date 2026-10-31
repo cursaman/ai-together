@@ -10,14 +10,14 @@
 .summary .fee { border-color: #e3a3bd; background: var(--green-pale); }
 .summary .fee dd { color: var(--green); font-size: 1.2rem; }
 .payment { padding: clamp(24px, 5vw, 36px); border-radius: 18px; background: var(--green-dark); color: white; }
-.payment > div:first-child p { margin: 0 0 8px; color: #ffc6dc; font-size: .7rem; font-weight: 900; letter-spacing: .14em; }
+.payment > div:first-child p { margin: 0 0 8px; color: #f3c784; font-size: .7rem; font-weight: 900; letter-spacing: .14em; }
 .payment h2 { margin: 0; font-size: 1.5rem; }
 .bank { margin-top: 24px; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
-.bank span,.bank small { display: block; color: #eadbea; font-size: .78rem; }
+.bank span,.bank small { display: block; color: #eadbc9; font-size: .78rem; }
 .bank strong { display: block; margin: 6px 0; font-size: clamp(1.45rem, 5vw, 2rem); letter-spacing: .02em; }
 .copyButton { min-height: 46px; padding: 0 17px; border: 0; border-radius: 9px; background: var(--green); color: white; font: inherit; font-size: .82rem; font-weight: 850; cursor: pointer; }
 .copyButton:hover { background: #cf3976; }
-.payment ul { margin: 24px 0 0; padding: 20px 0 0 20px; border-top: 1px solid rgba(255,255,255,.16); color: #eadbea; font-size: .8rem; line-height: 1.8; }
+.payment ul { margin: 24px 0 0; padding: 20px 0 0 20px; border-top: 1px solid rgba(255,255,255,.16); color: #eadbc9; font-size: .8rem; line-height: 1.8; }
 .actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
 .actions a { min-height: 48px; padding: 0 18px; border: 1px solid var(--green); border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; color: var(--green); font-size: .84rem; font-weight: 850; }
 .actions a:first-child { background: var(--green); color: white; }

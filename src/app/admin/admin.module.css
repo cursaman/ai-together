@@ -39,7 +39,7 @@
 .field label, .loginForm label { font-size: .82rem; font-weight: 800; }
 .field input, .field select, .field textarea, .loginForm input { width: 100%; padding: 13px 14px; border: 1px solid var(--line); border-radius: 11px; background: #fffdf9; color: var(--ink); font: inherit; }
 .field textarea { resize: vertical; }
-.field input:focus, .field select:focus, .field textarea:focus, .loginForm input:focus { border-color: var(--green); outline: 3px solid rgba(185,45,104,.12); }
+.field input:focus, .field select:focus, .field textarea:focus, .loginForm input:focus { border-color: var(--green); outline: 3px solid rgba(166,71,40,.12); }
 .error, .formMessage { margin: 0; color: #b53d2a; font-size: .76rem; font-weight: 700; }
 .loginShell { padding: 70px 20px; display: grid; place-items: center; }
 .loginCard { width: min(460px, 100%); padding: clamp(30px, 7vw, 50px); border-radius: 24px; background: white; box-shadow: var(--shadow); }
@@ -53,7 +53,7 @@
 .applicationSearch label { font-size:.78rem; font-weight:800; }
 .applicationSearch > div { display:flex; gap:8px; }
 .applicationSearch input { min-width:0; flex:1; padding:12px 14px; border:1px solid var(--line); border-radius:9px; background:white; color:var(--ink); font:inherit; }
-.applicationSearch input:focus { border-color:var(--green); outline:3px solid rgba(185,45,104,.12); }
+.applicationSearch input:focus { border-color:var(--green); outline:3px solid rgba(166,71,40,.12); }
 .applicationSearch button,.applicationSearch a { min-height:46px; padding:0 17px; border:0; border-radius:9px; display:inline-flex; align-items:center; justify-content:center; background:var(--green); color:white; font:inherit; font-weight:800; cursor:pointer; }
 .applicationSearch a { border:1px solid var(--line); background:white; color:var(--muted); }
 .applicationSummary { padding:12px 13px 12px 17px; border:1px solid var(--line); border-radius:10px; display:flex; align-items:center; justify-content:space-between; gap:24px; background:white; color:var(--muted); font-size:.84rem; }
@@ -87,7 +87,7 @@
 .success { color: var(--green); font-weight: 700; }
 .dashboardGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
 .dashboardCard { min-height:230px; padding:25px; border:1px solid var(--line); border-top:5px solid var(--green); border-radius:12px; display:flex; flex-direction:column; background:white; transition:transform .2s ease,box-shadow .2s ease; }
-.dashboardCard:hover { box-shadow:0 14px 32px rgba(50,17,58,.08); transform:translateY(-2px); }
+.dashboardCard:hover { box-shadow:0 14px 32px rgba(69,43,24,.08); transform:translateY(-2px); }
 .dashboardCard>span { color:var(--muted); font-size:.78rem; font-weight:800; }
 .dashboardCard>strong { margin:22px 0 8px; font-family:var(--font-display),"Noto Serif KR",serif; font-size:3.4rem; line-height:1; }
 .dashboardCard>strong small { margin-left:5px; font-family:inherit; font-size:1rem; }
