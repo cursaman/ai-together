@@ -32,7 +32,7 @@ insert into public.ait_meetings (
   '사진',
   '📷',
   '/images/meetings/ai-first-step.webp',
-  'AI로 이미지를 만들고 한 페이지 앨범 홈페이지에 직접 올리는 1일 체험입니다.',
+  'AI로 이미지를 만들고 한 페이지 앨범 홈페이지에 직접 올리는 주제 실습입니다.',
   E'이미지 생성 AI의 기본 사용법과 프롬프트 작성법을 익힙니다.\n원하는 주제의 이미지를 만들고 수정한 뒤, 준비된 홈페이지 틀에 적용합니다.\n수업이 끝나면 휴대전화에서도 볼 수 있는 나만의 온라인 앨범 홈페이지를 완성합니다.',
   date '2026-11-07',
   time '15:00',
@@ -41,7 +41,7 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  15000,
+  10000,
   '모집 중',
   'green'
 ),
@@ -51,7 +51,7 @@ insert into public.ait_meetings (
   '영상',
   '🎬',
   '/images/meetings/short-video-ideas.webp',
-  'AI로 짧은 동영상을 제작하고 영상이 재생되는 홈페이지를 만드는 1일 체험입니다.',
+  'AI로 짧은 동영상을 제작하고 영상이 재생되는 홈페이지를 만드는 주제 실습입니다.',
   E'영상 주제와 짧은 장면을 기획하고 AI로 이미지와 동영상을 만듭니다.\n완성한 영상을 준비된 홈페이지에 넣고 제목, 소개 문구와 버튼을 수정합니다.\n수업이 끝나면 나만의 영상이 담긴 한 페이지 홈페이지를 완성합니다.',
   date '2026-11-14',
   time '15:00',
@@ -60,7 +60,7 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  15000,
+  10000,
   '모집 중',
   'coral'
 ),
@@ -70,7 +70,7 @@ insert into public.ait_meetings (
   '홈페이지',
   '🎞️',
   '/images/meetings/one-page-site.webp',
-  'API를 이용해 영화 정보와 포스터를 보여주는 홈페이지를 만드는 1일 체험입니다.',
+  'API를 이용해 영화 정보와 포스터를 보여주는 홈페이지를 만드는 주제 실습입니다.',
   E'API가 무엇인지 쉬운 예제로 알아보고 준비된 영화 데이터 연결 방식을 사용합니다.\nAI와 함께 영화 목록 화면을 만들고 제목, 포스터와 평점 정보를 표시합니다.\nAPI 키는 코드에 직접 넣지 않고 안전하게 설정하는 방법도 함께 익힙니다.',
   date '2026-11-21',
   time '15:00',
@@ -79,7 +79,7 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  15000,
+  10000,
   '모집 중',
   'blue'
 ),
@@ -89,7 +89,7 @@ insert into public.ait_meetings (
   '자동화',
   '⚡',
   '/images/meetings/easy-automation.webp',
-  '반복해서 사용할 수 있는 블로그 글과 영상 기획 자동화 흐름을 만드는 1일 체험입니다.',
+  '반복해서 사용할 수 있는 블로그 글과 영상 기획 자동화 흐름을 만드는 주제 실습입니다.',
   E'콘텐츠 주제를 입력하면 제목, 목차와 본문 초안을 만드는 흐름을 구성합니다.\n같은 주제로 쇼츠 대본과 장면 구성까지 만들고 결과를 검토하는 방법을 익힙니다.\n수업 후에도 다시 사용할 수 있는 개인 맞춤 프롬프트 양식을 완성합니다.',
   date '2026-11-28',
   time '15:00',
@@ -98,18 +98,18 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  15000,
+  10000,
   '모집 중',
   'yellow'
 ),
 (
-  'AI 홈페이지 4주 완성반',
+  'AI 홈페이지 프로젝트 모임',
   '아이디어부터 실제 인터넷 주소까지 함께 완성해요',
   '홈페이지',
   '🖥️',
   '/images/meetings/one-page-site.webp',
-  '매주 토요일 18시부터 20시까지, 4주 동안 나에게 필요한 홈페이지를 완성합니다.',
-  E'1주차: 주제와 고객을 정하고 이미지와 문구를 준비합니다.\n2주차: 반응형 홈페이지의 주요 화면을 제작합니다.\n3주차: 필요한 기능을 추가하고 모바일 화면을 다듬습니다.\n4주차: GitHub에 저장하고 Vercel로 배포한 뒤 최종 점검합니다.\n\n과정 기간: 2026년 11월 7일~11월 28일, 매주 토요일 18:00~20:00',
+  '토요일 18~20시, 회차별로 홈페이지를 만들고 개선합니다. 회당 10,000원이며 음료는 개별 결제합니다.',
+  '홈페이지 기획, 화면 제작, 기능 연결과 배포를 각자 진행 상황에 맞춰 실습합니다. 회당 10,000원, 음료 개별 결제입니다. 참여 전 이전 진행 내용과 준비 사항을 문의해주세요.',
   date '2026-11-07',
   time '18:00',
   '커피긱스 2층 8인룸',
@@ -117,18 +117,18 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  80000,
+  10000,
   '모집 중',
   'blue'
 ),
 (
-  'AI 유튜브 4주 완성반',
+  'AI 유튜브 프로젝트 모임',
   '채널 기획부터 게시 가능한 첫 영상까지 완성해요',
   '영상',
   '▶️',
   '/images/meetings/short-video-ideas.webp',
-  '매주 토요일 18시부터 20시까지, 4주 동안 유튜브 채널과 첫 영상을 완성합니다.',
-  E'1주차: 채널 주제와 시청자를 정하고 콘텐츠를 기획합니다.\n2주차: AI로 영상 대본, 이미지와 음성을 제작합니다.\n3주차: 영상을 편집하고 자막과 썸네일을 완성합니다.\n4주차: 첫 영상을 점검하고 게시한 뒤 반복 제작 흐름을 정리합니다.\n\n과정 기간: 2026년 12월 5일~12월 26일, 매주 토요일 18:00~20:00',
+  '토요일 18~20시, 회차별로 유튜브 콘텐츠를 만들고 개선합니다. 회당 10,000원이며 음료는 개별 결제합니다.',
+  '채널 기획, 대본과 이미지 제작, 영상 편집과 게시를 각자 진행 상황에 맞춰 실습합니다. 회당 10,000원, 음료 개별 결제입니다. 참여 전 이전 진행 내용과 준비 사항을 문의해주세요.',
   date '2026-12-05',
   time '18:00',
   '커피긱스 2층 8인룸',
@@ -136,10 +136,33 @@ insert into public.ait_meetings (
   '개인 노트북',
   8,
   0,
-  80000,
+  10000,
   '모집 중',
   'coral'
 );
+
+
+-- 프로젝트 모임도 날짜별 신청과 정원을 따로 관리합니다.
+insert into public.ait_meetings (
+  title, subtitle, category, icon, representative_image_url, summary, description,
+  meeting_date, meeting_time, location, difficulty, supplies, capacity,
+  current_applicants, fee, recruitment_status, color
+)
+select source.title, source.subtitle, source.category, source.icon,
+  source.representative_image_url, source.summary, source.description,
+  source.meeting_date + offset_week * 7, source.meeting_time,
+  source.location, source.difficulty, source.supplies, source.capacity,
+  0, 10000, source.recruitment_status, source.color
+from public.ait_meetings as source
+cross join generate_series(1, 3) as weeks(offset_week)
+where ((source.title = 'AI 홈페이지 프로젝트 모임' and source.meeting_date = date '2026-11-07')
+    or (source.title = 'AI 유튜브 프로젝트 모임' and source.meeting_date = date '2026-12-05'))
+  and not exists (
+    select 1 from public.ait_meetings as existing
+    where existing.title = source.title
+      and existing.meeting_date = source.meeting_date + offset_week * 7
+      and existing.meeting_time = source.meeting_time
+  );
 
 commit;
 

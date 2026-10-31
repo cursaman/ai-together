@@ -86,7 +86,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
             <section aria-labelledby="introduction-title">
               <p className={styles.kicker}>ABOUT THIS MEETING</p>
               <h2 id="introduction-title">이런 모임이에요</h2>
-              <p>AI를 한 번도 사용하지 않았어도 참여할 수 있어요. 어려운 용어를 배우거나 정답을 맞히는 시간이 아니라, 관심 있는 주제로 직접 작은 결과물을 만드는 시간입니다.</p>
+              <p>관심 있는 주제로 직접 만들고 막힌 부분을 함께 해결하는 모임입니다. 원하는 날짜에 1회씩 참여하며, 프로젝트 모임은 이어지는 작업에 필요한 경험과 이전 진행 내용을 먼저 문의해주세요.</p>
               <div className={styles.quote}>“잘해야 참여하는 모임이 아니라,<br />함께 해보기 위해 모이는 자리예요.”</div>
             </section>
 
@@ -105,7 +105,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
             </section>
 
             <section className={styles.notice} aria-labelledby="notice-title">
-              <span aria-hidden="true">☕</span><div><h2 id="notice-title">노트북만 챙겨오세요</h2><p>커피와 빵 50,000원은 진행자가 참가비에서 준비합니다. 참가자는 추가 결제 없이 개인 노트북과 충전기만 준비해주세요.</p></div>
+              <span aria-hidden="true">☕</span><div><h2 id="notice-title">노트북만 챙겨오세요</h2><p>참가비는 회당 10,000원입니다. 음료는 각자 주문하고 카페에 직접 결제해주세요. 개인 노트북과 충전기를 준비하고, 프로젝트 모임은 이전 진행 내용과 준비 사항을 참여 전에 확인해주세요.</p></div>
             </section>
           </div>
 
@@ -113,7 +113,7 @@ export default async function MeetingDetailPage({ params }: MeetingDetailPagePro
             <p className={styles.cardLabel}>{meeting.status}</p>
             <div className={styles.seats}><strong>{isUpcoming ? "곧 모집을 시작해요" : isClosed ? "신청이 마감됐어요" : `${remainingSeats}자리 남았어요`}</strong><span>{meeting.applicants}명 신청 · 정원 {meeting.capacity}명</span></div>
             <div className={styles.progress} aria-label={`정원 ${percentage}% 신청`}><span style={{ width: `${percentage}%` }} /></div>
-            <dl><div><dt>참가비</dt><dd>{meeting.fee}</dd></div><div><dt>난이도</dt><dd>{meeting.difficulty}</dd></div><div><dt>준비물</dt><dd>{meeting.supplies}</dd></div></dl>
+            <dl><div><dt>회당 참가비</dt><dd>{meeting.fee} · 음료 별도</dd></div><div><dt>난이도</dt><dd>{meeting.difficulty}</dd></div><div><dt>준비물</dt><dd>{meeting.supplies}</dd></div></dl>
             {isUpcoming || isClosed ? (
               <button type="button" disabled>{isUpcoming ? "모집 예정이에요" : "모집이 마감됐어요"}</button>
             ) : (

@@ -18,7 +18,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
 
   const action = submitApplication.bind(null, meeting.id);
   const unavailable = meeting.status === "모집 예정" || meeting.applicants >= meeting.capacity;
-  const isFourWeek = meeting.title.includes("4주");
+
 
   return (
     <main className={styles.shell} id="main-content">
@@ -27,13 +27,13 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
         <section className={styles.intro}>
           <p className={styles.kicker}>JOIN TOGETHER</p>
           <h1>참가 신청</h1>
-          <p>복잡하지 않아요.<br />간단한 정보만 남겨주세요.</p>
+          <p>복잡하지 않아요.<br />표시된 날짜의 1회 참여를 신청합니다. 다음 회차는 별도로 신청해주세요.</p>
           <article className={styles.meetingCard}>
             <span aria-hidden="true">{meeting.icon}</span>
             <div><small>{meeting.category} · {meeting.status}</small><h2>{meeting.title}</h2><p>{meeting.date} · {meeting.time}<br />{meeting.location}</p></div>
           </article>
-          <ul><li>참가비 {meeting.fee}</li><li>준비물: {meeting.supplies}</li><li>현재 {meeting.applicants}명 신청 · 정원 {meeting.capacity}명</li></ul>
-          {isFourWeek ? <Link className={styles.paymentLink} href="/payment">4주 과정 결제 안내 확인하기 →</Link> : null}
+          <ul><li>1회 참가비 {meeting.fee} · 음료 개별 결제</li><li>준비물: {meeting.supplies}</li><li>현재 {meeting.applicants}명 신청 · 정원 {meeting.capacity}명</li></ul>
+          <Link className={styles.paymentLink} href="/payment">회당 참가비·입금 안내 확인하기 →</Link>
         </section>
         <section className={styles.formCard} aria-labelledby="form-title">
           <div className={styles.formHeading}><p className={styles.kicker}>APPLICATION</p><h2 id="form-title">신청자 정보</h2><p><span>*</span> 표시는 필수 항목이에요.</p></div>

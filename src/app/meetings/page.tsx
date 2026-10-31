@@ -1,3 +1,4 @@
+import { getCourseType } from "@/lib/meeting-course";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,11 +18,9 @@ type MeetingsPageProps = {
   searchParams: Promise<{ category?: string; course?: string }>;
 };
 
-const courseTypes = ["전체", "1일 체험", "4주 완성"] as const;
+const courseTypes = ["전체", "주제 실습", "프로젝트 모임"] as const;
 
-function getCourseType(title: string) {
-  return title.includes("4주") ? "4주 완성" : "1일 체험";
-}
+
 
 export default async function MeetingsPage({ searchParams }: MeetingsPageProps) {
   const { category, course } = await searchParams;
@@ -56,7 +55,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
         <SubpageHero
           eyebrow="FIND YOUR TOGETHER"
           title={<>이번에는 뭘<br />같이 만들어볼까요?</>}
-          description="관심 가는 주제를 골라보세요. 모든 모임은 AI가 처음인 분도 편하게 참여할 수 있어요."
+          description="회당 10,000원으로 원하는 날짜에 참여하세요. 음료는 개별 결제하며, 프로젝트 모임은 이전 진행 내용을 확인해주세요."
           image="/images/subpages/meetings-hero.png"
           imageAlt="노트북으로 창작 프로젝트를 함께 만드는 소규모 모임"
           standalone
@@ -64,7 +63,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
 
         <section className={styles.listSection} aria-labelledby="meeting-list-title">
           <div className={styles.courseFilters} aria-label="과정 유형 필터">
-            {courseTypes.map((item) => <Link className={selectedCourse === item ? styles.selectedCourse : ""} href={filterHref(item, selectedCategory)} key={item} aria-current={selectedCourse === item ? "page" : undefined}><span>{item === "1일 체험" ? "2시간" : item === "4주 완성" ? "총 8시간" : "모두 보기"}</span><strong>{item}</strong></Link>)}
+            {courseTypes.map((item) => <Link className={selectedCourse === item ? styles.selectedCourse : ""} href={filterHref(item, selectedCategory)} key={item} aria-current={selectedCourse === item ? "page" : undefined}><span>{item === "주제 실습" ? "2시간" : item === "프로젝트 모임" ? "회차별 신청" : "모두 보기"}</span><strong>{item}</strong></Link>)}
           </div>
           <div className={styles.filters} aria-label="카테고리 필터">
             {meetingCategories.map((item) => (
@@ -99,7 +98,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
                       <span className={styles.courseType}>{courseType}</span>
                     </div>
                     <div className={styles.cardBody}>
-                      <div className={styles.cardTop}><div className={styles.badges}><span>난이도 · {meeting.difficulty}</span><span>{courseType === "4주 완성" ? "4회 과정" : "1회 과정"}</span></div><strong className={styles.fee}>{meeting.fee}</strong></div>
+                      <div className={styles.cardTop}><div className={styles.badges}><span>난이도 · {meeting.difficulty}</span><span>1회 참여</span></div><strong className={styles.fee}>{meeting.fee} / 회</strong></div>
                       <h3>{meeting.title}</h3>
                       <p className={styles.subtitle}>{meeting.subtitle}</p>
                       <p className={styles.result}><span>완성 결과</span>{meeting.subtitle}</p>

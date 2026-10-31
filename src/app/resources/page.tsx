@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const groups = [
   { title:"AI·홈페이지 학습", description:"수업 전 기초학습부터 홈페이지 제작과 데이터베이스 실습까지 이어서 배워보세요.", icon:"AI", links:[
     {name:"AI 기초학습",url:"https://aiterminology-rho.vercel.app/",text:"AI 용어와 핵심 개념부터 첫 프로젝트 설계까지 단계별 학습"},
-    {name:"4주 홈페이지 과정",url:"https://autosites-jd3d.vercel.app/",text:"홈페이지 4주 완성 과정과 수업 장소 안내"},
+    {name:"홈페이지 학습자료",url:"https://autosites-jd3d.vercel.app/",text:"홈페이지 제작을 위한 단계별 참고자료 · 모임 신청과 별도"},
     {name:"홈페이지 제작 실습",url:"https://homepages-rosy.vercel.app/",text:"기획부터 제작·배포까지 따라 하는 홈페이지 실습"},
     {name:"AI 개발 가이드",url:"https://what-to-ai.vercel.app/",text:"AI를 활용한 개발 과정과 작업 방법 안내"},
     {name:"DB·회원가입 실습",url:"https://what-to-db.vercel.app/",text:"데이터베이스와 회원가입 기능을 연결하는 실습"},
