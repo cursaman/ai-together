@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const slides = [
-  { src: "/images/meetings/ai-first-step.webp", alt: "AI 이미지 만들기 체험" },
+  { src: "/images/workshop-hero.jpg", alt: "가게 홍보에 쓸 상품 사진을 스마트폰으로 함께 촬영하는 모습", position: "64% center" },
   { src: "/images/class-review.webp", alt: "노트북으로 함께 실습하는 실제 AI 수업 현장" },
   { src: "/images/meetings/short-video-ideas.webp", alt: "AI 숏폼 동영상 만들기 체험" },
   { src: "/images/meetings/one-page-site.webp", alt: "나만의 홈페이지 만들기 체험" },
@@ -35,7 +35,7 @@ export default function HeroSwiper() {
       }}>
       {slides.map((slide, index) => (
         <Image className={`hero-slide${index === current ? " is-active" : ""}`} src={slide.src}
-          alt={index === current ? slide.alt : ""} fill priority={index === 0} sizes="100vw" key={slide.src} />
+          alt={index === current ? slide.alt : ""} style={{ objectPosition: slide.position }} fill priority={index === 0} sizes="100vw" key={slide.src} />
       ))}
       <button className="hero-arrow hero-arrow-prev" type="button" onClick={() => move(-1)} aria-label="이전 이미지">‹</button>
       <button className="hero-arrow hero-arrow-next" type="button" onClick={() => move(1)} aria-label="다음 이미지">›</button>
