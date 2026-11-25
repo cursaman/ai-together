@@ -22,6 +22,52 @@ const firstCohortProjects = [
   { title: "인지아이앤에스", category: "제조 디지털 혁신", mark: "I&S", theme: "industry", description: "디지털 트윈, 스마트팩토리, 산업 IoT 등 제조 디지털 혁신 사업을 소개하는 기업 홈페이지입니다.", href: "https://ingins-5b3f.vercel.app/" },
 ];
 
+const secondCohortProjects = [
+  {
+    title: "한국안전교육",
+    category: "안전교육",
+    mark: "한국안전교육",
+    theme: "industry",
+    description: "양산 건설업 기초안전보건교육 일정과 준비물을 안내합니다.",
+    href: "https://korea-safety-web.vercel.app/",
+  },
+  {
+    title: "돌봄 준비 안내서",
+    category: "돌봄·요양",
+    mark: "돌봄 안내",
+    theme: "golf",
+    description: "방문요양센터 개설 기준과 요양보호사 자격증 취득 절차를 안내합니다.",
+    href: "https://dolbom-guide.vercel.app/",
+  },
+  {
+    title: "PC픽",
+    category: "PC 사양·가격 비교",
+    mark: "PC픽",
+    theme: "craft",
+    description: "FHD, QHD, 4K 게이밍 PC의 사양과 국내 판매가를 비교할 수 있습니다.",
+    href: "https://pcpik.vercel.app/",
+  },
+];
+
+const cohorts = [
+  {
+    id: "cohort-title",
+    label: "1기 작품",
+    eyebrow: "FIRST COHORT PROJECTS",
+    title: "1기 참여자가 직접 만든 작품",
+    description: "가위 수리점, 골프 피팅센터, 기업 소개까지. 참여자가 자신의 사업을 소개하기 위해 직접 제작하고 공개한 홈페이지입니다.",
+    projects: firstCohortProjects,
+  },
+  {
+    id: "second-cohort-title",
+    label: "2기 작품",
+    eyebrow: "SECOND COHORT PROJECTS",
+    title: "2기 참여자가 직접 만든 작품",
+    description: "안전교육, 돌봄 준비, 게이밍 PC 비교를 주제로 참여자가 만든 사이트입니다.",
+    projects: secondCohortProjects,
+  },
+];
+
 const showcases = [
   { number:"01",title:"오늘 뭐 빌리지?",type:"BOOK RECOMMENDATION",description:"기분과 읽을 시간을 고르면 가까운 도서관에서 빌릴 책을 추천해요.",href:"https://what-to-borrow.vercel.app/",image:"/images/showcase/what-to-borrow.png" },
   { number:"02",title:"오늘 뭐하지?",type:"ACTIVITY PLANNER",description:"날씨·시간·지역·취향에 맞는 오늘의 활동과 일정을 추천해요.",href:"https://today-what-pi.vercel.app/",image:"/images/showcase/today-what.png" },
@@ -68,18 +114,32 @@ export default async function Home() {
 
       <section className="course-compare" aria-labelledby="compare-title"><div className="market-heading"><div><p>CHOOSE YOUR COURSE</p><h2 id="compare-title">목표에 맞게 선택하세요</h2><span>모든 모임은 1회 2시간, 회당 10,000원입니다. 음료는 각자 주문하고 결제해주세요.</span></div></div><div className="compare-grid"><article><div className="compare-card-heading"><span>가볍게 시작</span><h3>주제 실습</h3><strong>회당 10,000원</strong></div><dl><div><dt>추천 대상</dt><dd>내 가게 소개 글·사진을 직접 만들고 싶은 분</dd></div><div><dt>수업 시간</dt><dd>1회 2시간 · 15시–17시</dd></div><div><dt>완성 결과</dt><dd>가게 소개 글·블로그 초안·홍보 이미지</dd></div></dl><Link href={oneDayApplyHref}>주제 실습 신청하기 →</Link></article><article className="compare-featured"><div className="compare-card-heading"><span>내 사업에 맞게 제작</span><h3>프로젝트 모임</h3><strong>회당 10,000원</strong></div><dl><div><dt>추천 대상</dt><dd>사업 홈페이지를 만들거나 개선하고 싶은 분</dd></div><div><dt>수업 시간</dt><dd>1회 2시간 · 회차별 신청</dd></div><div><dt>완성 결과</dt><dd>서비스·위치·문의 안내 페이지 제작·개선</dd></div></dl><Link href={fourWeekApplyHref}>프로젝트 모임 신청하기 →</Link></article></div></section>
 
-      <section className="showcase-section cohort-section" aria-labelledby="cohort-title">
-        <div className="market-heading"><div><p>FIRST COHORT PROJECTS</p><h2 id="cohort-title">1기 참여자가 직접 만든 작품</h2><span>가위 수리점, 골프 피팅센터, 기업 소개까지. 참여자가 자신의 사업을 소개하기 위해 직접 제작하고 공개한 홈페이지입니다.</span></div></div>
-        <div className="showcase-grid cohort-grid">
-          {firstCohortProjects.map((project) => (
-            <a href={project.href} target="_blank" rel="noopener noreferrer" key={project.href} aria-label={project.title + " 작품 사이트 보기 (새 창)"}>
-              <div className={"cohort-cover cohort-cover-" + project.theme} aria-hidden="true"><span>AI TOGETHER · 1기 작품</span><b>{project.mark}</b><small>{project.category}</small></div>
-              <div className="showcase-top"><span>1기 작품</span><small>{project.category}</small></div>
-              <h3>{project.title}</h3><p>{project.description}</p><strong>작품 사이트 보기 ↗</strong>
-            </a>
-          ))}
-        </div>
-      </section>
+      {cohorts.map((cohort) => (
+        <section className="showcase-section cohort-section" aria-labelledby={cohort.id} key={cohort.id}>
+          <div className="market-heading">
+            <div>
+              <p>{cohort.eyebrow}</p>
+              <h2 id={cohort.id}>{cohort.title}</h2>
+              <span>{cohort.description}</span>
+            </div>
+          </div>
+          <div className="showcase-grid cohort-grid">
+            {cohort.projects.map((project) => (
+              <a href={project.href} target="_blank" rel="noopener noreferrer" key={project.href} aria-label={project.title + " 작품 사이트 보기 (새 창)"}>
+                <div className={"cohort-cover cohort-cover-" + project.theme} aria-hidden="true">
+                  <span>AI TOGETHER · {cohort.label}</span>
+                  <b>{project.mark}</b>
+                  <small>{project.category}</small>
+                </div>
+                <div className="showcase-top"><span>{cohort.label}</span><small>{project.category}</small></div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <strong>작품 사이트 보기 ↗</strong>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
 
       <section className="showcase-section conversion-showcase" aria-labelledby="showcase-title"><div className="market-heading"><div><p>PROJECT SHOWCASE</p><h2 id="showcase-title">제작할 때 참고할 수 있는 예시</h2><span>다양한 주제와 기능을 살펴보고 내 프로젝트의 아이디어를 찾아보세요.</span></div><Link href="/resources">제작 참고자료 보기 →</Link></div><div className="showcase-grid">{featuredShowcases.map((site)=><a href={site.href} target="_blank" rel="noreferrer" key={site.href}><div className="showcase-preview"><Image src={site.image} alt={`${site.title} 홈페이지 첫 화면`} fill sizes="(max-width: 600px) 100vw, 33vw" /></div><div className="showcase-top"><span>{site.number}</span><small>{site.type}</small></div><h3>{site.title}</h3><p>{site.description}</p><strong>샘플 사이트 보기 ↗</strong></a>)}</div><details className="showcase-more"><summary>제작 예시 9개 모두 보기 <span aria-hidden="true">＋</span></summary><div className="showcase-grid">{moreShowcases.map((site)=><a href={site.href} target="_blank" rel="noreferrer" key={site.href}><div className="showcase-preview"><Image src={site.image} alt={`${site.title} 홈페이지 첫 화면`} fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" /></div><div className="showcase-top"><span>{site.number}</span><small>{site.type}</small></div><h3>{site.title}</h3><p>{site.description}</p><strong>샘플 사이트 보기 ↗</strong></a>)}</div></details></section>
 
