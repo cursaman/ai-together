@@ -62,6 +62,7 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
         />
 
         <section className={styles.listSection} aria-labelledby="meeting-list-title">
+          <p>기존 단체 모임을 둘러볼 수 있습니다. <Link href="/#lesson-guide">현재 1:1 교습 안내 보기 →</Link></p>
           <div className={styles.courseFilters} aria-label="과정 유형 필터">
             {courseTypes.map((item) => <Link className={selectedCourse === item ? styles.selectedCourse : ""} href={filterHref(item, selectedCategory)} key={item} aria-current={selectedCourse === item ? "page" : undefined}><span>{item === "주제 실습" ? "2시간" : item === "프로젝트 모임" ? "회차별 신청" : "모두 보기"}</span><strong>{item}</strong></Link>)}
           </div>

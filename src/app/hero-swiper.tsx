@@ -52,9 +52,8 @@ export default function HeroSwiper() {
         <Image className={`hero-slide${index === current ? " is-active" : ""}`} src={slide.src}
           alt={index === current ? slide.alt : ""} style={{ objectPosition: slide.position }} fill priority={index === 0} sizes="100vw" key={slide.src} />
       ))}
-      <button className="hero-arrow hero-arrow-prev" type="button" onClick={() => move(-1)} aria-label="이전 이미지">‹</button>
-      <button className="hero-arrow hero-arrow-next" type="button" onClick={() => move(1)} aria-label="다음 이미지">›</button>
       <div className="hero-controls">
+        <button className="hero-arrow" type="button" onClick={() => move(-1)} aria-label="이전 이미지">‹</button>
         <button className="hero-pause" type="button" onClick={() => setPaused((value) => !value)} aria-label={paused ? "슬라이드 자동 재생" : "슬라이드 일시정지"}>{paused ? "▶" : "Ⅱ"}</button>
         <div className="hero-dots" aria-label={`${current + 1} / ${slides.length}`}>
           {slides.map((slide, index) => (
@@ -62,6 +61,7 @@ export default function HeroSwiper() {
               aria-label={`${index + 1}번 이미지 보기`} aria-current={index === current ? "true" : undefined} key={slide.src} />
           ))}
         </div>
+        <button className="hero-arrow" type="button" onClick={() => move(1)} aria-label="다음 이미지">›</button>
       </div>
     </div>
   );
