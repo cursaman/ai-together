@@ -78,9 +78,72 @@ const showcases = [
   { number:"07",title:"AI Together",type:"AI WORKSHOP",description:"AI 수업을 살펴보고 원하는 모임에 바로 참가 신청해요.",href:"https://ai-together-mu.vercel.app/",image:"/images/showcase/ai-together.png" },
   { number:"08",title:"AX START",type:"AI LEARNING",description:"AI 핵심 용어를 익히고 첫 프로젝트 문서를 완성해요.",href:"https://aiterminology-rho.vercel.app/",image:"/images/showcase/ai-terminology.png" },
   { number:"09",title:"what-to-AI",type:"DEVELOPMENT GUIDE",description:"아이디어부터 기능 연결과 배포까지 8단계로 따라가요.",href:"https://what-to-ai.vercel.app/",image:"/images/showcase/what-to-ai.png" },
+  {
+    number: "10",
+    title: "AutoSites",
+    type: "홈페이지 제작 교육",
+    description: "AI로 홈페이지를 만들고 GitHub와 Vercel로 공개하는 과정을 배워요.",
+    href: "https://ai-edu-steel.vercel.app/",
+  },
+  {
+    number: "11",
+    title: "my-hub",
+    type: "개인 정보 포털",
+    description: "관심 있는 정보와 자주 쓰는 서비스를 한곳에 모아 살펴봐요.",
+    href: "https://my-hub-swart.vercel.app/",
+  },
+  {
+    number: "12",
+    title: "커사맨웍스",
+    type: "기업 홈페이지",
+    description: "홈페이지 진단·제작과 AI 실무교육 서비스를 소개해요.",
+    href: "https://cursaman-works.vercel.app/",
+  },
+  {
+    number: "13",
+    title: "처음 만드는 AI 웹사이트",
+    type: "단계별 학습",
+    description: "아이디어부터 배포까지 초보자용 실습을 10단계로 따라가요.",
+    href: "https://homepages-rosy.vercel.app/",
+  },
+  {
+    number: "14",
+    title: "온기담은 고구마",
+    type: "산지 직송 쇼핑몰",
+    description: "경주 산내에서 기른 고구마의 상품 정보를 보고 주문할 수 있어요.",
+    href: "https://sweet-potato-shop.vercel.app/",
+  },
+  {
+    number: "15",
+    title: "MatZip Map",
+    type: "지도 기반 검색",
+    description: "음식점을 검색하고 카카오맵에서 위치를 확인해요.",
+    href: "https://local-72g1.vercel.app/",
+  },
 ];
 
 
+
+function ShowcaseCard({ site }: { site: (typeof showcases)[number] }) {
+  return (
+    <a href={site.href} target="_blank" rel="noreferrer">
+      {site.image && (
+        <div className="showcase-preview">
+          <Image
+            src={site.image}
+            alt={`${site.title} 홈페이지 첫 화면`}
+            fill
+            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+          />
+        </div>
+      )}
+      <div className="showcase-top"><span>{site.number}</span><small>{site.type}</small></div>
+      <h3>{site.title}</h3>
+      <p>{site.description}</p>
+      <strong>샘플 사이트 보기 ↗</strong>
+    </a>
+  );
+}
 
 export default async function Home() {
   const [reviews, meetings] = await Promise.all([getPublishedReviews(3), getMeetings()]);
@@ -141,7 +204,21 @@ export default async function Home() {
         </section>
       ))}
 
-      <section className="showcase-section conversion-showcase" aria-labelledby="showcase-title"><div className="market-heading"><div><p>PROJECT SHOWCASE</p><h2 id="showcase-title">제작할 때 참고할 수 있는 예시</h2><span>다양한 주제와 기능을 살펴보고 내 프로젝트의 아이디어를 찾아보세요.</span></div><Link href="/resources">제작 참고자료 보기 →</Link></div><div className="showcase-grid">{featuredShowcases.map((site)=><a href={site.href} target="_blank" rel="noreferrer" key={site.href}><div className="showcase-preview"><Image src={site.image} alt={`${site.title} 홈페이지 첫 화면`} fill sizes="(max-width: 600px) 100vw, 33vw" /></div><div className="showcase-top"><span>{site.number}</span><small>{site.type}</small></div><h3>{site.title}</h3><p>{site.description}</p><strong>샘플 사이트 보기 ↗</strong></a>)}</div><details className="showcase-more"><summary>제작 예시 9개 모두 보기 <span aria-hidden="true">＋</span></summary><div className="showcase-grid">{moreShowcases.map((site)=><a href={site.href} target="_blank" rel="noreferrer" key={site.href}><div className="showcase-preview"><Image src={site.image} alt={`${site.title} 홈페이지 첫 화면`} fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" /></div><div className="showcase-top"><span>{site.number}</span><small>{site.type}</small></div><h3>{site.title}</h3><p>{site.description}</p><strong>샘플 사이트 보기 ↗</strong></a>)}</div></details></section>
+      <section className="showcase-section conversion-showcase" aria-labelledby="showcase-title">
+        <div className="market-heading">
+          <div>
+            <p>PROJECT SHOWCASE</p>
+            <h2 id="showcase-title">제작할 때 참고할 수 있는 예시</h2>
+            <span>다양한 주제와 기능을 살펴보고 내 프로젝트의 아이디어를 찾아보세요.</span>
+          </div>
+          <Link href="/resources">제작 참고자료 보기 →</Link>
+        </div>
+        <div className="showcase-grid">{featuredShowcases.map((site) => <ShowcaseCard key={site.href} site={site} />)}</div>
+        <details className="showcase-more">
+          <summary>제작 예시 {showcases.length}개 모두 보기 <span aria-hidden="true">＋</span></summary>
+          <div className="showcase-grid">{moreShowcases.map((site) => <ShowcaseCard key={site.href} site={site} />)}</div>
+        </details>
+      </section>
 
       <section className="how-section" aria-labelledby="how-title"><div className="market-heading centered light"><div><p>HOW TO JOIN</p><h2 id="how-title">처음이어도 3단계면 충분해요</h2></div></div><ol>{steps.map((step) => <li key={step.number}><span>{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol><Link className="button button-light" href="/guide">처음 오신 분 안내 →</Link></section>
       <section className="visit-section" aria-labelledby="visit-title"><div><p>LOCATION & PREPARATION</p><h2 id="visit-title">좋아하는 음료와 함께,<br />AI로 만들어봐요.</h2><ul><li><strong>장소</strong><span>부산 교대 인근 커피긱스 2층 8인룸</span></li><li><strong>카페 이용</strong><span>음료는 각자 주문하고 개별 결제</span></li><li><strong>참가비</strong><span>회당 10,000원 · 음료값 별도</span></li><li><strong>준비물</strong><span>개인 노트북·충전기·가게 소개·상품 사진</span></li></ul><Link className="text-link" href="/contact">장소와 이용 안내 자세히 보기 →</Link></div><figure className="visit-menu"><Image src="/images/coffee-geeks-menu.jpg" alt="커피긱스 커피와 음료 메뉴판" width={900} height={742} sizes="(max-width: 900px) calc(100vw - 40px), 44vw" /><figcaption><strong>커피긱스 메뉴</strong><span>메뉴와 가격은 방문 시점에 따라 달라질 수 있습니다.</span></figcaption></figure></section>
