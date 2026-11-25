@@ -84,6 +84,7 @@ const showcases = [
     type: "홈페이지 제작 교육",
     description: "AI로 홈페이지를 만들고 GitHub와 Vercel로 공개하는 과정을 배워요.",
     href: "https://ai-edu-steel.vercel.app/",
+    image: "/images/showcase/ai-edu-steel.jpg",
   },
   {
     number: "11",
@@ -91,6 +92,7 @@ const showcases = [
     type: "개인 정보 포털",
     description: "관심 있는 정보와 자주 쓰는 서비스를 한곳에 모아 살펴봐요.",
     href: "https://my-hub-swart.vercel.app/",
+    image: "/images/showcase/my-hub-swart.jpg",
   },
   {
     number: "12",
@@ -98,6 +100,7 @@ const showcases = [
     type: "기업 홈페이지",
     description: "홈페이지 진단·제작과 AI 실무교육 서비스를 소개해요.",
     href: "https://cursaman-works.vercel.app/",
+    image: "/images/showcase/cursaman-works.jpg",
   },
   {
     number: "13",
@@ -105,6 +108,7 @@ const showcases = [
     type: "단계별 학습",
     description: "아이디어부터 배포까지 초보자용 실습을 10단계로 따라가요.",
     href: "https://homepages-rosy.vercel.app/",
+    image: "/images/showcase/homepages-rosy.jpg",
   },
   {
     number: "14",
@@ -112,6 +116,7 @@ const showcases = [
     type: "산지 직송 쇼핑몰",
     description: "경주 산내에서 기른 고구마의 상품 정보를 보고 주문할 수 있어요.",
     href: "https://sweet-potato-shop.vercel.app/",
+    image: "/images/showcase/sweet-potato-shop.jpg",
   },
   {
     number: "15",
@@ -119,6 +124,7 @@ const showcases = [
     type: "지도 기반 검색",
     description: "음식점을 검색하고 카카오맵에서 위치를 확인해요.",
     href: "https://local-72g1.vercel.app/",
+    image: "/images/showcase/local-72g1.jpg",
   },
 ];
 
