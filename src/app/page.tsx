@@ -183,7 +183,18 @@ export default async function Home() {
 
       <section className="proof-strip" aria-label="모임 핵심 정보"><span><b>1:1 교습</b>내 사업에 맞춰 실습</span><span><b>매일 두 시간대</b>오전 10시 · 오후 3시</span><span><b>개인 노트북</b>충전기와 함께 준비</span><span><b>부산 교대 인근</b>커피긱스 2층 8인룸</span></section>
 
-      <section className="story-section conversion-story" aria-labelledby="story-title"><div><p>REAL CLASS STORY</p><h2 id="story-title">배운 내용을 바로,<br />내 가게 홍보에.</h2><p>가게 소개와 상품·서비스 사진을 가져오세요. 고객이 궁금해하는 내용을 블로그 글로 쓰고, 서비스·위치·문의 방법이 담긴 홈페이지를 직접 만듭니다. 완성 후에도 내용을 수정하고 운영하는 방법을 함께 익힙니다.</p><Link className="button button-primary" href="/reviews">모임 참여 후기 보기 →</Link></div><div className="story-images"><Image src="/images/class-review.webp" alt="노트북으로 AI 실습을 진행하며 이야기를 나누는 강의 현장" fill sizes="(max-width: 800px) 100vw, 50vw" /></div></section>
+      <section className="story-section conversion-story" aria-labelledby="story-title"><div><p>REAL CLASS STORY</p><h2 id="story-title">배운 내용을 바로,<br />내 가게 홍보에.</h2><p>가게 소개와 상품·서비스 사진을 가져오세요. 고객이 궁금해하는 내용을 블로그 글로 쓰고, 서비스·위치·문의 방법이 담긴 홈페이지를 직접 만듭니다. 완성 후에도 내용을 수정하고 운영하는 방법을 함께 익힙니다.</p><Link className="button button-primary" href="/reviews">모임 참여 후기 보기 →</Link></div><div className="story-images">
+        <picture>
+          <source media="(prefers-reduced-motion: no-preference)" srcSet="/images/sunlight-loop-web.gif" type="image/gif" />
+          <Image
+            src="/images/sunlight-loop-still.jpg"
+            alt="따뜻한 햇살 속에서 올려다보는 안경 쓴 캐릭터 일러스트"
+            fill
+            sizes="(max-width: 800px) 100vw, 50vw"
+            style={{ objectPosition: "center 32%" }}
+          />
+        </picture>
+      </div></section>
       {reviews.length > 0 ? <section className="home-reviews trust-reviews" aria-labelledby="home-reviews-title"><div className="market-heading"><div><p>REAL REVIEWS</p><h2 id="home-reviews-title">참여자가 직접 들려준 이야기</h2><span>공개에 동의한 실제 참여 후기만 소개합니다.</span></div><Link href="/reviews">전체 후기 보기 →</Link></div><div className="home-review-grid">{reviews.map((review)=><article key={review.id}>{review.result_image_url?<div className="home-review-image" role="img" aria-label={`${review.nickname}님의 결과물`} style={{backgroundImage:`url(${review.result_image_url})`}}/>:<span className="home-review-quote" aria-hidden="true">“</span>}<div><small>{review.ait_meetings?.title??"AI Together 모임"}</small><p>{review.content}</p><strong>{review.nickname}</strong></div></article>)}</div></section>:null}
 
       <section className="course-compare" id="lesson-guide" aria-labelledby="compare-title"><div className="market-heading"><div><p>CHOOSE YOUR COURSE</p><h2 id="compare-title">목표에 맞게 선택하세요</h2><span>가게 홍보 글·사진이나 홈페이지 중 필요한 작업을 골라 1:1로 배울 수 있어요.</span></div></div><div className="compare-grid"><article><div className="compare-card-heading"><span>가볍게 시작</span><h3>주제 실습</h3></div><dl><div><dt>추천 대상</dt><dd>내 가게 소개 글·사진을 직접 만들고 싶은 분</dd></div><div><dt>수업 시간</dt><dd>{lessonSchedule}</dd></div><div><dt>완성 결과</dt><dd>가게 소개 글·블로그 초안·홍보 이미지</dd></div></dl><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 주제 실습 신청 ↗</a></article><article className="compare-featured"><div className="compare-card-heading"><span>내 사업에 맞게 제작</span><h3>홈페이지 제작</h3></div><dl><div><dt>추천 대상</dt><dd>사업 홈페이지를 만들거나 개선하고 싶은 분</dd></div><div><dt>수업 시간</dt><dd>{lessonSchedule}</dd></div><div><dt>완성 결과</dt><dd>서비스·위치·문의 안내 페이지 제작·개선</dd></div></dl><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 홈페이지 교습 신청 ↗</a></article></div></section>
