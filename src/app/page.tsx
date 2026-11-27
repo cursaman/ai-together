@@ -171,8 +171,6 @@ export default async function Home() {
     <SiteHeader />
     <main id="main-content" className="home-editorial">
       <section className="market-hero conversion-hero" aria-labelledby="hero-title">
-        <HeroSwiper />
-        <div className="market-hero-shade" />
         <div className="market-hero-copy">
           <p>소상공인·개인사업자를 위한 1:1 AI 교습</p>
           <h1 id="hero-title">내 가게를 알리는<br />블로그와 홈페이지</h1>
@@ -181,6 +179,9 @@ export default async function Home() {
           <div className="hero-choice-card">
             <a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 예약 가능 시간 확인하기 ↗</a>
           </div>
+        </div>
+        <div className="hero-media">
+          <HeroSwiper />
         </div>
       </section>
 
@@ -210,7 +211,6 @@ export default async function Home() {
         <section className="showcase-section cohort-section" aria-labelledby={cohort.id} key={cohort.id}>
           <div className="market-heading">
             <div>
-              
               <h2 id={cohort.id}>{cohort.title}</h2>
               <span>{cohort.description}</span>
             </div>
@@ -223,7 +223,6 @@ export default async function Home() {
                   <b>{project.mark}</b>
                   <small>{project.category}</small>
                 </div>
-                
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <strong>작품 사이트 보기 ↗</strong>
@@ -236,7 +235,6 @@ export default async function Home() {
       <section className="showcase-section conversion-showcase" aria-labelledby="showcase-title">
         <div className="market-heading">
           <div>
-            
             <h2 id="showcase-title">제작할 때 참고할 수 있는 예시</h2>
             <span>다양한 주제와 기능을 살펴보고 내 프로젝트의 아이디어를 찾아보세요.</span>
           </div>
