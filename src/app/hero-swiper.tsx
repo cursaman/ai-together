@@ -4,26 +4,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const slides = [
-  {
-    src: "/images/workshop-product-photo.jpg",
-    alt: "도자기 공방에서 스마트폰으로 상품 사진을 촬영하는 모습",
-    position: "70% center",
-  },
-  {
-    src: "/images/workshop-blog-writing.jpg",
-    alt: "빵집 테이블에서 노트북과 사진을 보며 블로그 글을 준비하는 모습",
-    position: "65% center",
-  },
-  {
-    src: "/images/workshop-homepage-design.jpg",
-    alt: "꽃집 홈페이지를 노트북과 스마트폰에서 함께 확인하는 모습",
-    position: "68% center",
-  },
-  {
-    src: "/images/workshop-promo-video.jpg",
-    alt: "카페에서 커피 내리는 장면을 스마트폰으로 촬영하는 모습",
-    position: "72% center",
-  },
+  { src: "/images/workshop-refresh/product.jpg", alt: "도자기 컵의 상품 사진을 휴대전화로 찍는 모습", position: "center" },
+  { src: "/images/workshop-refresh/writing.jpg", alt: "빵 사진과 노트를 펼쳐 놓고 블로그 글을 작성하는 모습", position: "center" },
+  { src: "/images/workshop-refresh/site.jpg", alt: "꽃집 홈페이지를 노트북과 휴대전화에서 비교하는 모습", position: "center" },
+  { src: "/images/workshop-refresh/video.jpg", alt: "휴대전화 삼각대로 카페 음료의 세로 영상을 촬영하는 모습", position: "center" },
 ];
 
 export default function HeroSwiper() {

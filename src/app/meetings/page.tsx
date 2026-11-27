@@ -56,8 +56,8 @@ export default async function MeetingsPage({ searchParams }: MeetingsPageProps) 
           eyebrow="FIND YOUR TOGETHER"
           title={<>내 가게에 필요한<br />홍보 작업을 골라요.</>}
           description="블로그 글·가게 사진·홈페이지를 직접 만드는 모임입니다. 회당 10,000원, 음료 개별 결제이며 프로젝트 모임은 이전 진행 내용을 확인해주세요."
-          image="/images/subpages/meetings-hero.png"
-          imageAlt="노트북으로 창작 프로젝트를 함께 만드는 소규모 모임"
+          image="/images/workshop-refresh/meetings.jpg"
+          imageAlt="한 테이블에서 각자의 노트북으로 홍보 프로젝트를 실습하는 참여자"
           standalone
         />
 

@@ -27,13 +27,22 @@ type MeetingRow = {
 };
 
 const categoryImages: Record<string, string> = {
-  사진: "/images/meetings/ai-first-step.webp",
-  여행: "/images/meetings/travel-with-ai.webp",
-  글쓰기: "/images/meetings/write-my-story.webp",
-  홈페이지: "/images/meetings/one-page-site.webp",
-  영상: "/images/meetings/short-video-ideas.webp",
-  자동화: "/images/meetings/easy-automation.webp",
+  사진: "/images/workshop-refresh/product.jpg",
+  여행: "/images/workshop-refresh/travel.jpg",
+  글쓰기: "/images/workshop-refresh/writing.jpg",
+  홈페이지: "/images/workshop-refresh/site.jpg",
+  영상: "/images/workshop-refresh/video.jpg",
+  자동화: "/images/workshop-refresh/resources.jpg",
 };
+
+const refreshedMeetingImages = new Map([
+  ["/images/meetings/ai-first-step.webp", "/images/workshop-refresh/product.jpg"],
+  ["/images/meetings/travel-with-ai.webp", "/images/workshop-refresh/travel.jpg"],
+  ["/images/meetings/write-my-story.webp", "/images/workshop-refresh/writing.jpg"],
+  ["/images/meetings/one-page-site.webp", "/images/workshop-refresh/site.jpg"],
+  ["/images/meetings/short-video-ideas.webp", "/images/workshop-refresh/video.jpg"],
+  ["/images/meetings/easy-automation.webp", "/images/workshop-refresh/resources.jpg"],
+]);
 
 function formatDate(value: string) {
   return new Intl.DateTimeFormat("ko-KR", {
@@ -68,7 +77,9 @@ function toMeeting(row: MeetingRow): Meeting {
     description: row.description,
     category: row.category,
     icon: row.icon,
-    imageUrl: row.representative_image_url || categoryImages[row.category] || "/images/meetings/ai-first-step.webp",
+    imageUrl: row.representative_image_url
+      ? refreshedMeetingImages.get(row.representative_image_url) ?? row.representative_image_url
+      : categoryImages[row.category] ?? "/images/workshop-refresh/product.jpg",
     date: formatDate(row.meeting_date),
     time: formatTime(row.meeting_time),
     dateValue: row.meeting_date,
