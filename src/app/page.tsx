@@ -49,7 +49,6 @@ const cohorts = [
   {
     id: "cohort-title",
     label: "1기 작품",
-    eyebrow: "FIRST COHORT PROJECTS",
     title: "1기 참여자가 직접 만든 작품",
     description: "가위 수리점, 골프 피팅센터, 기업 소개까지. 참여자가 자신의 사업을 소개하기 위해 직접 제작하고 공개한 홈페이지입니다.",
     projects: firstCohortProjects,
@@ -57,7 +56,6 @@ const cohorts = [
   {
     id: "second-cohort-title",
     label: "2기 작품",
-    eyebrow: "SECOND COHORT PROJECTS",
     title: "2기 참여자가 직접 만든 작품",
     description: "안전교육, 돌봄 준비, 게이밍 PC 비교를 주제로 참여자가 만든 사이트입니다.",
     projects: secondCohortProjects,
@@ -65,7 +63,6 @@ const cohorts = [
   {
     id: "third-cohort-title",
     label: "3기 작품",
-    eyebrow: "THIRD COHORT PROJECTS",
     title: "3기 참여자가 직접 만든 작품",
     description: "홈페이지를 제작하고 Vercel에 자체 도메인을 연결한 뒤, 구글·네이버 검색엔진 등록까지 진행했습니다.",
     projects: [
@@ -172,18 +169,24 @@ export default async function Home() {
   return <>
     <ResourceBar />
     <SiteHeader />
-    <main id="main-content">
+    <main id="main-content" className="home-editorial">
       <section className="market-hero conversion-hero" aria-labelledby="hero-title">
-        <HeroSwiper /><div className="market-hero-shade" />
-        <div className="market-hero-copy"><p>소상공인·개인사업자를 위한 1:1 AI 교습</p><h1 id="hero-title">내 가게를 알리는<br />블로그와 홈페이지.</h1><span>가게 소개 글부터 블로그 콘텐츠, 홈페이지 제작·공개까지. 내 사업에 필요한 홍보 자료를 AI로 함께 만듭니다.</span><strong className="hero-beginner">{lessonSchedule} · 1:1 교습</strong></div>
-        <div className="hero-choice-card">
-          <a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 예약 가능 시간 확인하기 ↗</a>
+        <HeroSwiper />
+        <div className="market-hero-shade" />
+        <div className="market-hero-copy">
+          <p>소상공인·개인사업자를 위한 1:1 AI 교습</p>
+          <h1 id="hero-title">내 가게를 알리는<br />블로그와 홈페이지</h1>
+          <span>가게 소개 글과 상품 사진부터 홈페이지 제작·공개까지, 내 사업에 필요한 홍보 자료를 함께 만듭니다.</span>
+          <strong className="hero-beginner">{lessonSchedule}</strong>
+          <div className="hero-choice-card">
+            <a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 예약 가능 시간 확인하기 ↗</a>
+          </div>
         </div>
       </section>
 
       <section className="proof-strip" aria-label="모임 핵심 정보"><span><b>1:1 교습</b>내 사업에 맞춰 실습</span><span><b>매일 두 시간대</b>오전 10시 · 오후 3시</span><span><b>개인 노트북</b>충전기와 함께 준비</span><span><b>부산 교대 인근</b>커피긱스 2층 8인룸</span></section>
 
-      <section className="story-section conversion-story" aria-labelledby="story-title"><div><p>REAL CLASS STORY</p><h2 id="story-title">배운 내용을 바로,<br />내 가게 홍보에.</h2><p>가게 소개와 상품·서비스 사진을 가져오세요. 고객이 궁금해하는 내용을 블로그 글로 쓰고, 서비스·위치·문의 방법이 담긴 홈페이지를 직접 만듭니다. 완성 후에도 내용을 수정하고 운영하는 방법을 함께 익힙니다.</p><Link className="button button-primary" href="/reviews">모임 참여 후기 보기 →</Link></div><div className="story-images">
+      <section className="story-section conversion-story" aria-labelledby="story-title"><div><p>교습 소개</p><h2 id="story-title">배운 내용을 바로,<br />내 가게 홍보에.</h2><p>가게 소개와 상품·서비스 사진을 가져오세요. 고객이 궁금해하는 내용을 블로그 글로 쓰고, 서비스·위치·문의 방법이 담긴 홈페이지를 직접 만듭니다. 완성 후에도 내용을 수정하고 운영하는 방법을 함께 익힙니다.</p><Link className="button button-primary" href="/reviews">모임 참여 후기 보기 →</Link></div><div className="story-images">
         <picture>
           <source media="(prefers-reduced-motion: no-preference)" srcSet="/images/sunlight-loop-web.gif" type="image/gif" />
           <Image
@@ -197,13 +200,17 @@ export default async function Home() {
       </div></section>
       {reviews.length > 0 ? <section className="home-reviews trust-reviews" aria-labelledby="home-reviews-title"><div className="market-heading"><div><p>REAL REVIEWS</p><h2 id="home-reviews-title">참여자가 직접 들려준 이야기</h2><span>공개에 동의한 실제 참여 후기만 소개합니다.</span></div><Link href="/reviews">전체 후기 보기 →</Link></div><div className="home-review-grid">{reviews.map((review)=><article key={review.id}>{review.result_image_url?<div className="home-review-image" role="img" aria-label={`${review.nickname}님의 결과물`} style={{backgroundImage:`url(${review.result_image_url})`}}/>:<span className="home-review-quote" aria-hidden="true">“</span>}<div><small>{review.ait_meetings?.title??"AI Together 모임"}</small><p>{review.content}</p><strong>{review.nickname}</strong></div></article>)}</div></section>:null}
 
-      <section className="course-compare" id="lesson-guide" aria-labelledby="compare-title"><div className="market-heading"><div><p>CHOOSE YOUR COURSE</p><h2 id="compare-title">목표에 맞게 선택하세요</h2><span>가게 홍보 글·사진이나 홈페이지 중 필요한 작업을 골라 1:1로 배울 수 있어요.</span></div></div><div className="compare-grid"><article><div className="compare-card-heading"><span>가볍게 시작</span><h3>주제 실습</h3></div><dl><div><dt>추천 대상</dt><dd>내 가게 소개 글·사진을 직접 만들고 싶은 분</dd></div><div><dt>수업 시간</dt><dd>{lessonSchedule}</dd></div><div><dt>완성 결과</dt><dd>가게 소개 글·블로그 초안·홍보 이미지</dd></div></dl><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 주제 실습 신청 ↗</a></article><article className="compare-featured"><div className="compare-card-heading"><span>내 사업에 맞게 제작</span><h3>홈페이지 제작</h3></div><dl><div><dt>추천 대상</dt><dd>사업 홈페이지를 만들거나 개선하고 싶은 분</dd></div><div><dt>수업 시간</dt><dd>{lessonSchedule}</dd></div><div><dt>완성 결과</dt><dd>서비스·위치·문의 안내 페이지 제작·개선</dd></div></dl><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 홈페이지 교습 신청 ↗</a></article></div></section>
+      <div className="course-panel">
+        <section className="course-compare" id="lesson-guide" aria-labelledby="compare-title"><div className="market-heading"><div><p>1:1 교습 안내</p><h2 id="compare-title">목표에 맞게 선택하세요</h2><span>가게 홍보 글·사진이나 홈페이지 중 필요한 작업을 골라 1:1로 배울 수 있어요.</span></div></div><div className="compare-grid"><article><div className="compare-card-heading"><span>가볍게 시작</span><h3>주제 실습</h3></div><dl><div><dt>추천 대상</dt><dd>내 가게 소개 글·사진을 직접 만들고 싶은 분</dd></div><div><dt>수업 시간</dt><dd>{lessonSchedule}</dd></div><div><dt>완성 결과</dt><dd>가게 소개 글·블로그 초안·홍보 이미지</dd></div></dl><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 주제 실습 신청 ↗</a></article><article className="compare-featured"><div className="compare-card-heading"><span>내 사업에 맞게 제작</span><h3>홈페이지 제작</h3></div><dl><div><dt>추천 대상</dt><dd>사업 홈페이지를 만들거나 개선하고 싶은 분</dd></div><div><dt>수업 시간</dt><dd>{lessonSchedule}</dd></div><div><dt>완성 결과</dt><dd>서비스·위치·문의 안내 페이지 제작·개선</dd></div></dl><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 홈페이지 교습 신청 ↗</a></article></div></section>
+      </div>
+
+      <section className="how-section" aria-labelledby="how-title"><div className="market-heading centered light"><div><p>참여 방법</p><h2 id="how-title">처음이어도 3단계면 충분해요</h2></div></div><ol>{steps.map((step) => <li key={step.number}><span>{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol><Link className="button button-light" href="/guide">처음 오신 분 안내 →</Link></section>
 
       {cohorts.map((cohort) => (
         <section className="showcase-section cohort-section" aria-labelledby={cohort.id} key={cohort.id}>
           <div className="market-heading">
             <div>
-              <p>{cohort.eyebrow}</p>
+              
               <h2 id={cohort.id}>{cohort.title}</h2>
               <span>{cohort.description}</span>
             </div>
@@ -212,11 +219,11 @@ export default async function Home() {
             {cohort.projects.map((project) => (
               <a href={project.href} target="_blank" rel="noopener noreferrer" key={project.href} aria-label={project.title + " 작품 사이트 보기 (새 창)"}>
                 <div className={"cohort-cover cohort-cover-" + project.theme} aria-hidden="true">
-                  <span>AI TOGETHER · {cohort.label}</span>
+                  <span>{cohort.label}</span>
                   <b>{project.mark}</b>
                   <small>{project.category}</small>
                 </div>
-                <div className="showcase-top"><span>{cohort.label}</span><small>{project.category}</small></div>
+                
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <strong>작품 사이트 보기 ↗</strong>
@@ -229,7 +236,7 @@ export default async function Home() {
       <section className="showcase-section conversion-showcase" aria-labelledby="showcase-title">
         <div className="market-heading">
           <div>
-            <p>PROJECT SHOWCASE</p>
+            
             <h2 id="showcase-title">제작할 때 참고할 수 있는 예시</h2>
             <span>다양한 주제와 기능을 살펴보고 내 프로젝트의 아이디어를 찾아보세요.</span>
           </div>
@@ -242,9 +249,8 @@ export default async function Home() {
         </details>
       </section>
 
-      <section className="how-section" aria-labelledby="how-title"><div className="market-heading centered light"><div><p>HOW TO JOIN</p><h2 id="how-title">처음이어도 3단계면 충분해요</h2></div></div><ol>{steps.map((step) => <li key={step.number}><span>{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol><Link className="button button-light" href="/guide">처음 오신 분 안내 →</Link></section>
-      <section className="visit-section" aria-labelledby="visit-title"><div><p>LOCATION & PREPARATION</p><h2 id="visit-title">좋아하는 음료와 함께,<br />AI로 만들어봐요.</h2><ul><li><strong>장소</strong><span>부산 교대 인근 커피긱스 2층 8인룸</span></li><li><strong>카페 이용</strong><span>음료는 각자 주문하고 개별 결제</span></li><li><strong>교습 문의</strong><span>참가비와 예약 가능 시간은 당근에서 확인</span></li><li><strong>준비물</strong><span>개인 노트북·충전기·가게 소개·상품 사진</span></li></ul><Link className="text-link" href="/contact">장소와 이용 안내 자세히 보기 →</Link></div><figure className="visit-menu"><Image src="/images/coffee-geeks-menu.jpg" alt="커피긱스 커피와 음료 메뉴판" width={900} height={742} sizes="(max-width: 900px) calc(100vw - 40px), 44vw" /><figcaption><strong>커피긱스 메뉴</strong><span>메뉴와 가격은 방문 시점에 따라 달라질 수 있습니다.</span></figcaption></figure></section>
-      <section className="final-cta" aria-labelledby="final-cta-title"><p>READY TO MAKE?</p><h2 id="final-cta-title">내 가게 홍보,<br />직접 시작해볼까요?</h2><span>블로그 글 한 편부터 홈페이지까지, 지금 필요한 작업부터 시작하세요. 필요한 경험과 준비 사항은 참여 전에 안내합니다.</span><div><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 1:1 교습 신청 ↗</a></div></section>
+      <section className="visit-section" aria-labelledby="visit-title"><div><p>장소와 준비물</p><h2 id="visit-title">좋아하는 음료와 함께,<br />AI로 만들어봐요.</h2><ul><li><strong>장소</strong><span>부산 교대 인근 커피긱스 2층 8인룸</span></li><li><strong>카페 이용</strong><span>음료는 각자 주문하고 개별 결제</span></li><li><strong>교습 문의</strong><span>참가비와 예약 가능 시간은 당근에서 확인</span></li><li><strong>준비물</strong><span>개인 노트북·충전기·가게 소개·상품 사진</span></li></ul><Link className="text-link" href="/contact">장소와 이용 안내 자세히 보기 →</Link></div><figure className="visit-menu"><Image src="/images/coffee-geeks-menu.jpg" alt="커피긱스 커피와 음료 메뉴판" width={900} height={742} sizes="(max-width: 900px) calc(100vw - 40px), 44vw" /><figcaption><strong>커피긱스 메뉴</strong><span>메뉴와 가격은 방문 시점에 따라 달라질 수 있습니다.</span></figcaption></figure></section>
+      <section className="final-cta" aria-labelledby="final-cta-title"><p>1:1 교습 예약</p><h2 id="final-cta-title">내 가게 홍보,<br />직접 시작해볼까요?</h2><span>블로그 글 한 편부터 홈페이지까지, 지금 필요한 작업부터 시작하세요. 필요한 경험과 준비 사항은 참여 전에 안내합니다.</span><div><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 1:1 교습 신청 ↗</a></div></section>
     </main>
     <div className="mobile-apply-bar"><div><small>{lessonSchedule}</small><strong>1:1 교습</strong></div><a href={daangnUrl} target="_blank" rel="noreferrer">당근에서 신청 ↗</a></div>
     <footer className="site-footer"><div><Link className="brand footer-brand" href="/" aria-label="AI Together 홈"><span className="brand-mark">AI</span><span>Together</span></Link><p>내 가게의 블로그·홈페이지를 AI로 함께 만드는 모임</p></div><nav aria-label="하단 메뉴"><Link href="/meetings">지난 모임</Link><Link href="/guide">처음 오셨나요?</Link><Link href="/reviews">후기</Link><Link href="/contact">문의</Link><Link href="/resources">참고자료</Link></nav><small>© 2026 AI Together</small></footer>
