@@ -62,6 +62,23 @@ const cohorts = [
     description: "안전교육, 돌봄 준비, 게이밍 PC 비교를 주제로 참여자가 만든 사이트입니다.",
     projects: secondCohortProjects,
   },
+  {
+    id: "third-cohort-title",
+    label: "3기 작품",
+    eyebrow: "THIRD COHORT PROJECTS",
+    title: "3기 참여자가 직접 만든 작품",
+    description: "홈페이지를 제작하고 Vercel에 자체 도메인을 연결한 뒤, 구글·네이버 검색엔진 등록까지 진행했습니다.",
+    projects: [
+      {
+        title: "유진코트",
+        category: "기업 홈페이지",
+        mark: "유진코트",
+        theme: "industry",
+        description: "자체 도메인으로 공개한 유진코트 홈페이지입니다.",
+        href: "https://www.yujincoat.com/",
+      },
+    ],
+  },
 ];
 
 const showcases = [
